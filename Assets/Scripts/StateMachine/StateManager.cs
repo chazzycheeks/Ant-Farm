@@ -1,8 +1,11 @@
 using UnityEngine;
 
 public class StateManager : MonoBehaviour {
-    public State currentState;
-
+    State currentState;
+    [SerializeField] State defaultState;
+    private void Start() {
+        SwitchToNextState(defaultState);
+    }
     void RunStateMachine() {
         State nextstate = currentState?.RunCurrentState();
         if(nextstate != null && nextstate != currentState) {

@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class LocomotionController : MonoBehaviour
+public class PatrolLocomotionController : MonoBehaviour
 {
     [SerializeField] PatrolPath patrolPath; // The patrol path
     int currentPointIndex = 0;
     Rigidbody2D rb;
     [SerializeField] float speed = 100f; // Velocity it's moving at
     [SerializeField] float arrivalThreshold = 3f; // Distance treshhold before it slows down the speed
-    bool isPatrolling = true;
+    bool isPatrolling = false;
     bool inverseLoop = false;
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -21,6 +21,14 @@ public class LocomotionController : MonoBehaviour
 
     }
 
+    public void TogglePatrol(bool startPatrol) {
+        // We can add additional varaibles here if we want, such as selecting a specific waypoint to start at or so on.
+        if (startPatrol) {
+            isPatrolling = true;
+        } else {
+            isPatrolling = false;
+        }
+    }
     private void FixedUpdate() {
         if (isPatrolling) {
             // Local refernces
@@ -48,7 +56,6 @@ public class LocomotionController : MonoBehaviour
                 } else {
                     currentPointIndex++;
                 }
-                
             }
         }
     }

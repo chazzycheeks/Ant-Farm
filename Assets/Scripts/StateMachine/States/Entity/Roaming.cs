@@ -1,16 +1,23 @@
     using UnityEngine;
 
 public class Roaming : State {
-
+    PatrolLocomotionController patrolController;
+    private void Awake() {
+        patrolController = GetComponentInParent<PatrolLocomotionController>();
+        if(patrolController == null) {
+            Debug.Log("Patrol Locomotion Controller missing");
+            return;
+        }
+    }
     public override void DefaultState() {
-        throw new System.NotImplementedException();
+        patrolController.TogglePatrol(true);
     }
 
     public override void ExitState() {
-        throw new System.NotImplementedException();
+        patrolController.TogglePatrol(false);
     }
 
     public override State RunCurrentState() {
-        throw new System.NotImplementedException();
+        return this;
     }
 }
