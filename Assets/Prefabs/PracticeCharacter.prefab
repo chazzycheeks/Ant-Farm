@@ -147,14 +147,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultParameters:
-    Gravity: -45
+    Gravity: -30
     FallMultiplier: 1
     AscentMultiplier: 1
     MaxVelocity: {x: 100, y: 100}
-    SpeedAccelerationOnGround: 8
-    UseSeparateDecelerationOnGround: 0
+    SpeedAccelerationOnGround: 7.5
+    UseSeparateDecelerationOnGround: 1
     SpeedDecelerationOnGround: 20
-    SpeedAccelerationInAir: 7
+    SpeedAccelerationInAir: 5.5
     UseSeparateDecelerationInAir: 0
     SpeedDecelerationInAir: 5
     SpeedFactor: 1
@@ -183,7 +183,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    Physics2DInteraction: 1
+    Physics2DInteraction: 0
     Physics2DPushForce: 2
     DrawRaycastsGizmos: 1
     DisplayWarnings: 1
@@ -305,7 +305,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  WalkSpeed: 9
+  WalkSpeed: 6.5
   ResetHorizontalSpeedBtn: 0
   MovementSpeedMultiplier: 1
   AbilityMovementSpeedMultiplier: 1
@@ -320,7 +320,7 @@ MonoBehaviour:
   ActiveAfterDeath: 0
   TouchTheGroundFeedback: {fileID: 0}
   MinimumAirTimeBeforeFeedback: 0.2
-  StopWalkingWhenCollidingWithAWall: 0
+  StopWalkingWhenCollidingWithAWall: 1
 --- !u!114 &11449144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +436,7 @@ MonoBehaviour:
   JumpIsProportionalToThePressTime: 1
   JumpMinimumAirTime: 0.2
   JumpReleaseForceFactor: 2
-  CoyoteTime: 0
+  CoyoteTime: 0.2
   InputBufferDuration: 0.2
   OneWayPlatformsJumpCollisionOffDuration: 0.2
   MovingOneWayPlatformsJumpCollisionOffDuration: 0.2
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d37391d2147a467db78bf732ae24daa, type: 3}
   m_Name: 
@@ -605,7 +605,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  LadderClimbingSpeed: 3
+  LadderClimbingSpeed: 4
   ForceRightFacing: 0
   ForceAnchorToGroundOnExit: 0
   MinimumTimeAfterLadderJump: 0.5
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a07c6668aa55403790d27b575279549, type: 3}
   m_Name: 
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8abe6344b7148db4687d3c84e7712904, type: 3}
   m_Name: 
