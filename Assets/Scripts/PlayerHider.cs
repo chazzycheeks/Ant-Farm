@@ -1,9 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerHider : MonoBehaviour
 {
     private VisibilityManager visibilityManager;
-
+    
     // Update is called once per frame
     private void Start()
     {
@@ -24,7 +25,6 @@ public class PlayerHider : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             visibilityManager.isVisible = true;
-            
         }
     }
    

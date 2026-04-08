@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class VisibilityManager : MonoBehaviour
 {
@@ -7,12 +9,34 @@ public class VisibilityManager : MonoBehaviour
     public float visibilityTrigger = 2.5f;
     public float visibilityTimer;
     public UnityEvent onSeen;
-    private bool seenEventPlaying = false; 
+    private bool seenEventPlaying = false;
+    public Vector2 lastPlayerPositionSeen;
+    Transform playerT;
+    GameObject entity;
+    StateManager stateManager;
+    EntityStateTriggers entityTriggers;
+    private void Awake() {
+        entity = GameObject.FindGameObjectWithTag("Entity");
+
+        stateManager = entity.GetComponent<StateManager>();
+        entityTriggers = entity.GetComponent<EntityStateTriggers>();
+    }
+    private void Start() {
+        
+    }
 
     void Update()
     {
         if (isVisible == true)
         {
+            if (playerT == null) {
+                playerT = GameObject.FindGameObjectWithTag("Player").transform;
+            }
+            if(stateManager.GetCurrentState() is Roaming) {
+                entityTriggers.noticedPlayer = true;
+            }
+            lastPlayerPositionSeen = playerT.position;
+            
             UpdateTimer();
         }
 
@@ -33,8 +57,8 @@ public class VisibilityManager : MonoBehaviour
         {
             visibilityTimer = 0f;
             seenEventPlaying = true;
-            onSeen?.Invoke();
-            
+            //onSeen?.Invoke();
+            Debug.Log("Seen");
         }
     }
 

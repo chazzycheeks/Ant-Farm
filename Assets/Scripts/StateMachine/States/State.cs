@@ -1,6 +1,11 @@
 using UnityEngine;
 
 public abstract class State : MonoBehaviour {
+    public EntityStateTriggers entityStateTriggers;
+
+    protected virtual void Awake() {
+        entityStateTriggers = GetComponentInParent<EntityStateTriggers>();
+    }
     /// <summary>
     /// The tick of the state that will be run per frame. (Update)
     /// </summary>

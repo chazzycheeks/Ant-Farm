@@ -6,6 +6,9 @@ public class StateManager : MonoBehaviour {
     private void Start() {
         SwitchToNextState(defaultState);
     }
+    private void Update() {
+        RunStateMachine();
+    }
     void RunStateMachine() {
         State nextstate = currentState?.RunCurrentState();
         if(nextstate != null && nextstate != currentState) {
@@ -25,4 +28,10 @@ public class StateManager : MonoBehaviour {
     public void ForceSwapState(State stateForced) {
         SwitchToNextState(stateForced);
     }
+
+    public State GetCurrentState() {
+        return currentState;
+    }
+
+    
 }

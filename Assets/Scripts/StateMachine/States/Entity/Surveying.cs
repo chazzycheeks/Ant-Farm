@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class Surveying : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+public class Surveying : State {
+    public override void DefaultState() {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public override void ExitState() {
         
+    }
+
+    public override State RunCurrentState() {
+        return this;
     }
 }

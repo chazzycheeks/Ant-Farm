@@ -2,7 +2,9 @@
 
 public class Roaming : State {
     PatrolLocomotionController patrolController;
-    private void Awake() {
+    public State surveyState;
+    protected override void Awake() {
+        base.Awake();
         patrolController = GetComponentInParent<PatrolLocomotionController>();
         if(patrolController == null) {
             Debug.Log("Patrol Locomotion Controller missing");
@@ -15,9 +17,16 @@ public class Roaming : State {
 
     public override void ExitState() {
         patrolController.TogglePatrol(false);
+        entityStateTriggers.noticedPlayer = false;
     }
 
     public override State RunCurrentState() {
-        return this;
+        if(entityStateTriggers.noticedPlayer) {
+            Debug.Log("Noticed player swaping to survey");
+            return surveyState;
+        } else {
+            return this;
+        }
+            
     }
 }
