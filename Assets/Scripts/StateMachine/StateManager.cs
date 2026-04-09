@@ -33,5 +33,13 @@ public class StateManager : MonoBehaviour {
         return currentState;
     }
 
-    
+    /// <summary>
+    /// If we have an animation, call this method to grab the animation event from inside the state, i.e if we parse in "Hit", and the state matches it and has a function attached to the animation event, it will trigger.
+    /// </summary>
+    /// <param name="eventId">Value to match for events</param>
+    public void TriggerAnimationEvent(string eventId) {
+        if (currentState != null) {
+            currentState.HandleAnimationEvent(eventId);
+        }
+    }
 }

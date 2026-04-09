@@ -12,21 +12,27 @@ public class Roaming : State {
         }
     }
     public override void DefaultState() {
-        patrolController.TogglePatrol(true);
+        animator.Play("Emerge");
     }
 
     public override void ExitState() {
-        patrolController.TogglePatrol(false);
+        patrolController.TogglePatrol(false, PathType.Roaming);
         entityStateTriggers.noticedPlayer = false;
+        animator.Play("Submerge");
     }
 
     public override State RunCurrentState() {
         if(entityStateTriggers.noticedPlayer) {
-            Debug.Log("Noticed player swaping to survey");
+            Debug.Log("Noticed player, swaping to survey");
             return surveyState;
         } else {
             return this;
         }
             
+    }
+    public override void HandleAnimationEvent(string eventId) {
+        if(eventId == "Finished") {
+            patrolController.TogglePatrol(true, PathType.Roaming);
+        }
     }
 }
