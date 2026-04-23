@@ -3,9 +3,20 @@ using UnityEngine;
 public abstract class State : MonoBehaviour {
     public EntityStateTriggers entityStateTriggers;
     protected Animator animator;
+    protected PatrolLocomotionController patrolController;
     protected virtual void Awake() {
         entityStateTriggers = GetComponentInParent<EntityStateTriggers>();
+        if (entityStateTriggers == null) {
+            Debug.LogWarning($"Entity State Triggers missing from state: {gameObject.name}");
+        }
         animator = GetComponentInParent<Animator>();
+        if (animator == null) {
+            Debug.LogWarning($"Animator missing from state: {gameObject.name}");
+        }
+        patrolController = GetComponentInParent<PatrolLocomotionController>();
+        if (patrolController == null) {
+            Debug.LogWarning($"Patrol Locomotion Controller missing from state: {gameObject.name}");
+        }
     }
     /// <summary>
     /// The tick of the state that will be run per frame. (Update)

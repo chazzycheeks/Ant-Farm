@@ -15,9 +15,19 @@ public class VisibilityManager : MonoBehaviour
     GameObject entity;
     StateManager stateManager;
     EntityStateTriggers entityTriggers;
-    private void Awake() {
-        entity = GameObject.FindGameObjectWithTag("Entity");
 
+    static VisibilityManager instance;
+    public static VisibilityManager Instance {
+        get {  return instance; }
+    }
+    private void Awake() {
+        if(instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+
+        entity = GameObject.FindGameObjectWithTag("Entity");
         stateManager = entity.GetComponent<StateManager>();
         entityTriggers = entity.GetComponent<EntityStateTriggers>();
     }
@@ -32,9 +42,17 @@ public class VisibilityManager : MonoBehaviour
             if (playerT == null) {
                 playerT = GameObject.FindGameObjectWithTag("Player").transform;
             }
-            if(stateManager.GetCurrentState() is Roaming) {
-                entityTriggers.noticedPlayer = true;
+
+            if(entityTriggers.transitioned == true) {
+                if (stateManager.GetCurrentState() is Roaming) {
+                    entityTriggers.noticedPlayer = true;
+                }
+
+                if (stateManager.GetCurrentState() is Surveying) {
+                    entityTriggers.isSpotting = true;
+                }
             }
+            
             lastPlayerPositionSeen = playerT.position;
             
             UpdateTimer();

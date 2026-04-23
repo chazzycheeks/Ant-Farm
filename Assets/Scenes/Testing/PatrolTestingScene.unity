@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Surveying
   entityStateTriggers: {fileID: 0}
-  spottingState: {fileID: 0}
+  spottingState: {fileID: 816381765}
 --- !u!1001 &604364337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1439,6 +1439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 816381764}
+  - component: {fileID: 816381765}
   m_Layer: 0
   m_Name: Spotting
   m_TagString: Untagged
@@ -1465,6 +1466,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &816381765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816381763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a263af18a96b61e4cb9604425f5f12be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spotting
+  entityStateTriggers: {fileID: 0}
+  timer: 0
+  timeToSpot: 5
+  surveyingState: {fileID: 452176113}
 --- !u!1001 &831258676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2556,6 +2573,7 @@ MonoBehaviour:
     path: {fileID: 2003178700}
     currentIndex: 0
     inverse: 0
+  targetCoordinates: {x: 0, y: 0, z: 0}
   speed: 5
   arrivalThreshold: 3
 --- !u!50 &1479117052
@@ -2598,6 +2616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   noticedPlayer: 0
+  isSpotting: 0
+  transitioned: 0
 --- !u!95 &1479117054
 Animator:
   serializedVersion: 7
