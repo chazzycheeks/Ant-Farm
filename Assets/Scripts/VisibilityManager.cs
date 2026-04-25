@@ -35,15 +35,13 @@ public class VisibilityManager : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        if (isVisible == true)
-        {
+    void Update() {
+        if (isVisible == true && entityTriggers.isSpottable) {
             if (playerT == null) {
                 playerT = GameObject.FindGameObjectWithTag("Player").transform;
             }
 
-            if(entityTriggers.transitioned == true) {
+            if (entityTriggers.transitioned == true) {
                 if (stateManager.GetCurrentState() is Roaming) {
                     entityTriggers.noticedPlayer = true;
                 }
@@ -51,11 +49,26 @@ public class VisibilityManager : MonoBehaviour
                 if (stateManager.GetCurrentState() is Surveying) {
                     entityTriggers.isSpotting = true;
                 }
+
+                if (stateManager.GetCurrentState() is Spotting) {
+                    entityTriggers.isSpotting = true;
+                }
+            }
+
+            lastPlayerPositionSeen = playerT.position;
+
+            UpdateTimer();
+        } else {
+            if(entityTriggers.transitioned) {
+                if (stateManager.GetCurrentState() is Surveying) {
+                    entityTriggers.isSpotting = false;
+                }
+
+                if (stateManager.GetCurrentState() is Spotting) {
+                    entityTriggers.isSpotting = false;
+                }
             }
             
-            lastPlayerPositionSeen = playerT.position;
-            
-            UpdateTimer();
         }
 
         CheckIfSpotted();

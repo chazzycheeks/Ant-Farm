@@ -8,11 +8,13 @@ public class PatrolLocomotionController : MonoBehaviour
     [SerializeField] PathCache patrolPath;
     [SerializeField] PathCache surveyPath;
     [SerializeField] Vector3 targetCoordinates;
+    [SerializeField] Transform offsetAnchor; // used to add offset to position when spotting so the eye is focused on the player, not the body
     //[SerializeField] PatrolPath patrolPath; // The patrol path
     //int currentPointIndex = 0;
     Rigidbody2D rb;
     [SerializeField] float speed = 100f; // Velocity it's moving at
     [SerializeField] float arrivalThreshold = 3f; // Distance treshhold before it slows down the speed
+    [SerializeField] float spottingSpeed = 200f;
     bool isPatrolling = false;
     bool isFixating = false;
     //bool inverseLoop = false;
@@ -220,20 +222,19 @@ public class PatrolLocomotionController : MonoBehaviour
 
             case PathType.FreeMoving:
                 if (isFixating) {
-                    // Local refernces
-                    Vector2 currentPos = transform.position;
+                    // 
+                    Vector2 currentPos = offsetAnchor.transform.position;
                     Vector2 targetPos = VisibilityManager.Instance.lastPlayerPositionSeen;
                     Vector2 dir = (targetPos - currentPos).normalized;
-                    float currentSpeed = speed;
+                    float currentSpeed = spottingSpeed;
                     float distance = Vector2.Distance(currentPos, targetPos);
                     // Slow down movement before arriving to the destination
-                    if (distance < arrivalThreshold) {
+
                         // t goes from 1 (at threshold) to 0 (at target)
                         float t = Mathf.Clamp01(distance / arrivalThreshold);
-                        float ease = 0.5f * (1f - Mathf.Cos(t * Mathf.PI));
+                        float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
 
-                        currentSpeed = speed * ease;
-                    }
+                        currentSpeed = spottingSpeed * ease;
                     rb.linearVelocity = dir * currentSpeed; // Set speed
                 }
                 break;

@@ -1236,7 +1236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Surveying
   entityStateTriggers: {fileID: 0}
+  surveyingTimer: 0
+  timeToSurvey: 20
   spottingState: {fileID: 816381765}
+  roamingState: {fileID: 116571148}
 --- !u!1001 &604364337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1430,6 +1433,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 723837750}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &753905081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 753905082}
+  m_Layer: 0
+  m_Name: AnchorEye
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &753905082
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753905081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1479117049}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.72, y: -0.949}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &816381763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spotting
   entityStateTriggers: {fileID: 0}
-  timer: 0
+  spottingTimer: 0
   timeToSpot: 5
   surveyingState: {fileID: 452176113}
 --- !u!1001 &831258676
@@ -2487,6 +2525,7 @@ RectTransform:
   - {fileID: 1351005152}
   - {fileID: 2007983570}
   - {fileID: 423900628}
+  - {fileID: 753905082}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2574,8 +2613,10 @@ MonoBehaviour:
     currentIndex: 0
     inverse: 0
   targetCoordinates: {x: 0, y: 0, z: 0}
+  offsetAnchor: {fileID: 753905082}
   speed: 5
   arrivalThreshold: 3
+  spottingSpeed: 20
 --- !u!50 &1479117052
 Rigidbody2D:
   serializedVersion: 5
@@ -2618,6 +2659,7 @@ MonoBehaviour:
   noticedPlayer: 0
   isSpotting: 0
   transitioned: 0
+  isSpottable: 1
 --- !u!95 &1479117054
 Animator:
   serializedVersion: 7

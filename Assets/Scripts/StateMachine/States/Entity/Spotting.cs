@@ -3,8 +3,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spotting : State {
-    public float timer;
-    public float timeToSpot = 10;
+    public float spottingTimer;
+    public float timeToSpot = 5;
     bool isTimeOver = false;
     [SerializeField] Surveying surveyingState;
     protected override void Awake() {
@@ -15,14 +15,15 @@ public class Spotting : State {
     }
     public override void DefaultState() {
         patrolController.TogglePatrol(false, PathType.FreeMoving);
-        timer = 0;
+        spottingTimer = 0;
         isTimeOver = false;
         StartCoroutine(TimerSpoting());
     }
 
     public override void ExitState() {
-        timer = 0;
+        spottingTimer = 0;
         isTimeOver = false;
+        StopCoroutine(TimerSpoting());
     }
 
     public override State RunCurrentState() {
@@ -36,8 +37,13 @@ public class Spotting : State {
     }
 
     IEnumerator TimerSpoting() {
-        while (timer < timeToSpot) {
-            timer += Time.deltaTime;
+        while (spottingTimer < timeToSpot) {
+            if (!entityStateTriggers.isSpotting) {
+                spottingTimer += Time.deltaTime;
+            } else {
+                spottingTimer = 0;
+            }
+            
             yield return null;
         }
         isTimeOver = true;

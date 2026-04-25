@@ -7,13 +7,12 @@ public class Roaming : State {
     }
     public override void DefaultState() {
         animator.Play("Emerge");
+        entityStateTriggers.isSpotting = false;
+        entityStateTriggers.transitioned = false;
     }
 
     public override void ExitState() {
         patrolController.TogglePatrol(false, PathType.Roaming);
-        entityStateTriggers.noticedPlayer = false;
-        entityStateTriggers.transitioned = false;
-        animator.Play("Submerge");
     }
 
     public override State RunCurrentState() {
@@ -29,6 +28,7 @@ public class Roaming : State {
         if(eventId == "Finished") {
             patrolController.TogglePatrol(true, PathType.Roaming);
             entityStateTriggers.transitioned = true;
+            entityStateTriggers.isSpottable = true;
         }
     }
 }
