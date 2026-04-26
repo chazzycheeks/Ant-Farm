@@ -40,7 +40,7 @@ public class VisibilityManager : MonoBehaviour
             if (playerT == null) {
                 playerT = GameObject.FindGameObjectWithTag("Player").transform;
             }
-
+            //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
             if (entityTriggers.transitioned == true) {
                 if (stateManager.GetCurrentState() is Roaming) {
                     entityTriggers.noticedPlayer = true;
@@ -59,6 +59,7 @@ public class VisibilityManager : MonoBehaviour
 
             UpdateTimer();
         } else {
+            //Toggle the visual input off so mechanics work accordingly
             if(entityTriggers.transitioned) {
                 if (stateManager.GetCurrentState() is Surveying) {
                     entityTriggers.isSpotting = false;
@@ -88,7 +89,8 @@ public class VisibilityManager : MonoBehaviour
         {
             visibilityTimer = 0f;
             seenEventPlaying = true;
-            //onSeen?.Invoke();
+            //onSeen?.Invoke(); <<<< Probably should be a death call here, if it's been spotted I'm assuming we should kill the player
+            onSeen?.Invoke();
             Debug.Log("Seen");
         }
     }

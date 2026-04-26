@@ -5,20 +5,23 @@ using UnityEngine;
 
 public class PatrolLocomotionController : MonoBehaviour
 {
+    [Header("CoordinationPoints")]
     [SerializeField] PathCache patrolPath;
     [SerializeField] PathCache surveyPath;
     [SerializeField] Vector3 targetCoordinates;
     [SerializeField] Transform offsetAnchor; // used to add offset to position when spotting so the eye is focused on the player, not the body
-    //[SerializeField] PatrolPath patrolPath; // The patrol path
-    //int currentPointIndex = 0;
-    Rigidbody2D rb;
-    [SerializeField] float speed = 100f; // Velocity it's moving at
+    [Header("Speeds")]
+    [SerializeField] float speed = 3f; // Velocity it's moving at
     [SerializeField] float arrivalThreshold = 3f; // Distance treshhold before it slows down the speed
-    [SerializeField] float spottingSpeed = 200f;
+    [SerializeField] float spottingSpeed = 20f;
+    [Header("Properties")]
     bool isPatrolling = false;
     bool isFixating = false;
-    //bool inverseLoop = false;
     PathType currentPath = PathType.Roaming;
+    //References
+    Rigidbody2D rb;
+    
+    
 
 
     private void Awake() {
@@ -38,8 +41,12 @@ public class PatrolLocomotionController : MonoBehaviour
             return surveyPath.path.waypoints[surveyPath.currentIndex].transform.position;
         }
     }
+    /// <summary>
+    /// Toggles whether the unit should be in patrol mode or not and which path to swap to
+    /// </summary>
+    /// <param name="startPatrol">Decides whether the entity patrols or not</param>
+    /// <param name="path">The path to set to</param>
     public void TogglePatrol(bool startPatrol, PathType path) {
-        // We can add additional varaibles here if we want, such as selecting a specific waypoint to start at or so on.
         if (startPatrol) {
             isPatrolling = true;
         } else {
@@ -47,6 +54,7 @@ public class PatrolLocomotionController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
         isFixating = false;
+        //Setting path according to the parameter
         if (path == PathType.Roaming) {
             currentPath = PathType.Roaming;
         } else if(path == PathType.Surveying) {
@@ -222,7 +230,7 @@ public class PatrolLocomotionController : MonoBehaviour
 
             case PathType.FreeMoving:
                 if (isFixating) {
-                    // 
+                    // Consistantly moves towards the fixed point
                     Vector2 currentPos = offsetAnchor.transform.position;
                     Vector2 targetPos = VisibilityManager.Instance.lastPlayerPositionSeen;
                     Vector2 dir = (targetPos - currentPos).normalized;

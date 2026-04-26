@@ -2,11 +2,17 @@
 
 public class Roaming : State {
     public State surveyState;
+    public bool isReturning = false;
     protected override void Awake() {
         base.Awake();
     }
     public override void DefaultState() {
-        animator.Play("Emerge");
+        if (isReturning) {
+            animator.Play("Submerge");
+            isReturning = false;
+        } else {
+            animator.Play("Emerge");
+        }
         entityStateTriggers.isSpotting = false;
         entityStateTriggers.transitioned = false;
     }
@@ -25,7 +31,17 @@ public class Roaming : State {
             
     }
     public override void HandleAnimationEvent(string eventId) {
-        if(eventId == "Finished") {
+        //if(eventId == "Finished") {
+        //    patrolController.TogglePatrol(true, PathType.Roaming);
+        //    entityStateTriggers.transitioned = true;
+        //    entityStateTriggers.isSpottable = true;
+        //}
+
+        if (eventId == "Submerged") {
+            transform.root.position = patrolController.GetCurrentPointLocation(PathType.Roaming);
+            animator.Play("Emerge");
+
+        } else if (eventId == "FinishedEmerging") {
             patrolController.TogglePatrol(true, PathType.Roaming);
             entityStateTriggers.transitioned = true;
             entityStateTriggers.isSpottable = true;

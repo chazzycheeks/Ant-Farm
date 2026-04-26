@@ -29,6 +29,7 @@ public class Spotting : State {
     public override State RunCurrentState() {
         if (isTimeOver) {
             patrolController.ReturnToPath(PathType.Surveying);
+            surveyingState.isReturning = true;
             return surveyingState;
         } else {
             return this;

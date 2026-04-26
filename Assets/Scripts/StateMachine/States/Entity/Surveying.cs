@@ -6,7 +6,8 @@ public class Surveying : State {
     public float timeToSurvey = 20;
     bool isTimeOver = false;
     public State spottingState;
-    public State roamingState;
+    public Roaming roamingState;
+    public bool isReturning = false;
     protected override void Awake() {
         base.Awake();
     }
@@ -14,7 +15,12 @@ public class Surveying : State {
         entityStateTriggers.noticedPlayer = false;
         entityStateTriggers.transitioned = false;
         entityStateTriggers.isSpotting = false;
-        animator.Play("Submerge");
+        if (!isReturning) {
+            animator.Play("Submerge");
+        } else {
+            isReturning = false;
+        }
+        
         
     }
 
@@ -30,6 +36,8 @@ public class Surveying : State {
         }
 
         if (isTimeOver) {
+            roamingState.isReturning = true;
+            patrolController.TogglePatrol(false, PathType.Surveying);
             return roamingState;
         }
             return this;
