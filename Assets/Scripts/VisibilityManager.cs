@@ -89,8 +89,7 @@ public class VisibilityManager : MonoBehaviour
         {
             visibilityTimer = 0f;
             seenEventPlaying = true;
-            //onSeen?.Invoke(); <<<< Probably should be a death call here, if it's been spotted I'm assuming we should kill the player
-            onSeen?.Invoke();
+            //onSeen?.Invoke(); <<<< 
             Debug.Log("Seen");
         }
     }
