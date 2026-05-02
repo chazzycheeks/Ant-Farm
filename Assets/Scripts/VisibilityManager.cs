@@ -8,6 +8,10 @@ public class VisibilityManager : MonoBehaviour
     public bool isVisible = false;
     public float visibilityTrigger = 2.5f;
     public float visibilityTimer;
+    public bool isDiscoverable => canPlayerBeSpotted();
+    public float distanceUntilDiscoverable = 30f; // decides how far the entity can be until it can go into survey
+    
+    [SerializeField]bool debuggingDistance = false;
     public UnityEvent onSeen;
     private bool seenEventPlaying = false;
     public Vector2 lastPlayerPositionSeen;
@@ -15,8 +19,9 @@ public class VisibilityManager : MonoBehaviour
     GameObject entity;
     StateManager stateManager;
     EntityStateTriggers entityTriggers;
-
     static VisibilityManager instance;
+
+    public float debugDistance;
     public static VisibilityManager Instance {
         get {  return instance; }
     }
@@ -30,16 +35,33 @@ public class VisibilityManager : MonoBehaviour
         entity = GameObject.FindGameObjectWithTag("Entity");
         stateManager = entity.GetComponent<StateManager>();
         entityTriggers = entity.GetComponent<EntityStateTriggers>();
+        
     }
     private void Start() {
         
     }
 
+    bool canPlayerBeSpotted() {
+        if (playerT == null) return false;
+        float distance = Vector2.Distance(playerT.position, entity.transform.position);
+        if(distance < distanceUntilDiscoverable) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public float distanceToEntity() {
+        float distance = Vector2.Distance(playerT.position, entity.transform.position);
+        return distance;
+    }
     void Update() {
-        if (isVisible == true && entityTriggers.isSpottable) {
-            if (playerT == null) {
-                playerT = GameObject.FindGameObjectWithTag("Player").transform;
-            }
+        if (playerT == null) {
+            playerT = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        if (debuggingDistance) debugDistance = distanceToEntity();
+        if (isVisible == true && entityTriggers.isSpottable &&
+            canPlayerBeSpotted() == true) {
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
             if (entityTriggers.transitioned == true) {
                 if (stateManager.GetCurrentState() is Roaming) {

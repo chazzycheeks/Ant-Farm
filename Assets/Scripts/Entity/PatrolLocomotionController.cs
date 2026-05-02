@@ -7,7 +7,8 @@ public class PatrolLocomotionController : MonoBehaviour
 {
     [Header("CoordinationPoints")]
     [SerializeField] PathCache patrolPath;
-    [SerializeField] PathCache surveyPath;
+    [SerializeField]  PathCache surveyPath;
+    [SerializeField] PathCache lastSurveyPathUsed;
     [SerializeField] Vector3 targetCoordinates;
     [SerializeField] Transform offsetAnchor; // used to add offset to position when spotting so the eye is focused on the player, not the body
     [Header("Speeds")]
@@ -34,6 +35,14 @@ public class PatrolLocomotionController : MonoBehaviour
             
 
     }
+
+    public void SetSurveyPath(PathCache newPath) {
+        if(surveyPath != null) {
+            lastSurveyPathUsed = surveyPath;
+            surveyPath = newPath;
+        }
+    }
+
     public Vector3 GetCurrentPointLocation(PathType path) {
         if(path == PathType.Roaming) {
             return patrolPath.path.waypoints[patrolPath.currentIndex].transform.position;
