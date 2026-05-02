@@ -35,8 +35,9 @@ GameObject:
   - component: {fileID: 114408133200064378}
   - component: {fileID: 114679018816720190}
   - component: {fileID: -4342895061800036961}
+  - component: {fileID: 4337192195661074905}
   m_Layer: 9
-  m_Name: Demo
+  m_Name: PracticeCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +185,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 0
     Physics2DInteraction: 0
-    Physics2DPushForce: 0
+    Physics2DPushForce: 2
     DrawRaycastsGizmos: 1
     DisplayWarnings: 1
   PlatformMask:
@@ -605,7 +606,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  LadderClimbingSpeed: 3
+  LadderClimbingSpeed: 4
   ForceRightFacing: 0
   ForceAnchorToGroundOnExit: 0
   MinimumTimeAfterLadderJump: 0.5
@@ -666,7 +667,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a07c6668aa55403790d27b575279549, type: 3}
   m_Name: 
@@ -725,7 +726,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
   m_Name: 
@@ -770,7 +771,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8abe6344b7148db4687d3c84e7712904, type: 3}
   m_Name: 
@@ -1043,6 +1044,18 @@ MonoBehaviour:
   PreventClimbingPastStairs: 1
   PreventClimbingRaycastOffset: {x: 0.22, y: 0.2, z: 0}
   PreventClimbingRaycastLength: 0.5
+--- !u!114 &4337192195661074905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2ef3ed5e056b34bbe3fc3520e51299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &159142
 GameObject:
   m_ObjectHideFlags: 0
