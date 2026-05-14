@@ -13,8 +13,7 @@ public class Roaming : State {
         } else {
             animator.Play("Emerge");
         }
-        entityStateTriggers.isSpotting = false;
-        entityStateTriggers.transitioned = false;
+        
     }
 
     public override void ExitState() {

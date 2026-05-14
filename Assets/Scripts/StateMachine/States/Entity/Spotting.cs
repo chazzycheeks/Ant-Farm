@@ -37,6 +37,13 @@ public class Spotting : State {
         
     }
 
+    public override void HandleAnimationEvent(string eventId) {
+        if (eventId == "FinishedEmerging") {
+            entityStateTriggers.transitioned = true;
+            entityStateTriggers.isSpottable = true;
+        }
+    }
+
     IEnumerator TimerSpoting() {
         while (spottingTimer < timeToSpot) {
             if (!entityStateTriggers.isSpotting) {

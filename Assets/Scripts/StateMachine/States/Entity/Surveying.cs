@@ -49,9 +49,9 @@ public class Surveying : State {
 
         } else if (eventId == "FinishedEmerging") {
             patrolController.TogglePatrol(true, PathType.Surveying);
+            StartCoroutine(TimerSpoting());
             entityStateTriggers.transitioned = true;
             entityStateTriggers.isSpottable = true;
-            StartCoroutine(TimerSpoting());
         }
     }
 
