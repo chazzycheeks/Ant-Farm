@@ -367,20 +367,20 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  DashDistance: 4
-  DashForce: 25
+  DashDistance: 4.5
+  DashForce: 20
   ResetForcesOnExit: 1
   ForceExactDistance: 0
   DetachFromMovingPlatformsOnDash: 0
   Aim:
-    AimControl: 2
+    AimControl: 1
     RotationMode: 2
-    MinimumAngle: -180
+    MinimumAngle: 0
     MaximumAngle: 180
     CurrentAngle: 0
   MinimumInputThreshold: 0.1
   FlipCharacterIfNeeded: 1
-  AutoCorrectTrajectory: 1
+  AutoCorrectTrajectory: 0
   DashDirectionMinThreshold: 0.1
   DashCooldown: 1
   LimitedDashes: 0
