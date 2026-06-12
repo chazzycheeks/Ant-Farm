@@ -35,6 +35,8 @@ GameObject:
   - component: {fileID: 114408133200064378}
   - component: {fileID: 114679018816720190}
   - component: {fileID: -4342895061800036961}
+  - component: {fileID: 1148262242733755894}
+  - component: {fileID: 7159822963858989587}
   m_Layer: 9
   m_Name: NewOne
   m_TagString: Player
@@ -1043,6 +1045,31 @@ MonoBehaviour:
   PreventClimbingPastStairs: 1
   PreventClimbingRaycastOffset: {x: 0.22, y: 0.2, z: 0}
   PreventClimbingRaycastLength: 0.5
+--- !u!114 &1148262242733755894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2ef3ed5e056b34bbe3fc3520e51299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTracker
+--- !u!114 &7159822963858989587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422363314f5a04747bc594af1292a49b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrappedStateHandler
+  trap: {fileID: 0}
 --- !u!1 &159142
 GameObject:
   m_ObjectHideFlags: 0
