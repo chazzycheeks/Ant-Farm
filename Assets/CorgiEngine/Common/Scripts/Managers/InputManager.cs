@@ -61,7 +61,13 @@ namespace MoreMountains.CorgiEngine
 		/// the possible kinds of control used for movement
 		public enum MovementControls { Joystick, Arrows }
 
-		[Header("Mobile controls")]
+        public enum PlayState {
+            Player,
+            Trapped
+        }
+
+		public PlayState currentPlayState;
+        [Header("Mobile controls")]
 		[MMInformation("If you check Auto Mobile Detection, the engine will automatically switch to mobile controls when your build target is Android or iOS. You can also force mobile or desktop (keyboard, gamepad) controls using the dropdown below.\nNote that if you don't need mobile controls and/or GUI this component can also work on its own, just put it on an empty GameObject instead.",MMInformationAttribute.InformationType.Info,false)]
 
 		/// if this is set to true, the InputManager will try to detect what mode it should be in, based on the current target device
@@ -588,3 +594,4 @@ namespace MoreMountains.CorgiEngine
 
 	}
 }
+

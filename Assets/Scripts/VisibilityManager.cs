@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,14 +7,78 @@ public class VisibilityManager : MonoBehaviour
     public bool isVisible = false;
     public float visibilityTrigger = 2.5f;
     public float visibilityTimer;
+    public float distanceUntilDiscoverable = 30f; // decides how far the entity can be until it can go into survey
+    
+    [SerializeField]bool debuggingDistance = false;
     public UnityEvent onSeen;
-    private bool seenEventPlaying = false; 
+    private bool seenEventPlaying = false;
+    public Vector2 lastPlayerPositionSeen;
+    Transform playerT;
+    GameObject entity;
+    StateManager stateManager;
+    EntityStateTriggers entityTriggers;
+    static VisibilityManager instance;
+    public static VisibilityManager Instance {
+        get {  return instance; }
+    }
+    private void Awake() {
+        if(instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
 
-    void Update()
-    {
-        if (isVisible == true)
-        {
-            UpdateTimer();
+        entity = GameObject.FindGameObjectWithTag("Entity");
+        stateManager = entity.GetComponent<StateManager>();
+        entityTriggers = entity.GetComponent<EntityStateTriggers>();
+        
+    }
+
+    public float distanceToEntity() {
+        Vector2 VNoYPlayer = new Vector2(playerT.position.x, 0);
+        Vector2 VNoYEntity = new Vector2(entity.transform.position.x, 0);
+        float distance = Vector2.Distance(VNoYPlayer, VNoYEntity);
+        return distance;
+    }
+    void Update() {
+        if (playerT == null) {
+            playerT = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        if (isVisible == true && 
+            entityTriggers.isSpottable &&
+            RoomTracker.Instance.canEntitySurvey == true) {
+            //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
+            if (entityTriggers.transitioned == true) {
+                if (stateManager.GetCurrentState() is Roaming) {
+                    entityTriggers.noticedPlayer = true;
+                }
+
+                if (stateManager.GetCurrentState() is Surveying) {
+                    entityTriggers.isSpotting = true;
+                }
+
+                if (stateManager.GetCurrentState() is Spotting) {
+                    entityTriggers.isSpotting = true;
+                }
+
+                
+
+                UpdateTimer();
+            }
+            lastPlayerPositionSeen = playerT.position;
+
+        } else {
+            //Toggle the visual input off so mechanics work accordingly
+            if(entityTriggers.transitioned) {
+                if (stateManager.GetCurrentState() is Surveying) {
+                    entityTriggers.isSpotting = false;
+                }
+
+                if (stateManager.GetCurrentState() is Spotting) {
+                    entityTriggers.isSpotting = false;
+                }
+            }
+            
         }
 
         CheckIfSpotted();
@@ -33,8 +98,8 @@ public class VisibilityManager : MonoBehaviour
         {
             visibilityTimer = 0f;
             seenEventPlaying = true;
-            onSeen?.Invoke();
-            
+            //onSeen?.Invoke(); <<<< 
+            Debug.Log("Seen");
         }
     }
 
