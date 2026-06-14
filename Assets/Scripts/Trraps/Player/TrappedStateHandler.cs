@@ -1,18 +1,23 @@
 using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class TrappedStateHandler : MonoBehaviour
 {
+    MoreMountains.CorgiEngine.Character character;
+    CharacterHorizontalMovement charMov;
+    CorgiController controller;
     CharacterDash charDash;
     CharacterJump charJump;
-    CharacterHorizontalMovement charMov;
     InputManager _inputManager;
     public ArmGrabTrap trap;
 
     private void Awake() {
         charDash = GetComponent<CharacterDash>();
         charJump = GetComponent<CharacterJump>();
+        character = GetComponent<MoreMountains.CorgiEngine.Character>();
+        controller = GetComponent<CorgiController>();
         charMov = GetComponent<CharacterHorizontalMovement>();
         _inputManager = InputManager.Instance;
     }
@@ -25,9 +30,16 @@ public class TrappedStateHandler : MonoBehaviour
     }
 
     void ToggleComponents(bool toggle) {
-        charJump.enabled = toggle;
-        charDash.enabled = toggle;
-        charMov.enabled = toggle;
+        charMov.ResetHorizontalSpeed();
+        charMov.ResetInput();
+
+        controller.SetForce(Vector2.zero);
+        character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Normal);
+        character.MovementState.ChangeState(CharacterStates.MovementStates.Falling);
+
+        charMov.AbilityPermitted = toggle;
+        charDash.AbilityPermitted = toggle;
+        charJump.AbilityPermitted = toggle;
     }
 
     // Update is called once per frame

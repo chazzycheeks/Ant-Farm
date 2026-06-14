@@ -2,18 +2,24 @@ using System.Collections;
 using UnityEngine;
 
 public class ArmGrabTrap : MonoBehaviour {
-    public GameObject playerGO;
-    [SerializeField]Transform anchorGrabbedPoint;
-    bool disarmed = false;
+    // References
+    [HideInInspector] public GameObject playerGO; // Player reference to set position when trapped
+    [HideInInspector] public TrappedStateHandler trappedStateHandler; // Trapping state for player
+    // Anchor Point
+    [SerializeField] Transform anchorGrabbedPoint; // Point where the player is held at
+     //Break progress
     float breakProgress = 0;
-    [SerializeField] float breakGoal = 2;
-    public TrappedStateHandler trappedStateHandler;
+    [SerializeField] float breakGoal = 2; // Amount of times you have to struggle when getting caught
+    //Disarm variables
+    public bool disarmed = false;
+    float DisarmedTrapTimer;
+    [SerializeField] float DisarmTime = 2f;
+
     void Start() {
         //playerGO = GameObject.FindGameObjectWithTag("Player");
     }
 
     public IEnumerator TrapTriggered() {
-        disarmed = false;
         trappedStateHandler.enabled = true;
         breakProgress = 0;
         while (disarmed == false) {
@@ -26,8 +32,18 @@ public class ArmGrabTrap : MonoBehaviour {
         if (breakProgress < breakGoal) {
             breakProgress++;
         } else {
-            disarmed = true;
             trappedStateHandler.enabled = false;
+            StartCoroutine(DisarmTrap());
         }
+    }
+
+    public IEnumerator DisarmTrap() {
+        DisarmedTrapTimer = 0;
+        disarmed = true;
+        while(DisarmedTrapTimer < DisarmTime) {
+            DisarmedTrapTimer += Time.deltaTime;
+            yield return null;
+        }
+        disarmed = false;
     }
 }
