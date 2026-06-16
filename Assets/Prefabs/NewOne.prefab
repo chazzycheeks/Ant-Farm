@@ -376,8 +376,8 @@ MonoBehaviour:
   DetachFromMovingPlatformsOnDash: 0
   Aim:
     AimControl: 1
-    RotationMode: 2
-    MinimumAngle: 0
+    RotationMode: 0
+    MinimumAngle: -180
     MaximumAngle: 180
     CurrentAngle: 0
   MinimumInputThreshold: 0.1
@@ -433,7 +433,7 @@ MonoBehaviour:
   JumpHeight: 3
   JumpRestrictions: 1
   ResetCameraOffsetOnJump: 0
-  CanJumpDownOneWayPlatforms: 1
+  CanJumpDownOneWayPlatforms: 0
   FixedAerialJumpCount: 0
   JumpIsProportionalToThePressTime: 1
   JumpMinimumAirTime: 0.2
