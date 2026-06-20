@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public abstract class State : MonoBehaviour {
-    public EntityStateTriggers entityStateTriggers;
+    [HideInInspector] public EntityStateTriggers entityStateTriggers;
     protected Animator animator;
     protected PatrolLocomotionController patrolController;
     protected virtual void Awake() {

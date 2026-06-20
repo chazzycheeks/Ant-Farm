@@ -1,7 +1,9 @@
     using UnityEngine;
 
 public class Roaming : State {
+    [Tooltip("The survey state we use once we spot a player briefly")]
     public State surveyState;
+    [Tooltip("Used to check whether the entity should roam in a reverse path or not")]
     public bool isReturning = false;
     protected override void Awake() {
         base.Awake();

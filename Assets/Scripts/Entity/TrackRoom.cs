@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TrackRoom : MonoBehaviour {
     RoomTracker roomTracker;
+    [Tooltip("The room we assign the entity or player to be in once it walks inside the trigger")]
     [SerializeField] Room roomData;
 
     private void Awake() {

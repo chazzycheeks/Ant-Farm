@@ -6,14 +6,21 @@ using UnityEngine;
 public class PatrolLocomotionController : MonoBehaviour
 {
     [Header("CoordinationPoints")]
-    [SerializeField] PathCache patrolPath;
-    [SerializeField]  PathCache surveyPath;
-    [SerializeField] PathCache lastSurveyPathUsed;
-    [SerializeField] Vector3 targetCoordinates;
-    [SerializeField] Transform offsetAnchor; // used to add offset to position when spotting so the eye is focused on the player, not the body
+    ///<summary> The path used during roaming, needs to have an inittialy set point to start the roaming process. </summary>
+    [Tooltip("The path used during roaming, needs to have an inittialy set point to start the roaming process")]
+    [SerializeField] PathCache patrolPath; // need to have a starting patrol path and hide this
+    /// <summary> The path used during surveying, it should retroactively get set by <see cref="AssignPathTrigger"/>. </summary>
+    PathCache surveyPath;
+    PathCache lastSurveyPathUsed;
+    Vector3 targetCoordinates;
+    [Tooltip("The anchor point used to add offset to position when spotting so the eye is focused on the player, not the body")]
+    [SerializeField] Transform offsetAnchor; 
     [Header("Speeds")]
-    [SerializeField] float speed = 3f; // Velocity it's moving at
-    [SerializeField] float arrivalThreshold = 3f; // Distance treshhold before it slows down the speed
+    [Tooltip("The velocity speed the entity roams at")]
+    [SerializeField] float speed = 3f;
+    [Tooltip("The distance treshold before it slows down to reach the waypoint")]
+    [SerializeField] float arrivalThreshold = 3f;
+    [Tooltip("The velocity speed it spots at")]
     [SerializeField] float spottingSpeed = 20f;
     [Header("Properties")]
     bool isPatrolling = false;

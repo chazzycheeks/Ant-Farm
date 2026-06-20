@@ -6,8 +6,9 @@ public class RoomTracker : MonoBehaviour {
     public static RoomTracker Instance {
         get {  return instance; }
     }
-    public Room currentRoom_Player;
-    public Room currentRoom_Entity;
+    [HideInInspector] public Room currentRoom_Player;
+    [HideInInspector]public Room currentRoom_Entity;
+    [Tooltip("How many rooms away can we spot the player to go into surveying state")]
     [SerializeField] int roomDistanceBeforeSurveying;
     private void Awake() {
         if (instance != null && instance != this) {

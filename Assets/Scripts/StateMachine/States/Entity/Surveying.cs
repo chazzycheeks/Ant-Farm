@@ -2,11 +2,15 @@ using System.Collections;
 using UnityEngine;
 
 public class Surveying : State {
-    public float surveyingTimer;
+    [HideInInspector]public float surveyingTimer;
+    [Tooltip("The timer it takes to finish surveying a room")]
     public float timeToSurvey = 20;
     bool isTimeOver = false;
+    [Tooltip("The spotting state we move to if the player gets spotted while surveying")]
     public State spottingState;
+    [Tooltip("The roaming state we go back to if the player is not spotted")]
     public Roaming roamingState;
+    [Tooltip("Used to check whether the entity should survey in a reverse path or not")]
     public bool isReturning = false;
     protected override void Awake() {
         base.Awake();

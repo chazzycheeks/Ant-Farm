@@ -3,6 +3,7 @@ using UnityEngine;
 public class AssignPathTrigger : MonoBehaviour
 {
     PatrolLocomotionController locoController;
+    [Tooltip("The survey path it should assign to the entity")]
     [SerializeField] PathCache surveyPath;
     private void Awake() {
         locoController = FindFirstObjectByType<PatrolLocomotionController>();

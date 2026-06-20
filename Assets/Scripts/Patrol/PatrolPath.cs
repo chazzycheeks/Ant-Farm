@@ -3,11 +3,16 @@ using System.Collections.Generic;
 
 public class PatrolPath : MonoBehaviour {
     [Range(0, 5)]
-    public float waitDelay = 0;
+    [HideInInspector]public float waitDelay = 0;
+    [Tooltip("Whether entity should loop or not the path")]
     public bool loopPath = true;
+    [Tooltip("Whether the path should return when finishing or not")]
     public bool inverseLoop = false;
+    [Tooltip("The waypoints existent in the path, null transforms get deleted on play")]
     public List<Transform> waypoints = new List<Transform>();
-    
+    private void Awake() {
+        waypoints.RemoveAll(t => t == null);
+    }
     public void CreateWaypoint() {
         // Cleanup nulls first
         waypoints.RemoveAll(item => item == null);

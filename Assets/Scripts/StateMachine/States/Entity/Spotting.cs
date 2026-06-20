@@ -3,9 +3,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spotting : State {
-    public float spottingTimer;
+    [HideInInspector] public float spottingTimer;
+    [Tooltip("The amount of time it takes to spot the player")]
     public float timeToSpot = 5;
     bool isTimeOver = false;
+    [Tooltip("The surveying state we return to if the entity fails spotting")]
     [SerializeField] Surveying surveyingState;
     protected override void Awake() {
         base.Awake();
