@@ -33,6 +33,7 @@ public class ArmGrabTrap : MonoBehaviour {
             breakProgress++;
         } else {
             trappedStateHandler.enabled = false;
+            trappedStateHandler.trap = null;
             StartCoroutine(DisarmTrap());
         }
     }

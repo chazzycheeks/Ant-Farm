@@ -11,14 +11,14 @@ public class ArmGrabTrapTrigger : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player") && armGrabTrap.disarmed == false) {
-            if(collision.GetComponent<Health>().TemporarilyInvulnerable == false) {
+            if(collision.GetComponent<Health>().TemporarilyInvulnerable == false && collision.gameObject.GetComponent<TrappedStateHandler>().enabled == false) {
                 if (armGrabTrap != null) {
                     armGrabTrap.playerGO = collision.gameObject;
                 }
                 if (armGrabTrap.trappedStateHandler == null) {
                     armGrabTrap.trappedStateHandler = collision.gameObject.GetComponent<TrappedStateHandler>();
-                    collision.gameObject.GetComponent<TrappedStateHandler>().trap = armGrabTrap;
                 }
+                collision.gameObject.GetComponent<TrappedStateHandler>().trap = armGrabTrap;
                 StartCoroutine(armGrabTrap.TrapTriggered());
             }
         }
