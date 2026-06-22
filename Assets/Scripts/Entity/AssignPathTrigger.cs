@@ -10,6 +10,9 @@ public class AssignPathTrigger : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        locoController.SetSurveyPath(surveyPath);
+        if (collision.CompareTag("Player")) {
+            locoController.SetSurveyPath(surveyPath);
+        }
+        
     }
 }

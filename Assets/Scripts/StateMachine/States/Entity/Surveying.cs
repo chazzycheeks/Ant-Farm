@@ -48,6 +48,7 @@ public class Surveying : State {
     }
     public override void HandleAnimationEvent(string eventId) {
         if(eventId == "Submerged") {
+            patrolController.TogglePatrol(false, PathType.Surveying);
             transform.root.position = patrolController.GetCurrentPointLocation(PathType.Surveying);
             animator.Play("Emerge");
 
