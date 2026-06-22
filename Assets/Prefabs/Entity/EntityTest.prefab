@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 6096919304577907121}
   m_Layer: 0
   m_Name: EntityTest
-  m_TagString: Untagged
+  m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,15 +278,6 @@ MonoBehaviour:
     path: {fileID: 0}
     currentIndex: 0
     inverse: 0
-  surveyPath:
-    path: {fileID: 0}
-    currentIndex: 0
-    inverse: 0
-  lastSurveyPathUsed:
-    path: {fileID: 0}
-    currentIndex: 0
-    inverse: 0
-  targetCoordinates: {x: 0, y: 0, z: 0}
   offsetAnchor: {fileID: 3330503740829267807}
   speed: 7
   arrivalThreshold: 3
@@ -452,7 +443,7 @@ GameObject:
   - component: {fileID: 5375932586434751773}
   m_Layer: 0
   m_Name: RoomTrigger
-  m_TagString: Untagged
+  m_TagString: EntityTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
