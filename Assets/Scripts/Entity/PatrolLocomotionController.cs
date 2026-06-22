@@ -47,6 +47,8 @@ public class PatrolLocomotionController : MonoBehaviour
         if(surveyPath != null) {
             lastSurveyPathUsed = surveyPath;
             surveyPath = newPath;
+        } else {
+            surveyPath = newPath;
         }
     }
 
