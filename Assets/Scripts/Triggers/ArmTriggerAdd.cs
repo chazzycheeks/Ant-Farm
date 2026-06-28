@@ -6,13 +6,8 @@ public class ArmTriggerAdd : MonoBehaviour
     private bool armTriggerEntered = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (armTriggerEntered == false)
-        {
+        if (armTriggerEntered == false && collision.CompareTag("Player")) {
             AddArm();
-        }
-        else
-        {
-            return;
         }
     }
 

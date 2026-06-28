@@ -6,13 +6,8 @@ public class LadderTrigger : MonoBehaviour
     private bool ladderTriggerEntered = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (ladderTriggerEntered == false)
-        {
+        if (ladderTriggerEntered == false && collision.CompareTag("Player")) {
             LowerLadder();
-        }
-        else
-        {
-            return;
         }
     }
 

@@ -1,10 +1,16 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class VisibilityManager : MonoBehaviour
 {
-    public bool isVisible = false;
+    public bool _isVisible {
+        get {
+            return coverObjects.Count == 0;
+        }
+    }
+    public bool isVisible => _isVisible;
     public float visibilityTrigger = 2.5f;
     public float visibilityTimer;
     public float distanceUntilDiscoverable = 30f; // decides how far the entity can be until it can go into survey
@@ -18,6 +24,8 @@ public class VisibilityManager : MonoBehaviour
     StateManager stateManager;
     EntityStateTriggers entityTriggers;
     static VisibilityManager instance;
+
+    public List<PlayerHider> coverObjects;
     public static VisibilityManager Instance {
         get {  return instance; }
     }
@@ -41,10 +49,13 @@ public class VisibilityManager : MonoBehaviour
         return distance;
     }
     void Update() {
+        if(_isVisible != true){
+            visibilityTimer = 0;
+        }
         if (playerT == null) {
             playerT = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        if (isVisible == true && 
+        if (_isVisible == true && 
             entityTriggers.isSpottable &&
             RoomTracker.Instance.canEntitySurvey == true) {
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly

@@ -60,7 +60,7 @@ public class EntityManager : MonoBehaviour
 
     public void Find()
     {
-        if (visibilityManager.isVisible == true && isSeeking == true)
+        if (visibilityManager._isVisible == true && isSeeking == true)
         {
             //SceneManager.LoadSceneAsync(0, 1, 2);
             spottedText.SetActive(true);

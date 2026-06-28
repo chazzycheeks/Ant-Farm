@@ -24,14 +24,13 @@ public class PlayerHider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            visibilityManager.isVisible = true;
+            visibilityManager.coverObjects.Remove(this);
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision) { // test fix to look for movement while in stay rather than on enter
+    private void OnTriggerEnter2D(Collider2D collision) { // test fix to look for movement while in stay rather than on enter
         if (collision.CompareTag("Player")) {
-            visibilityManager.isVisible = false;
-            visibilityManager.visibilityTimer = 0;
+            visibilityManager.coverObjects.Add(this);
         }
     }
 

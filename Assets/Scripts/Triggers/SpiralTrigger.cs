@@ -8,13 +8,9 @@ public class SpiralTrigger : MonoBehaviour
     private bool spiralTriggerEntered = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (spiralTriggerEntered == false)
+        if (spiralTriggerEntered == false && collision.CompareTag("Player"))
         {
             RemoveWalls();
-        }
-        else
-        {
-            return;
         }
     }
 
