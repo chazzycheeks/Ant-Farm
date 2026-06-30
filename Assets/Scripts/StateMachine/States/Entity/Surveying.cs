@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class Surveying : State {
-    [HideInInspector]public float surveyingTimer;
+    public float surveyingTimer;
     [Tooltip("The timer it takes to finish surveying a room")]
     public float timeToSurvey = 20;
     bool isTimeOver = false;
@@ -12,10 +12,14 @@ public class Surveying : State {
     public Roaming roamingState;
     [Tooltip("Used to check whether the entity should survey in a reverse path or not")]
     public bool isReturning = false;
+
+    private Coroutine currentTimerRoutine;
+
     protected override void Awake() {
         base.Awake();
     }
     public override void DefaultState() {
+        StartTimer();
         entityStateTriggers.noticedPlayer = false;
         entityStateTriggers.transitioned = false;
         entityStateTriggers.isSpotting = false;
@@ -29,7 +33,7 @@ public class Surveying : State {
     }
 
     public override void ExitState() {
-        StopCoroutine(TimerSpoting());
+        StopCoroutine(currentTimerRoutine);
         isTimeOver = false;
         surveyingTimer = 0;
     }
@@ -52,12 +56,22 @@ public class Surveying : State {
             transform.root.position = patrolController.GetCurrentPointLocation(PathType.Surveying);
             animator.Play("Emerge");
 
-        } else if (eventId == "FinishedEmerging") {
+        } else if (eventId == "FinishedEmerging")
+        {
             patrolController.TogglePatrol(true, PathType.Surveying);
-            StartCoroutine(TimerSpoting());
             entityStateTriggers.transitioned = true;
             entityStateTriggers.isSpottable = true;
         }
+    }
+
+    private void StartTimer()
+    {
+        if (currentTimerRoutine != null)
+        {
+            StopCoroutine(currentTimerRoutine);
+        }
+
+        currentTimerRoutine = StartCoroutine(TimerSpoting());
     }
 
     IEnumerator TimerSpoting() {

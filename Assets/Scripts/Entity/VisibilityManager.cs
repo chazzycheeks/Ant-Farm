@@ -59,23 +59,28 @@ public class VisibilityManager : MonoBehaviour
             entityTriggers.isSpottable &&
             RoomTracker.Instance.canEntitySurvey == true) {
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
-            if (entityTriggers.transitioned == true) {
-                if (stateManager.GetCurrentState() is Roaming) {
+            if (entityTriggers.transitioned == true)
+            {
+                if (stateManager.GetCurrentState() is Roaming)
+                {
                     entityTriggers.noticedPlayer = true;
                 }
 
-                if (stateManager.GetCurrentState() is Surveying) {
+                if (stateManager.GetCurrentState() is Surveying)
+                {
                     entityTriggers.isSpotting = true;
                 }
 
-                if (stateManager.GetCurrentState() is Spotting) {
+                if (stateManager.GetCurrentState() is Spotting)
+                {
                     entityTriggers.isSpotting = true;
                 }
 
-                
+
 
                 UpdateTimer();
             }
+
             lastPlayerPositionSeen = playerT.position;
 
         } else {
