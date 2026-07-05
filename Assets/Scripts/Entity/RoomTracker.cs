@@ -6,18 +6,11 @@ public class RoomTracker : MonoBehaviour {
     public static RoomTracker Instance {
         get {  return instance; }
     }
-    [HideInInspector] public Room currentRoom_Player;
-    [HideInInspector]public Room currentRoom_Entity;
-    [Tooltip("How many rooms away can we spot the player to go into surveying state")]
+    Room currentRoom_Player;
+    Room currentRoom_Entity;
+    [Tooltip("How many rooms away can the entity be before it starts spotting the player ")]
     [SerializeField] int roomDistanceBeforeSurveying;
-    private void Awake() {
-        if (instance != null && instance != this) {
-            Destroy(gameObject);
-        } else {
-            instance = this;
-        }
-    }
-    public bool canEntitySurvey {
+    public bool _canEntitySurvey {
         get {
             int roomNumber_P = currentRoom_Player.roomNumber;
             int roomNumber_E = currentRoom_Entity.roomNumber;
@@ -27,18 +20,32 @@ public class RoomTracker : MonoBehaviour {
             }
             // Checks if the entity can spot from the room it's in compared to the player.
             int distance = Mathf.Abs(roomNumber_P - roomNumber_E);
-            if (distance > roomDistanceBeforeSurveying) {
+            if (distance >= roomDistanceBeforeSurveying) {
                 return false;
             }
 
             return true;
         }
     }
+    [SerializeField] bool CanEntitySurvey; 
 
-    [SerializeField] bool _canEntitySurvey; // Shows in inspector
+    private void Awake() {
+        if (instance != null && instance != this) {
+            Destroy(gameObject);
+        } else {
+            instance = this;
+        }
+    }
+    public void SetRoom(bool _isPlayer, Room _Room) {
+        if (_isPlayer) {
+            currentRoom_Player = _Room;
+        } else {
+            currentRoom_Entity = _Room;
+        }
+    }
 
     public void FixedUpdate() {
-        _canEntitySurvey = canEntitySurvey;
+        CanEntitySurvey = _canEntitySurvey; // visualise in inspector
     }
 }
 

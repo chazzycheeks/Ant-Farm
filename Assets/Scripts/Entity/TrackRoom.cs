@@ -12,11 +12,11 @@ public class TrackRoom : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (roomTracker != null && collision != null) {
             if (collision.CompareTag("Player")) {
-                roomTracker.currentRoom_Player = roomData;
+                roomTracker.SetRoom(true, roomData);
             }
 
             if (collision.CompareTag("EntityTrigger")) {
-                roomTracker.currentRoom_Entity = roomData;
+                roomTracker.SetRoom(false, roomData);
             }
         }
     }

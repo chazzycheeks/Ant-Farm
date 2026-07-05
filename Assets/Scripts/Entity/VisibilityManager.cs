@@ -55,9 +55,7 @@ public class VisibilityManager : MonoBehaviour
         if (playerT == null) {
             playerT = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        if (_isVisible == true && 
-            entityTriggers.isSpottable &&
-            RoomTracker.Instance.canEntitySurvey == true) {
+        if (_isVisible == true && RoomTracker.Instance._canEntitySurvey == true) {
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
             if (entityTriggers.transitioned == true)
             {
@@ -86,13 +84,8 @@ public class VisibilityManager : MonoBehaviour
         } else {
             //Toggle the visual input off so mechanics work accordingly
             if(entityTriggers.transitioned) {
-                if (stateManager.GetCurrentState() is Surveying) {
-                    entityTriggers.isSpotting = false;
-                }
-
-                if (stateManager.GetCurrentState() is Spotting) {
-                    entityTriggers.isSpotting = false;
-                }
+                entityTriggers.isSpotting = false;
+                entityTriggers.noticedPlayer = false;
             }
             
         }

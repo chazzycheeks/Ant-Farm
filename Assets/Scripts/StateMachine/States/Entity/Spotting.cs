@@ -9,6 +9,7 @@ public class Spotting : State {
     bool isTimeOver = false;
     [Tooltip("The surveying state we return to if the entity fails spotting")]
     [SerializeField] Surveying surveyingState;
+    public bool bDebugLog = false;
     protected override void Awake() {
         base.Awake();
         if(surveyingState == null) {
@@ -25,12 +26,16 @@ public class Spotting : State {
     public override void ExitState() {
         spottingTimer = 0;
         isTimeOver = false;
+
         StopCoroutine(TimerSpoting());
     }
 
     public override State RunCurrentState() {
+        // If the timer for spotting is over then return to surveying
         if (isTimeOver) {
+            if(bDebugLog)Debug.Log("Failed to spot player, swapping to survey");
             patrolController.ReturnToPath(PathType.Surveying);
+            patrolController.TogglePatrol(true, PathType.Surveying);
             surveyingState.isReturning = true;
             return surveyingState;
         } else {
@@ -42,7 +47,6 @@ public class Spotting : State {
     public override void HandleAnimationEvent(string eventId) {
         if (eventId == "FinishedEmerging") {
             entityStateTriggers.transitioned = true;
-            entityStateTriggers.isSpottable = true;
         }
     }
 

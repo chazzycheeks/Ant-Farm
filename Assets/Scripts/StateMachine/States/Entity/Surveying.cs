@@ -10,26 +10,23 @@ public class Surveying : State {
     public State spottingState;
     [Tooltip("The roaming state we go back to if the player is not spotted")]
     public Roaming roamingState;
-    [Tooltip("Used to check whether the entity should survey in a reverse path or not")]
+    [Tooltip("Used to check whether the entity is returning from Spotting or not to not play the submerge animation")]
     public bool isReturning = false;
 
     private Coroutine currentTimerRoutine;
 
+    public bool bDebugLog = false;
     protected override void Awake() {
         base.Awake();
     }
     public override void DefaultState() {
-        StartTimer();
-        entityStateTriggers.noticedPlayer = false;
-        entityStateTriggers.transitioned = false;
-        entityStateTriggers.isSpotting = false;
         if (!isReturning) {
+            StartTimer();
+            entityStateTriggers.transitioned = false;
             animator.Play("Submerge");
         } else {
             isReturning = false;
         }
-        
-        
     }
 
     public override void ExitState() {
@@ -39,15 +36,19 @@ public class Surveying : State {
     }
 
     public override State RunCurrentState() {
+        // If it spots the player then go to spot
         if (entityStateTriggers.isSpotting) {
+            if(bDebugLog)Debug.Log("Spotted player, swapping to spotting");
             return spottingState;
         }
-
+        // If the timer for surveying over then return to roaming
         if (isTimeOver) {
+            if(bDebugLog)Debug.Log("Failed to spot player, swap to roaming");
             roamingState.isReturning = true;
             patrolController.TogglePatrol(false, PathType.Surveying);
             return roamingState;
         }
+
             return this;
     }
     public override void HandleAnimationEvent(string eventId) {
@@ -60,7 +61,6 @@ public class Surveying : State {
         {
             patrolController.TogglePatrol(true, PathType.Surveying);
             entityStateTriggers.transitioned = true;
-            entityStateTriggers.isSpottable = true;
         }
     }
 
