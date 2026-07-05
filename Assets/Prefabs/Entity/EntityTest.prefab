@@ -161,6 +161,7 @@ MonoBehaviour:
   entityStateTriggers: {fileID: 0}
   surveyState: {fileID: 5796884253702939600}
   isReturning: 0
+  bDebugLog: 0
 --- !u!1 &4010628150861524752
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,6 +210,7 @@ MonoBehaviour:
   spottingTimer: 0
   timeToSpot: 5
   surveyingState: {fileID: 5796884253702939600}
+  bDebugLog: 0
 --- !u!1 &4913771812838199901
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +299,6 @@ MonoBehaviour:
   noticedPlayer: 0
   isSpotting: 0
   transitioned: 0
-  isSpottable: 1
 --- !u!50 &5165052021825733562
 Rigidbody2D:
   serializedVersion: 5
@@ -431,6 +432,11 @@ MonoBehaviour:
   spottingState: {fileID: 4167869913638561631}
   roamingState: {fileID: 2351734432959435531}
   isReturning: 0
+  _gracePeriodTimerSpotting: 2
+  _gracePeriodMeterAmplifier: 1
+  _gracePeriodMeter: 0
+  _isGracePeriodOver: 0
+  bDebugLog: 0
 --- !u!1 &8360371545743709772
 GameObject:
   m_ObjectHideFlags: 0

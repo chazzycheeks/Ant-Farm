@@ -13,8 +13,13 @@ public class Surveying : State {
     [Tooltip("Used to check whether the entity is returning from Spotting or not to not play the submerge animation")]
     public bool isReturning = false;
 
-    private Coroutine currentTimerRoutine;
+    [SerializeField] float _gracePeriodTimerSpotting = 2f; // Timer the meter needs to hit before 
+    [SerializeField] float _gracePeriodMeterAmplifier = 1f; // Affects how fast the meter fills up
+    [SerializeField] float _gracePeriodMeter; // The meter of how much until the grace period is over
+    [SerializeField] bool _isGracePeriodOver; // Shows whether the grace period is over or not
 
+    private Coroutine currentTimerRoutine;
+    Coroutine _gracePeriodCoroutine;
     public bool bDebugLog = false;
     protected override void Awake() {
         base.Awake();
@@ -31,14 +36,22 @@ public class Surveying : State {
 
     public override void ExitState() {
         StopCoroutine(currentTimerRoutine);
+        StopCoroutine(_gracePeriodCoroutine);
         isTimeOver = false;
+        _gracePeriodCoroutine = null;
+        _isGracePeriodOver = false;
+        _gracePeriodMeter = 0;
         surveyingTimer = 0;
     }
 
     public override State RunCurrentState() {
         // If it spots the player then go to spot
-        if (entityStateTriggers.isSpotting) {
-            if(bDebugLog)Debug.Log("Spotted player, swapping to spotting");
+        if (entityStateTriggers.isSpotting && _gracePeriodCoroutine == null) {
+            _gracePeriodCoroutine = StartCoroutine(GraceTimerSpotting());
+        }
+
+        if (_isGracePeriodOver) {
+            if (bDebugLog) Debug.Log("Spotted player, swapping to spotting");
             return spottingState;
         }
         // If the timer for surveying over then return to roaming
@@ -72,6 +85,19 @@ public class Surveying : State {
         }
 
         currentTimerRoutine = StartCoroutine(TimerSpoting());
+    }
+    IEnumerator GraceTimerSpotting() {
+        while (_gracePeriodMeter < _gracePeriodTimerSpotting) {
+            if (entityStateTriggers.isSpotting) {
+                _gracePeriodMeter += Time.deltaTime * _gracePeriodMeterAmplifier;
+            } else {
+                _gracePeriodMeter = Mathf.Clamp(_gracePeriodMeter - Time.deltaTime, 0, _gracePeriodTimerSpotting);
+            }
+
+            yield return null;
+        }
+        if (bDebugLog) Debug.Log("Grace period over");
+        _isGracePeriodOver = true;
     }
 
     IEnumerator TimerSpoting() {

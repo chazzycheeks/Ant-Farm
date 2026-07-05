@@ -12,6 +12,9 @@ public class RoomTracker : MonoBehaviour {
     [SerializeField] int roomDistanceBeforeSurveying;
     public bool _canEntitySurvey {
         get {
+            if(currentRoom_Entity == null ||currentRoom_Player == null) {
+                return false;
+            }
             int roomNumber_P = currentRoom_Player.roomNumber;
             int roomNumber_E = currentRoom_Entity.roomNumber;
             //Checks if the floor is different than the one the player is currently on
