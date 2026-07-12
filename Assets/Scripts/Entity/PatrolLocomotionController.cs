@@ -8,9 +8,11 @@ public class PatrolLocomotionController : MonoBehaviour
     [Header("CoordinationPoints")]
     ///<summary> The path used during roaming, needs to have an inittialy set point to start the roaming process. </summary>
     [Tooltip("The path used during roaming, needs to have an inittialy set point to start the roaming process")]
-    [SerializeField] PathCache patrolPath; // need to have a starting patrol path and hide this
+    [SerializeField] PathCache _patrolPath; // need to have a starting patrol path and hide this
+    public PathCache PatrolPath => _patrolPath;
     /// <summary> The path used during surveying, it should retroactively get set by <see cref="AssignPathTrigger"/>. </summary>
-    PathCache surveyPath;
+    PathCache _surveyPath;
+    public PathCache SurveyPath => _surveyPath;
     PathCache lastSurveyPathUsed;
     Vector3 targetCoordinates;
     PathCache _spottingPath;
@@ -46,15 +48,15 @@ public class PatrolLocomotionController : MonoBehaviour
     }
 
     public void SetSurveyPath(PathCache newPath) {
-        if(surveyPath != null) {
-            lastSurveyPathUsed = surveyPath;
-            surveyPath = newPath;
+        if(_surveyPath != null) {
+            lastSurveyPathUsed = _surveyPath;
+            _surveyPath = newPath;
         } else {
-            surveyPath = newPath;
+            _surveyPath = newPath;
         }
     }
     public void SetSpottingPath(PathCache newPath) {
-        if (patrolPath != null) {
+        if (_patrolPath != null) {
             _spottingPath = newPath;
         } else {
             _spottingPath = newPath;
@@ -62,9 +64,9 @@ public class PatrolLocomotionController : MonoBehaviour
     }
     public Vector3 GetCurrentPointLocation(PathType path) {
         if(path == PathType.Roaming) {
-            return patrolPath.path.waypoints[patrolPath.currentIndex].transform.position;
+            return _patrolPath.path.waypoints[_patrolPath.currentIndex].transform.position;
         } else {
-            return surveyPath.path.waypoints[surveyPath.currentIndex].transform.position;
+            return _surveyPath.path.waypoints[_surveyPath.currentIndex].transform.position;
         }
     }
     /// <summary>
@@ -112,7 +114,7 @@ public class PatrolLocomotionController : MonoBehaviour
         Transform closestWaypoint = null;
         Vector3 currentPos = transform.position;
         if(pathToReturnTo == PathType.Roaming) {
-            foreach (Transform t in patrolPath.path.waypoints) {
+            foreach (Transform t in _patrolPath.path.waypoints) {
                 float distance = Vector3.Distance(currentPos, t.position);
                 if (distance < lowestDistance) {
                     lowestDistance = distance;
@@ -120,71 +122,71 @@ public class PatrolLocomotionController : MonoBehaviour
                 }
             }
             
-            int currentIndex = patrolPath.path.waypoints.IndexOf(closestWaypoint);
+            int currentIndex = _patrolPath.path.waypoints.IndexOf(closestWaypoint);
             Vector2 dir = (closestWaypoint.position - transform.position).normalized;
-            if (patrolPath.inverse == false) { // Look for the closest point to the right side
+            if (_patrolPath.inverse == false) { // Look for the closest point to the right side
                 if (dir.x < 0) {
-                    patrolPath.currentIndex = currentIndex;
+                    _patrolPath.currentIndex = currentIndex;
                     // If the path already reached it's limit, do not try to force it to go further
-                    if (patrolPath.currentIndex == patrolPath.path.waypoints.Count - 1) {
+                    if (_patrolPath.currentIndex == _patrolPath.path.waypoints.Count - 1) {
                         Debug.Log("Limit reached for path, not changing result");
                         return;
                     } else {
-                        patrolPath.currentIndex++;
+                        _patrolPath.currentIndex++;
                     }
                 } else {
-                    patrolPath.currentIndex = currentIndex;
+                    _patrolPath.currentIndex = currentIndex;
                 }
             } else { // Look for the closest point to the left side
                 if (dir.x > 0) {
-                    patrolPath.currentIndex = currentIndex;
+                    _patrolPath.currentIndex = currentIndex;
                     // If the path already reached it's limit, do not try to force it to go further
-                    if (patrolPath.currentIndex == 0) {
+                    if (_patrolPath.currentIndex == 0) {
                         Debug.Log("Limit reached for path, not changing result");
                         return;
                     } else {
-                        patrolPath.currentIndex--;
+                        _patrolPath.currentIndex--;
                     }
                 } else {
-                    patrolPath.currentIndex = currentIndex;
+                    _patrolPath.currentIndex = currentIndex;
                 }
             }
         } 
         else if (pathToReturnTo == PathType.Surveying) {
-            foreach (Transform t in surveyPath.path.waypoints) {
+            foreach (Transform t in _surveyPath.path.waypoints) {
                 float distance = Vector3.Distance(currentPos, t.position);
                 if (distance < lowestDistance) {
                     lowestDistance = distance;
                     closestWaypoint = t;
                 }
             }
-            int currentIndex = surveyPath.path.waypoints.IndexOf(closestWaypoint);
+            int currentIndex = _surveyPath.path.waypoints.IndexOf(closestWaypoint);
             Vector2 dir = (closestWaypoint.position - transform.position).normalized;
-            if (surveyPath.inverse == false) { // Look for the closest point to the right side
+            if (_surveyPath.inverse == false) { // Look for the closest point to the right side
                 if (dir.x < 0) {
-                    surveyPath.currentIndex = currentIndex;
+                    _surveyPath.currentIndex = currentIndex;
                     // If the path already reached it's limit, do not try to force it to go further
-                    if (surveyPath.currentIndex == surveyPath.path.waypoints.Count - 1) {
+                    if (_surveyPath.currentIndex == _surveyPath.path.waypoints.Count - 1) {
                         Debug.Log("Limit reached for path, not changing result");
                         return;
                     } else {
-                        surveyPath.currentIndex++;
+                        _surveyPath.currentIndex++;
                     }
                 } else {
-                    surveyPath.currentIndex = currentIndex;
+                    _surveyPath.currentIndex = currentIndex;
                 }
             } else { // Look for the closest point to the left side
                 if (dir.x < 0) {
-                    surveyPath.currentIndex = currentIndex;
+                    _surveyPath.currentIndex = currentIndex;
                     // If the path already reached it's limit, do not try to force it to go further
-                    if (surveyPath.currentIndex == 0) {
+                    if (_surveyPath.currentIndex == 0) {
                         Debug.Log("Limit reached for path, not changing result");
                         return;
                     } else {
-                        surveyPath.currentIndex--;
+                        _surveyPath.currentIndex--;
                     }
                 } else {
-                    surveyPath.currentIndex = currentIndex;
+                    _surveyPath.currentIndex = currentIndex;
                 }
             }
         }
@@ -197,10 +199,10 @@ public class PatrolLocomotionController : MonoBehaviour
     private void FixedUpdate() {
         switch (currentPath) {
             case PathType.Roaming:
-                MoveAlongPath(patrolPath);
+                MoveAlongPath(_patrolPath);
                 break;
             case PathType.Surveying:
-                MoveAlongPath(surveyPath);
+                MoveAlongPath(_surveyPath);
                 break;
             case PathType.FreeMoving:
                 if (isFixating) MoveToTargetPoint();

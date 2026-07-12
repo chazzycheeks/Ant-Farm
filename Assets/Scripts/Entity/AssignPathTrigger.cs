@@ -20,6 +20,7 @@ public class AssignPathTrigger : MonoBehaviour
     }
     private void Start() {
         locoController = FindFirstObjectByType<PatrolLocomotionController>();
+        if (AssignDefaultPath && locoController.SurveyPath != null) Debug.LogWarning($"Object: {gameObject.name} is overlapping an existing surveyPath, there's two objects with assign default path");
         if (AssignDefaultPath) {
             locoController.SetSurveyPath(surveyPath);
             if (AssignSpottingPath) locoController.SetSpottingPath(spottingPath);
