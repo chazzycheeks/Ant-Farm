@@ -13,6 +13,8 @@ public class PatrolLocomotionController : MonoBehaviour
     PathCache surveyPath;
     PathCache lastSurveyPathUsed;
     Vector3 targetCoordinates;
+    PathCache _spottingPath;
+    public PathCache SpottingPath => _spottingPath;
     [Tooltip("The anchor point used to add offset to position when spotting so the eye is focused on the player, not the body")]
     [SerializeField] Transform offsetAnchor; 
     [Header("Speeds")]
@@ -51,7 +53,13 @@ public class PatrolLocomotionController : MonoBehaviour
             surveyPath = newPath;
         }
     }
-
+    public void SetSpottingPath(PathCache newPath) {
+        if (patrolPath != null) {
+            _spottingPath = newPath;
+        } else {
+            _spottingPath = newPath;
+        }
+    }
     public Vector3 GetCurrentPointLocation(PathType path) {
         if(path == PathType.Roaming) {
             return patrolPath.path.waypoints[patrolPath.currentIndex].transform.position;
@@ -71,6 +79,7 @@ public class PatrolLocomotionController : MonoBehaviour
             isPatrolling = false;
             rb.linearVelocity = Vector2.zero;
         }
+        rb.linearVelocity = Vector2.zero;
         isFixating = false;
         //Setting path according to the parameter
         if (path == PathType.Roaming) {
@@ -79,6 +88,9 @@ public class PatrolLocomotionController : MonoBehaviour
             currentPath = PathType.Surveying;
         } else if(path == PathType.FreeMoving) {
             currentPath = PathType.FreeMoving;
+            isFixating = true;
+        } else if(path == PathType.Spotting) {
+            currentPath = PathType.Spotting;
             isFixating = true;
         }
 
@@ -182,103 +194,88 @@ public class PatrolLocomotionController : MonoBehaviour
         
     }
 
-
     private void FixedUpdate() {
         switch (currentPath) {
             case PathType.Roaming:
-                if (isPatrolling) {
-                    // Local refernces
-                    Vector2 currentPos = transform.position;
-                    Vector2 targetPos = patrolPath.path.waypoints[patrolPath.currentIndex].position;
-                    Vector2 dir = (targetPos - currentPos).normalized;
-                    float currentSpeed = speed;
-                    float distance = Vector2.Distance(currentPos, targetPos);
-                    // Slow down movement before arriving to the destination
-                    if (distance < arrivalThreshold) {
-                        currentSpeed = speed * (distance / arrivalThreshold);
-                    }
-                    rb.linearVelocity = dir * currentSpeed; // Set speed
-                                                            // Stop before reaching point
-                    if (distance < 0.3f) {
-                        //rb.linearVelocity = Vector2.zero; This would full
-                        if (patrolPath.currentIndex == 0 && patrolPath.inverse == true) {
-                            patrolPath.inverse = false;
-                        }
-                        if (patrolPath.currentIndex == patrolPath.path.waypoints.Count - 1 && patrolPath.inverse == false) {
-                            patrolPath.inverse = true;
-                        }
-                        if (patrolPath.inverse) {
-                            patrolPath.currentIndex--;
-                        } else {
-                            patrolPath.currentIndex++;
-                        }
-                    }
-                }
+                MoveAlongPath(patrolPath);
                 break;
             case PathType.Surveying:
-                if (isPatrolling) {
-                    // Local refernces
-                    Vector2 currentPos = transform.position;
-                    Vector2 targetPos = surveyPath.path.waypoints[surveyPath.currentIndex].position;
-                    Vector2 dir = (targetPos - currentPos).normalized;
-                    float currentSpeed = speed;
-                    float distance = Vector2.Distance(currentPos, targetPos);
-                    // Slow down movement before arriving to the destination
-                    if (distance < arrivalThreshold) {
-                        currentSpeed = speed * (distance / arrivalThreshold);
-                    }
-                    rb.linearVelocity = dir * currentSpeed; // Set speed
-                                                            // Stop before reaching point
-                    if (distance < 0.3f) {
-                        //rb.linearVelocity = Vector2.zero; This would full
-                        if (surveyPath.currentIndex == 0 && surveyPath.inverse == true) {
-                            surveyPath.inverse = false;
-                        }
-                        if (surveyPath.currentIndex == surveyPath.path.waypoints.Count - 1 && surveyPath.inverse == false) {
-                            surveyPath.inverse = true;
-                        }
-                        if (surveyPath.inverse) {
-                            surveyPath.currentIndex--;
-                        } else {
-                            surveyPath.currentIndex++;
-                        }
-                    }
-                }
+                MoveAlongPath(surveyPath);
                 break;
-
             case PathType.FreeMoving:
-                if (isFixating) {
-                    // Consistantly moves towards the fixed point
-                    Vector2 currentPos = offsetAnchor.transform.position;
-                    Vector2 targetPos = VisibilityManager.Instance.lastPlayerPositionSeen;
-                    Vector2 dir = (targetPos - currentPos).normalized;
-                    float currentSpeed = spottingSpeed;
-                    float distance = Vector2.Distance(currentPos, targetPos);
-                    // Slow down movement before arriving to the destination
-
-                        // t goes from 1 (at threshold) to 0 (at target)
-                        float t = Mathf.Clamp01(distance / arrivalThreshold);
-                        float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
-
-                        currentSpeed = spottingSpeed * ease;
-                    rb.linearVelocity = dir * currentSpeed; // Set speed
-                }
+                if (isFixating) MoveToTargetPoint();
                 break;
-            
+            case PathType.Spotting:
+                if(isFixating) MoveToWindow();
+                break;
+        }
+    }
+    private void MoveToWindow() {
+        if (VisibilityManager.Instance == null) return;
+        Vector2 currentPos = offsetAnchor.transform.position;
+        Vector2 targetPos = SpottingPath.path.ClosestWaypointToLocation(VisibilityManager.Instance.lastPlayerPositionSeen).position;
+        Vector2 dir = (targetPos - currentPos).normalized;
+        float distance = Vector2.Distance(currentPos, targetPos);
+        float t = Mathf.Clamp01(distance / arrivalThreshold);
+        float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
+        rb.linearVelocity = dir * (spottingSpeed * ease);
+    }
+    private void MoveAlongPath(PathCache pathCache) {
+        if (!isPatrolling || pathCache?.path?.waypoints == null || pathCache.path.waypoints.Count == 0) return;
+
+        Vector2 currentPos = transform.position;
+        // Move towards targetIndex rather than currentIndex
+        Vector2 targetPos = pathCache.path.waypoints[pathCache.targetIndex].position;
+        Vector2 dir = (targetPos - currentPos).normalized;
+        float distance = Vector2.Distance(currentPos, targetPos);
+
+        float currentSpeed = speed;
+        if (distance < arrivalThreshold) {
+            currentSpeed = speed * (distance / arrivalThreshold);
+        }
+
+        rb.linearVelocity = dir * currentSpeed;
+
+        if (distance < 0.3f) {
+            // Update the last reached point tracking
+            pathCache.currentIndex = pathCache.targetIndex;
+
+            if (pathCache.targetIndex == 0 && pathCache.inverse) {
+                pathCache.inverse = false;
+            } else if (pathCache.targetIndex == pathCache.path.waypoints.Count - 1 && !pathCache.inverse) {
+                pathCache.inverse = true;
+            }
+
+            pathCache.targetIndex += pathCache.inverse ? -1 : 1;
+            pathCache.targetIndex = Mathf.Clamp(pathCache.targetIndex, 0, pathCache.path.waypoints.Count - 1);
         }
     }
 
+    private void MoveToTargetPoint() {
+        if (VisibilityManager.Instance == null) return;
 
+        Vector2 currentPos = offsetAnchor.transform.position;
+        Vector2 targetPos = VisibilityManager.Instance.lastPlayerPositionSeen;
+        Vector2 dir = (targetPos - currentPos).normalized;
+        float distance = Vector2.Distance(currentPos, targetPos);
+
+        float t = Mathf.Clamp01(distance / arrivalThreshold);
+        float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
+
+        rb.linearVelocity = dir * (spottingSpeed * ease);
+    }
 }
 
 [System.Serializable]
 public class PathCache {
     public PatrolPath path;
     public int currentIndex;
+    public int targetIndex;
     public bool inverse; // whether it's going left>right(false) or left<right(true)
-    public PathCache(PatrolPath _path, int index, bool _inverse) { 
+    public PathCache(PatrolPath _path, int _currentIndex, int _tarrgetIndex, bool _inverse) { 
         path = _path;
-        currentIndex = index;
+        currentIndex = _currentIndex;
+        targetIndex = _tarrgetIndex;
         inverse = _inverse;
     }
 
@@ -288,5 +285,6 @@ public class PathCache {
 public enum PathType {
     Roaming,
     Surveying,
-    FreeMoving
+    FreeMoving,
+    Spotting
 }

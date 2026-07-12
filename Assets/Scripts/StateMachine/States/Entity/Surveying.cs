@@ -36,7 +36,7 @@ public class Surveying : State {
 
     public override void ExitState() {
         StopCoroutine(currentTimerRoutine);
-        StopCoroutine(_gracePeriodCoroutine);
+        if(_gracePeriodCoroutine != null) StopCoroutine(_gracePeriodCoroutine);
         isTimeOver = false;
         _gracePeriodCoroutine = null;
         _isGracePeriodOver = false;

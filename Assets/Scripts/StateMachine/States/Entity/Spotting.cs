@@ -17,7 +17,7 @@ public class Spotting : State {
         }
     }
     public override void DefaultState() {
-        patrolController.TogglePatrol(false, PathType.FreeMoving);
+        patrolController.TogglePatrol(false, PathType.Spotting);
         spottingTimer = 0;
         isTimeOver = false;
         StartCoroutine(TimerSpoting());

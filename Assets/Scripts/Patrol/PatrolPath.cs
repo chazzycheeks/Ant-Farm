@@ -26,7 +26,24 @@ public class PatrolPath : MonoBehaviour {
 
         waypoints.Add(newPoint.transform);
     }
-
+    public Transform ClosestWaypointToLocation(Vector2 targetPos) {
+        Transform closest = null;
+        float distance = 9999;
+        foreach (Transform w in waypoints) { 
+            float WaypointDistance = Vector3.Distance(targetPos, w.position);
+            if (WaypointDistance < distance) {
+                distance = WaypointDistance;
+                closest = w;
+            }
+        }
+        if(closest == null) {
+            Debug.Log("No waypoint Found in ClosestWaypointToLocation");
+            return null;
+        } else {
+            return closest;
+        }
+        
+    }
     public void ClearPath() {
         foreach (var waypoint in waypoints) {
             if (waypoint != null) DestroyImmediate(waypoint.gameObject);
