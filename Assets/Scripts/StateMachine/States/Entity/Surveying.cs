@@ -17,7 +17,11 @@ public class Surveying : State {
     [SerializeField] float _gracePeriodMeterAmplifier = 1f; // Affects how fast the meter fills up
     [SerializeField] float _gracePeriodMeter; // The meter of how much until the grace period is over
     [SerializeField] bool _isGracePeriodOver; // Shows whether the grace period is over or not
-
+    float GracePeriodAmplifier {
+        get {
+            return entityStateTriggers.inFrontOfEntity ? 999f : _gracePeriodMeterAmplifier;
+        }
+    }
     private Coroutine currentTimerRoutine;
     Coroutine _gracePeriodCoroutine;
     public bool bDebugLog = false;
@@ -30,6 +34,7 @@ public class Surveying : State {
             entityStateTriggers.transitioned = false;
             animator.Play("Submerge");
         } else {
+            StartTimer();
             isReturning = false;
         }
     }
@@ -89,7 +94,7 @@ public class Surveying : State {
     IEnumerator GraceTimerSpotting() {
         while (_gracePeriodMeter < _gracePeriodTimerSpotting) {
             if (entityStateTriggers.isSpotting) {
-                _gracePeriodMeter += Time.deltaTime * _gracePeriodMeterAmplifier;
+                _gracePeriodMeter += Time.deltaTime * GracePeriodAmplifier;
             } else {
                 _gracePeriodMeter = Mathf.Clamp(_gracePeriodMeter - Time.deltaTime, 0, _gracePeriodTimerSpotting);
             }
@@ -102,7 +107,7 @@ public class Surveying : State {
 
     IEnumerator TimerSpoting() {
         while (surveyingTimer < timeToSurvey) {
-            if (!entityStateTriggers.isSpotting) {
+            if (!entityStateTriggers.isSpotting && entityStateTriggers.transitioned) {
                 surveyingTimer += Time.deltaTime;
             } else {
                 surveyingTimer = 0;
