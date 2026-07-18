@@ -306,10 +306,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArmGrabTrap
   playerGO: {fileID: 0}
   trappedStateHandler: {fileID: 0}
+  struggleMeter: {fileID: 0}
   anchorGrabbedPoint: {fileID: 6247734533496982051}
   breakGoal: 4
+  decayRate: 3
   disarmed: 0
   DisarmTime: 2
+  UseSpline: 0
 --- !u!1 &8347738858578103353
 GameObject:
   m_ObjectHideFlags: 0

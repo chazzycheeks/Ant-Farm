@@ -2,6 +2,7 @@ using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class TrappedStateHandler : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class TrappedStateHandler : MonoBehaviour
     CharacterJump charJump;
     InputManager _inputManager;
     public ArmGrabTrap trap;
-
+    [SerializeField] Slider _sliderComponent;
+    public Slider SliderComponent => _sliderComponent;
     private void Awake() {
         charDash = GetComponent<CharacterDash>();
         charJump = GetComponent<CharacterJump>();
