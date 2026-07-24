@@ -5220,6 +5220,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &175715196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 145898, guid: f58a667c8217aaf42b28e20ef609767b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1826198459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &180051817
 GameObject:
   m_ObjectHideFlags: 0
@@ -33735,7 +33741,6 @@ Transform:
   - {fileID: 774183699}
   - {fileID: 1830759059}
   - {fileID: 47191014}
-  - {fileID: 1325966906}
   - {fileID: 1889013477}
   - {fileID: 934549780}
   - {fileID: 611218094}
@@ -44066,6 +44071,7 @@ Transform:
   m_Children:
   - {fileID: 983324586}
   - {fileID: 333011796}
+  - {fileID: 1325966906}
   m_Father: {fileID: 906369227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339935411
@@ -44724,6 +44730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Room6Gate
   door: {fileID: 1530554423}
+  room4Door: {fileID: 175715196}
 --- !u!1 &1352769261
 GameObject:
   m_ObjectHideFlags: 0
@@ -61410,11 +61417,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1067330010}
+    m_TransformParent: {fileID: 1339930873}
     m_Modifications:
     - target: {fileID: 145898, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_Name
-      value: Platform1000x100 (50)
+      value: gate 3
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_RootOrder
@@ -61422,15 +61429,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.34339005
+      value: 0.34339002
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6948601
+      value: 0.69486004
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -345.14
+      value: -336.44
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -61446,11 +61453,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalRotation.z
