@@ -21,9 +21,9 @@ public class PatrolLocomotionController : MonoBehaviour
     [SerializeField] Transform offsetAnchor; 
     [Header("Speeds")]
     [Tooltip("The velocity speed the entity roams at")]
-    [SerializeField] float roamingSpeed = 3f;
+    [SerializeField] float roamingSpeed = 7f;
     [Tooltip("The velocity speed the entity surveys at")]
-    [SerializeField] float surveySpeed = 6f;
+    [SerializeField] float surveySpeed = 14f;
     [Tooltip("The distance treshold before it slows down to reach the waypoint")]
     [SerializeField] float arrivalThreshold = 3f;
     [Tooltip("The velocity speed it spots at")]
