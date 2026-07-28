@@ -18,7 +18,11 @@ public class PatrolLocomotionController : MonoBehaviour
     PathCache _spottingPath;
     public PathCache SpottingPath => _spottingPath;
     [Tooltip("The anchor point used to add offset to position when spotting so the eye is focused on the player, not the body")]
-    [SerializeField] Transform offsetAnchor; 
+    [SerializeField] Transform offsetAnchor;
+
+    [SerializeField] Transform offsetAnchorLeft;
+    [SerializeField] Transform offsetAnchorRight;
+
     [Header("Speeds")]
     [Tooltip("The velocity speed the entity roams at")]
     [SerializeField] float roamingSpeed = 7f;
@@ -223,9 +227,12 @@ public class PatrolLocomotionController : MonoBehaviour
     }
     private void MoveToWindow() {
         if (VisibilityManager.Instance == null) return;
-        Vector2 currentPos = offsetAnchor.transform.position;
         Vector2 targetPos = SpottingPath.path.ClosestWaypointToLocation(VisibilityManager.Instance.lastPlayerPositionSeen).position;
+        // Decide position of eye offset depending on whether target is more right or left
+        Vector2 decidingOffsetDistance = targetPos - (Vector2)transform.position;
+        Vector2 currentPos = decidingOffsetDistance.x > 0 ? offsetAnchorRight.transform.position : offsetAnchorLeft.transform.position;
         Vector2 dir = (targetPos - currentPos).normalized;
+        // Calculate easing to destination and add velocity
         float distance = Vector2.Distance(currentPos, targetPos);
         float t = Mathf.Clamp01(distance / arrivalThreshold);
         float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
@@ -249,13 +256,18 @@ public class PatrolLocomotionController : MonoBehaviour
         rb.linearVelocity = dir * currentSpeed;
 
         if (distance < 0.3f) {
-            // Update the last reached point tracking
             pathCache.currentIndex = pathCache.targetIndex;
 
-            if (pathCache.targetIndex == 0 && pathCache.inverse) {
+            bool hitStart = pathCache.targetIndex == 0 && pathCache.inverse;
+            bool hitEnd = pathCache.targetIndex == pathCache.path.waypoints.Count - 1 && !pathCache.inverse;
+            bool hitDistanceLimit = currentPath == PathType.Roaming && RoomTracker.Instance != null && RoomTracker.Instance.isTooFar;
+
+            if (hitStart) {
                 pathCache.inverse = false;
-            } else if (pathCache.targetIndex == pathCache.path.waypoints.Count - 1 && !pathCache.inverse) {
+            } else if (hitEnd) {
                 pathCache.inverse = true;
+            } else if (hitDistanceLimit) {
+                pathCache.inverse = !pathCache.inverse;
             }
 
             pathCache.targetIndex += pathCache.inverse ? -1 : 1;

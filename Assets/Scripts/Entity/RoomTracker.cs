@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoomTracker : MonoBehaviour {
@@ -10,6 +11,22 @@ public class RoomTracker : MonoBehaviour {
     Room currentRoom_Entity;
     [Tooltip("How many rooms away can the entity be before it starts spotting the player ")]
     [SerializeField] int roomDistanceBeforeSurveying;
+
+    bool _isTooFar {
+        get {
+            if (currentRoom_Entity == null || currentRoom_Player == null) {
+                return false;
+            }
+
+            int distance = Mathf.Abs(currentRoom_Player.roomNumber - currentRoom_Entity.roomNumber);
+            return distance >= distanceBeforeOutsideRange;
+        }
+    }
+    [Tooltip("Indicate if the entity is too far away from the player")]
+    public bool isTooFar => _isTooFar;
+
+    [Tooltip("Indicate how many rooms away the entity should be before it's considered too far")]
+    public int distanceBeforeOutsideRange = 5;
     public bool _canEntitySurvey {
         get {
             if(currentRoom_Entity == null ||currentRoom_Player == null) {
