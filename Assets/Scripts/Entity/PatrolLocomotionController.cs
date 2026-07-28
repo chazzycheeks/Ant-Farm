@@ -21,11 +21,20 @@ public class PatrolLocomotionController : MonoBehaviour
     [SerializeField] Transform offsetAnchor; 
     [Header("Speeds")]
     [Tooltip("The velocity speed the entity roams at")]
-    [SerializeField] float speed = 3f;
+    [SerializeField] float roamingSpeed = 3f;
+    [Tooltip("The velocity speed the entity surveys at")]
+    [SerializeField] float surveySpeed = 6f;
     [Tooltip("The distance treshold before it slows down to reach the waypoint")]
     [SerializeField] float arrivalThreshold = 3f;
     [Tooltip("The velocity speed it spots at")]
     [SerializeField] float spottingSpeed = 20f;
+    //Velocity the entity is currently going at
+    float _speed {
+        get {
+            return currentPath == PathType.Roaming ? roamingSpeed : surveySpeed;
+        }
+    }
+
     [Header("Properties")]
     bool isPatrolling = false;
     bool isFixating = false;
@@ -230,10 +239,11 @@ public class PatrolLocomotionController : MonoBehaviour
         Vector2 targetPos = pathCache.path.waypoints[pathCache.targetIndex].position;
         Vector2 dir = (targetPos - currentPos).normalized;
         float distance = Vector2.Distance(currentPos, targetPos);
-
-        float currentSpeed = speed;
+        
+        
+        float currentSpeed = _speed;
         if (distance < arrivalThreshold) {
-            currentSpeed = speed * (distance / arrivalThreshold);
+            currentSpeed = _speed * (distance / arrivalThreshold);
         }
 
         rb.linearVelocity = dir * currentSpeed;
