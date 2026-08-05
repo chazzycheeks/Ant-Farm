@@ -24,11 +24,39 @@ public class VisibilityManager : MonoBehaviour
     StateManager stateManager;
     EntityStateTriggers entityTriggers;
     static VisibilityManager instance;
+    /// <summary>
+    /// Grace period variable to be used while transitioning between rooms.
+    /// </summary>
+    public bool CanBeSpotted = true;
+    /// <summary>
+    /// How long is the player immune to spotting(used when transitioning between rooms).
+    /// </summary>
+    [SerializeField] float gracePeriodTimeImmunity = 10f;
+    [SerializeField] float gracePeriodTimer = 0;
+    Coroutine timerCoroutineGraceSpotting;
 
     public List<PlayerHider> coverObjects;
     public static VisibilityManager Instance {
         get {  return instance; }
     }
+
+    public void OnNewRoomEnter() {
+        if(timerCoroutineGraceSpotting == null) {
+            gracePeriodTimer = 0f;
+            timerCoroutineGraceSpotting = StartCoroutine(gracePeriodSpottingImmunity());
+        }
+    }
+
+    IEnumerator gracePeriodSpottingImmunity() {
+        CanBeSpotted = false;
+        while (gracePeriodTimer < gracePeriodTimeImmunity) {
+            gracePeriodTimer += Time.deltaTime;
+            yield return null;
+        }
+        CanBeSpotted = true;
+        timerCoroutineGraceSpotting = null;
+    }
+
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -57,7 +85,7 @@ public class VisibilityManager : MonoBehaviour
         }
         if (_isVisible == true && RoomTracker.Instance._canEntitySurvey == true) {
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
-            if (entityTriggers.transitioned == true)
+            if (entityTriggers.transitioned == true && CanBeSpotted)
             {
                 if (stateManager.GetCurrentState() is Roaming)
                 {

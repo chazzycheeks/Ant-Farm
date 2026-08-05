@@ -47,7 +47,7 @@ public class RoomTracker : MonoBehaviour {
             return true;
         }
     }
-    [SerializeField] bool CanEntitySurvey; 
+    [SerializeField] bool CanEntitySurvey;
 
     private void Awake() {
         if (instance != null && instance != this) {

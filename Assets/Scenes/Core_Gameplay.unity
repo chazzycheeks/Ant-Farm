@@ -4879,6 +4879,9 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   lastPlayerPositionSeen: {x: 0, y: 0}
+  CanBeSpotted: 1
+  gracePeriodTimeImmunity: 10
+  gracePeriodTimer: 0
   coverObjects: []
 --- !u!4 &1053627721
 Transform:

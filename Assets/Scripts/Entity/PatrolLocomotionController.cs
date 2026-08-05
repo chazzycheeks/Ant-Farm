@@ -221,7 +221,7 @@ public class PatrolLocomotionController : MonoBehaviour
                 if (isFixating) MoveToTargetPoint();
                 break;
             case PathType.Spotting:
-                if(isFixating) MoveToWindow();
+                if(isFixating && VisibilityManager.Instance.CanBeSpotted) MoveToWindow();
                 break;
         }
     }

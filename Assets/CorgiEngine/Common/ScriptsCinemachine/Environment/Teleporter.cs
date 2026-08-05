@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
+using UnityEngine.UIElements;
 
 namespace MoreMountains.CorgiEngine
 {	
@@ -216,11 +217,9 @@ namespace MoreMountains.CorgiEngine
 			}			
             
 			// if the teleporter is supposed to only affect the player (well, corgiControllers), we do nothing and exit
-			if (OnlyAffectsPlayer || !AutoActivation)
-			{
+			if (OnlyAffectsPlayer || !AutoActivation) {
 				base.OnTriggerEnter2D(collider);
-			}
-			else
+			} else
 			{
 				Teleport(collider);
 			}
