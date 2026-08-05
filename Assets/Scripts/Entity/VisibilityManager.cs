@@ -24,15 +24,17 @@ public class VisibilityManager : MonoBehaviour
     StateManager stateManager;
     EntityStateTriggers entityTriggers;
     static VisibilityManager instance;
-    /// <summary>
-    /// Grace period variable to be used while transitioning between rooms.
-    /// </summary>
+
+    [Tooltip("Grace period variable to be used while transitioning between rooms.")]
     public bool CanBeSpotted = true;
+
+    [Tooltip("How long is the player immune to spotting(used when transitioning between rooms).")]
+    [SerializeField] float spottingPeriodTimeImmunity = 10f;
+
     /// <summary>
-    /// How long is the player immune to spotting(used when transitioning between rooms).
+    /// Timer for grace period where the player cannot be seen
     /// </summary>
-    [SerializeField] float gracePeriodTimeImmunity = 10f;
-    [SerializeField] float gracePeriodTimer = 0;
+    float gracePeriodTimer = 0;
     Coroutine timerCoroutineGraceSpotting;
 
     public List<PlayerHider> coverObjects;
@@ -49,7 +51,7 @@ public class VisibilityManager : MonoBehaviour
 
     IEnumerator gracePeriodSpottingImmunity() {
         CanBeSpotted = false;
-        while (gracePeriodTimer < gracePeriodTimeImmunity) {
+        while (gracePeriodTimer < spottingPeriodTimeImmunity) {
             gracePeriodTimer += Time.deltaTime;
             yield return null;
         }
