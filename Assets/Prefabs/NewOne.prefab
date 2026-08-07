@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: -4342895061800036961}
   - component: {fileID: 1148262242733755894}
   - component: {fileID: 7159822963858989587}
+  - component: {fileID: 1847599862698786925}
   m_Layer: 9
   m_Name: NewOne
   m_TagString: Player
@@ -1072,6 +1073,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrappedStateHandler
   trap: {fileID: 0}
   _sliderComponent: {fileID: 2591263011871976746}
+--- !u!114 &1847599862698786925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b68f99f71374a46a421d00d1e15f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MoreMountains.CorgiEngine::MoreMountains.CorgiEngine.CharacterSlopeOrientation
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  ObjectToRotate: {fileID: 2014582596434258926}
+  CharacterRotationSpeed: 10
+  MinimumAllowedAngle: -90
+  MaximumAllowedAngle: 90
+  ResetAngleInTheAir: 1
+  RotateWeapon: 1
+  RaycastLength: 1
 --- !u!1 &159142
 GameObject:
   m_ObjectHideFlags: 0
