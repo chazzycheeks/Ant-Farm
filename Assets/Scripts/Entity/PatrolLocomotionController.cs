@@ -33,6 +33,11 @@ public class PatrolLocomotionController : MonoBehaviour
     [Tooltip("The velocity speed it spots at")]
     [SerializeField] float spottingSpeed = 20f;
     //Velocity the entity is currently going at
+    [Header("Survey")]
+    [Tooltip("The amount of time you stop at a point(in seconds")]
+    [SerializeField] float arrivalStopTime = 5f;
+    private bool _isWaiting = false;
+
     float _speed {
         get {
             return currentPath == PathType.Roaming ? roamingSpeed : surveySpeed;
@@ -241,13 +246,16 @@ public class PatrolLocomotionController : MonoBehaviour
     private void MoveAlongPath(PathCache pathCache) {
         if (!isPatrolling || pathCache?.path?.waypoints == null || pathCache.path.waypoints.Count == 0) return;
 
+        if (_isWaiting) {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         Vector2 currentPos = transform.position;
-        // Move towards targetIndex rather than currentIndex
         Vector2 targetPos = pathCache.path.waypoints[pathCache.targetIndex].position;
         Vector2 dir = (targetPos - currentPos).normalized;
         float distance = Vector2.Distance(currentPos, targetPos);
-        
-        
+
         float currentSpeed = _speed;
         if (distance < arrivalThreshold) {
             currentSpeed = _speed * (distance / arrivalThreshold);
@@ -256,25 +264,40 @@ public class PatrolLocomotionController : MonoBehaviour
         rb.linearVelocity = dir * currentSpeed;
 
         if (distance < 0.3f) {
-            pathCache.currentIndex = pathCache.targetIndex;
-
-            bool hitStart = pathCache.targetIndex == 0 && pathCache.inverse;
-            bool hitEnd = pathCache.targetIndex == pathCache.path.waypoints.Count - 1 && !pathCache.inverse;
-            bool hitDistanceLimit = currentPath == PathType.Roaming && RoomTracker.Instance != null && RoomTracker.Instance.isTooFar;
-
-            if (hitStart) {
-                pathCache.inverse = false;
-            } else if (hitEnd) {
-                pathCache.inverse = true;
-            } else if (hitDistanceLimit) {
-                pathCache.inverse = !pathCache.inverse;
-            }
-
-            pathCache.targetIndex += pathCache.inverse ? -1 : 1;
-            pathCache.targetIndex = Mathf.Clamp(pathCache.targetIndex, 0, pathCache.path.waypoints.Count - 1);
+            StartCoroutine(WaitAtWaypoint(pathCache));
         }
     }
+    private IEnumerator WaitAtWaypoint(PathCache pathCache) {
+        if (_isWaiting) yield break;
 
+        _isWaiting = true;
+        rb.linearVelocity = Vector2.zero;
+
+        if(currentPath == PathType.Roaming) {
+            yield return new WaitForSeconds(0);
+        } else {
+            yield return new WaitForSeconds(arrivalStopTime);
+        }
+
+        pathCache.currentIndex = pathCache.targetIndex;
+
+        bool hitStart = pathCache.targetIndex == 0 && pathCache.inverse;
+        bool hitEnd = pathCache.targetIndex == pathCache.path.waypoints.Count - 1 && !pathCache.inverse;
+        bool hitDistanceLimit = currentPath == PathType.Roaming && RoomTracker.Instance != null && RoomTracker.Instance.isTooFar;
+
+        if (hitStart) {
+            pathCache.inverse = false;
+        } else if (hitEnd) {
+            pathCache.inverse = true;
+        } else if (hitDistanceLimit) {
+            pathCache.inverse = !pathCache.inverse;
+        }
+
+        pathCache.targetIndex += pathCache.inverse ? -1 : 1;
+        pathCache.targetIndex = Mathf.Clamp(pathCache.targetIndex, 0, pathCache.path.waypoints.Count - 1);
+
+        _isWaiting = false;
+    }
     private void MoveToTargetPoint() {
         if (VisibilityManager.Instance == null) return;
 
