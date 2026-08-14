@@ -371,9 +371,10 @@ namespace MoreMountains.CorgiEngine
 			{
 				yield break;
 			}
-
-			// we keep dashing until we've reached our target distance or until we get interrupted
-			while (_distanceTraveled < DashDistance 
+            Vector3 previousFramePosition = _characterTransform.position;
+            bool isFirstFrame = true;
+            // we keep dashing until we've reached our target distance or until we get interrupted
+            while (_distanceTraveled < DashDistance 
 				   && _shouldKeepDashing 
 				   && TestForLevelBounds()
 				   && TestForExactDistance()
@@ -381,21 +382,18 @@ namespace MoreMountains.CorgiEngine
 			{
 				_distanceTraveled = Vector3.Distance(_initialPosition,_characterTransform.position);
 
-				// if we collide with something on our left or right (wall, slope), we stop dashing, otherwise we apply horizontal force
-				//if ( (_controller.State.IsCollidingLeft && _dashDirection.x < -DashDirectionMinThreshold)
-				//	 || (_controller.State.IsCollidingRight && _dashDirection.x > DashDirectionMinThreshold)
-				//	 || (_controller.State.IsCollidingAbove && _dashDirection.y > DashDirectionMinThreshold)
-				//	 || (_controller.State.IsCollidingBelow && _dashDirection.y < -DashDirectionMinThreshold))
-				//{
-				//	_shouldKeepDashing = false;
-				//	_controller.SetForce (Vector2.zero);
-				//}
-				//else
-				//{
-					_controller.GravityActive(false);
-					_controller.SetForce(_dashDirection * DashForce);
-				//}
-				yield return null;
+                if (!isFirstFrame && Vector3.Distance(previousFramePosition, _characterTransform.position) <= 0.001f) {
+                    _shouldKeepDashing = false;
+                    _controller.SetForce(Vector2.zero);
+                } else {
+                    _controller.GravityActive(false);
+                    _controller.SetForce(_dashDirection * DashForce);
+                }
+
+                previousFramePosition = _characterTransform.position;
+                isFirstFrame = false;
+
+                yield return null;
 			}
 
 			StopDash();				
