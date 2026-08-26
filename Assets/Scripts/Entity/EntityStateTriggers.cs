@@ -18,4 +18,5 @@ public class EntityStateTriggers : MonoBehaviour
     /// Used to check whether the player is in front of the entity or not.
     /// </summary>
     public bool inFrontOfEntity;
+    public bool narativeStuckInSpot;
 }

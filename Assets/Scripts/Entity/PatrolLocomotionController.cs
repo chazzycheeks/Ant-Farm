@@ -6,19 +6,19 @@ using UnityEngine;
 public class PatrolLocomotionController : MonoBehaviour
 {
     [Header("CoordinationPoints")]
-    ///<summary> The path used during roaming, needs to have an inittialy set point to start the roaming process. </summary>
     [Tooltip("The path used during roaming, needs to have an inittialy set point to start the roaming process")]
     [SerializeField] PathCache _patrolPath; // need to have a starting patrol path and hide this
     public PathCache PatrolPath => _patrolPath;
     /// <summary> The path used during surveying, it should retroactively get set by <see cref="AssignPathTrigger"/>. </summary>
     PathCache _surveyPath;
     public PathCache SurveyPath => _surveyPath;
+    [Tooltip("The point where the entity is stuck still while it's in a naratting spot")]
+    public Transform staticPointTransform;
     PathCache lastSurveyPathUsed;
-    Vector3 targetCoordinates;
+    //Vector3 targetCoordinates;
     PathCache _spottingPath;
     public PathCache SpottingPath => _spottingPath;
     [Tooltip("The anchor point used to add offset to position when spotting so the eye is focused on the player, not the body")]
-    [SerializeField] Transform offsetAnchor;
 
     [SerializeField] Transform offsetAnchorLeft;
     [SerializeField] Transform offsetAnchorRight;
@@ -32,6 +32,8 @@ public class PatrolLocomotionController : MonoBehaviour
     [SerializeField] float arrivalThreshold = 3f;
     [Tooltip("The velocity speed it spots at")]
     [SerializeField] float spottingSpeed = 20f;
+    [Tooltip("The velocity speed it goes to the static spot speed with.")]
+    [SerializeField] float staticSpeed = 100f;
     //Velocity the entity is currently going at
     [Header("Survey")]
     [Tooltip("The amount of time you stop at a point(in seconds")]
@@ -102,15 +104,10 @@ public class PatrolLocomotionController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         isFixating = false;
         //Setting path according to the parameter
-        if (path == PathType.Roaming) {
-            currentPath = PathType.Roaming;
-        } else if(path == PathType.Surveying) {
-            currentPath = PathType.Surveying;
-        } else if(path == PathType.FreeMoving) {
-            currentPath = PathType.FreeMoving;
+        currentPath = path;
+        if(path == PathType.FreeMoving) {
             isFixating = true;
         } else if(path == PathType.Spotting) {
-            currentPath = PathType.Spotting;
             isFixating = true;
         }
 
@@ -223,10 +220,24 @@ public class PatrolLocomotionController : MonoBehaviour
                 MoveAlongPath(_surveyPath);
                 break;
             case PathType.FreeMoving:
-                if (isFixating) MoveToTargetPoint();
+                //if (isFixating) MoveToTargetPoint();
                 break;
             case PathType.Spotting:
                 if(isFixating && VisibilityManager.Instance.CanBeSpotted) MoveToWindow();
+                break;
+            case PathType.Static:
+                if (VisibilityManager.Instance == null) return;
+
+                //Vector2 currentPos = offsetAnchor.transform.position;
+                Vector2 currentPos = transform.position;
+                Vector2 targetPos = staticPointTransform.position;
+                Vector2 dir = (targetPos - currentPos).normalized;
+                float distance = Vector2.Distance(currentPos, targetPos);
+
+                float t = Mathf.Clamp01(distance / arrivalThreshold);
+                float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
+
+                rb.linearVelocity = dir * (staticSpeed * ease);
                 break;
         }
     }
@@ -298,19 +309,19 @@ public class PatrolLocomotionController : MonoBehaviour
 
         _isWaiting = false;
     }
-    private void MoveToTargetPoint() {
-        if (VisibilityManager.Instance == null) return;
+    //private void MoveToTargetPoint() {
+    //    if (VisibilityManager.Instance == null) return;
 
-        Vector2 currentPos = offsetAnchor.transform.position;
-        Vector2 targetPos = VisibilityManager.Instance.lastPlayerPositionSeen;
-        Vector2 dir = (targetPos - currentPos).normalized;
-        float distance = Vector2.Distance(currentPos, targetPos);
+    //    Vector2 currentPos = offsetAnchor.transform.position;
+    //    Vector2 targetPos = VisibilityManager.Instance.lastPlayerPositionSeen;
+    //    Vector2 dir = (targetPos - currentPos).normalized;
+    //    float distance = Vector2.Distance(currentPos, targetPos);
 
-        float t = Mathf.Clamp01(distance / arrivalThreshold);
-        float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
+    //    float t = Mathf.Clamp01(distance / arrivalThreshold);
+    //    float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
 
-        rb.linearVelocity = dir * (spottingSpeed * ease);
-    }
+    //    rb.linearVelocity = dir * (spottingSpeed * ease);
+    //}
 }
 
 [System.Serializable]
@@ -333,5 +344,6 @@ public enum PathType {
     Roaming,
     Surveying,
     FreeMoving,
-    Spotting
+    Spotting,
+    Static
 }

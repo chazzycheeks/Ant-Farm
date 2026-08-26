@@ -3,8 +3,12 @@ using UnityEngine;
 public class StateManager : MonoBehaviour {
     State currentState;
     [SerializeField] State defaultState;
+
+    public State LastStateUsed;
+    [SerializeField] StaticEntityState narativeState;
     private void Start() {
         SwitchToNextState(defaultState);
+        LastStateUsed = currentState;
     }
     private void Update() {
         RunStateMachine();
@@ -20,6 +24,7 @@ public class StateManager : MonoBehaviour {
         //Debug.Log(nextState.name);
         if (currentState != null) {
             currentState.ExitState();
+            LastStateUsed = currentState;
         }
         nextState.DefaultState();
         currentState = nextState;
@@ -33,6 +38,9 @@ public class StateManager : MonoBehaviour {
         return currentState;
     }
 
+    public void SwapToNarativeStuck() {
+        SwitchToNextState(narativeState);
+    }
     /// <summary>
     /// If we have an animation, call this method to grab the animation event from inside the state, i.e if we parse in "Hit", and the state matches it and has a function attached to the animation event, it will trigger.
     /// </summary>
