@@ -22,5 +22,6 @@ public class TriggerNarativeState : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision) {
         entityStateTriggers.narativeStuckInSpot = false;
+        gameObject.SetActive(false);
     }
 }
