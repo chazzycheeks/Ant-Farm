@@ -14,13 +14,20 @@ public class TriggerNarativeState : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        patrolLocomotionController.staticPointTransform = narativeStuckSpot;
-        entityStateTriggers.narativeStuckInSpot = true;
-        stateManager.SwapToNarativeStuck();
+        
         
     }
 
+    public void EnterNarativeState() {
+        patrolLocomotionController.staticPointTransform = narativeStuckSpot;
+        entityStateTriggers.narativeStuckInSpot = true;
+        stateManager.SwapToNarativeStuck();
+    }
     private void OnTriggerExit2D(Collider2D collision) {
+        
+    }
+
+    public void LeaveNarativeState() {
         entityStateTriggers.narativeStuckInSpot = false;
         gameObject.SetActive(false);
     }
