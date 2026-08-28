@@ -11,6 +11,27 @@ public class RoomTracker : MonoBehaviour {
     Room currentRoom_Entity;
     [Tooltip("How many rooms away can the entity be before it starts spotting the player ")]
     [SerializeField] int roomDistanceBeforeSurveying;
+    public Room CurrentRoom_Player => currentRoom_Player;
+    public Room CurrentRoom_Entity => currentRoom_Entity;
+    public int minRoomNumberAway(int maxValue){
+        int number = Mathf.Clamp(currentRoom_Player.roomNumber - distanceBeforeOutsideRange, 0, maxValue);
+        return number;
+    }
+
+    public int maxRoomNumberAway(int maxValue) {
+        int number = Mathf.Clamp(currentRoom_Player.roomNumber + distanceBeforeOutsideRange, 0, maxValue);
+        return number;
+    }
+    public bool entityNotNear {
+        get {
+            if(currentRoom_Entity == null) {
+                return false;
+            }
+
+            int distance = Mathf.Abs(currentRoom_Player.roomNumber - currentRoom_Entity.roomNumber);
+            return distance >= distanceBeforeOutsideRange + 1;
+        }
+    }
 
     bool _isTooFar {
         get {
@@ -25,7 +46,7 @@ public class RoomTracker : MonoBehaviour {
     [Tooltip("Indicate if the entity is too far away from the player")]
     public bool isTooFar => _isTooFar;
 
-    [Tooltip("Indicate how many rooms away the entity should be before it's considered too far")]
+    [Tooltip("Indicate how many rooms away the entity should be before it's considered too far for patrolling")]
     public int distanceBeforeOutsideRange = 5;
     public bool _canEntitySurvey {
         get {

@@ -229,15 +229,18 @@ public class PatrolLocomotionController : MonoBehaviour
                 if (VisibilityManager.Instance == null) return;
 
                 //Vector2 currentPos = offsetAnchor.transform.position;
-                Vector2 currentPos = transform.position;
-                Vector2 targetPos = staticPointTransform.position;
-                Vector2 dir = (targetPos - currentPos).normalized;
-                float distance = Vector2.Distance(currentPos, targetPos);
 
-                float t = Mathf.Clamp01(distance / arrivalThreshold);
-                float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
+                //Vector2 currentPos = transform.position;
+                //Vector2 targetPos = staticPointTransform.position;
+                //Vector2 dir = (targetPos - currentPos).normalized;
+                //float distance = Vector2.Distance(currentPos, targetPos);
 
-                rb.linearVelocity = dir * (staticSpeed * ease);
+                //float t = Mathf.Clamp01(distance / arrivalThreshold);
+                //float ease = -(Mathf.Cos(Mathf.PI * t) - 1) / 2;
+
+                //rb.linearVelocity = dir * (staticSpeed * ease);
+
+                transform.position = staticPointTransform.position;
                 break;
         }
     }
@@ -303,8 +306,20 @@ public class PatrolLocomotionController : MonoBehaviour
         } else if (hitDistanceLimit) {
             pathCache.inverse = !pathCache.inverse;
         }
+        if (RoomTracker.Instance.entityNotNear) {
+            int maxVal = pathCache.path.waypoints.Count - 1;
+            if (RoomTracker.Instance.CurrentRoom_Player.roomNumber > RoomTracker.Instance.CurrentRoom_Entity.roomNumber) {
+                pathCache.targetIndex = RoomTracker.Instance.minRoomNumberAway(maxVal);
+                pathCache.inverse = true;
+            } else {
+                pathCache.targetIndex = RoomTracker.Instance.maxRoomNumberAway(maxVal);
+                pathCache.inverse = false;
+            }
+        } else {
+            pathCache.targetIndex += pathCache.inverse ? -1 : 1;
+        }
 
-        pathCache.targetIndex += pathCache.inverse ? -1 : 1;
+        
         pathCache.targetIndex = Mathf.Clamp(pathCache.targetIndex, 0, pathCache.path.waypoints.Count - 1);
 
         _isWaiting = false;

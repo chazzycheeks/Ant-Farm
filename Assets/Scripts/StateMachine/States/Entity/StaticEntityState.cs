@@ -20,8 +20,7 @@ public class StaticEntityState : State {
         stateManager = GetComponentInParent<StateManager>();
     }
     public override void DefaultState() {
-        patrolController.TogglePatrol(false, PathType.Static);
-        
+        animator.Play("Submerge");
     }
 
     public override void ExitState() {
@@ -33,10 +32,11 @@ public class StaticEntityState : State {
             if(stateManager.LastStateUsed is Surveying) {
                 patrolController.ReturnToPath(PathType.Surveying);
                 patrolController.TogglePatrol(true, PathType.Surveying);
+                surveyingState.isReturning = true;
                 return surveyingState;
             } else {
-                patrolController.ReturnToPath(PathType.Roaming);
-                patrolController.TogglePatrol(true, PathType.Roaming);
+                roamingState.isReturning = true;
+                patrolController.TogglePatrol(false, PathType.Surveying);
                 return roamingState;
             }
         }
@@ -44,7 +44,10 @@ public class StaticEntityState : State {
     }
 
     public override void HandleAnimationEvent(string eventId) {
-        if (eventId == "FinishedEmerging") {
+        if (eventId == "Submerged") {
+            patrolController.TogglePatrol(false, PathType.Static);
+            animator.Play("Emerge");
+        } else if (eventId == "FinishedEmerging") {
             entityStateTriggers.transitioned = true;
         }
     }
