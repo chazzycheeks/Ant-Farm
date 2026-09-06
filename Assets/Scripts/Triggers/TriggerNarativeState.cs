@@ -28,7 +28,8 @@ public class TriggerNarativeState : MonoBehaviour
     }
 
     public void LeaveNarativeState() {
+        Debug.Log("Leaving Narative Spot");
         entityStateTriggers.narativeStuckInSpot = false;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }
