@@ -1,37 +1,40 @@
 fileFormatVersion: 2
-guid: 9240df1b2f37c5949a047a557cc9d9cb
+guid: 604767c639a7f794fab2ebda18603080
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7675649439818736203
-    second: Asset_Pipes_0
+      213: -8015045599047271499
+    second: Asset_Pipes(1)_0
   - first:
-      213: 8445767524187518648
-    second: Asset_Pipes_1
+      213: 5056608099171176672
+    second: Asset_Pipes(1)_1
   - first:
-      213: -5538975742206893153
-    second: Asset_Pipes_2
+      213: -8447125169564640775
+    second: Asset_Pipes(1)_2
   - first:
-      213: 4147803256086813404
-    second: Asset_Pipes_3
+      213: 1598486496740349209
+    second: Asset_Pipes(1)_3
   - first:
-      213: -2729993711031002902
-    second: Asset_Pipes_4
+      213: 1015081288981936577
+    second: Asset_Pipes(1)_4
   - first:
-      213: -2882467329889404682
-    second: Asset_Pipes_5
+      213: -5132571224000465645
+    second: Asset_Pipes(1)_5
   - first:
-      213: 4447362303448133688
-    second: Asset_Pipes_6
+      213: -6457127782001427537
+    second: Asset_Pipes(1)_6
   - first:
-      213: -7707112054796945227
-    second: Asset_Pipes_7
+      213: 807037887083536758
+    second: Asset_Pipes(1)_7
   - first:
-      213: 2269040755779009492
-    second: Asset_Pipes_8
+      213: -6787321802323694600
+    second: Asset_Pipes(1)_8
   - first:
-      213: -3210881916124224119
-    second: Asset_Pipes_9
+      213: -2162686556482656916
+    second: Asset_Pipes(1)_9
+  - first:
+      213: 8557910519724914732
+    second: Asset_Pipes(1)_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,7 +102,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -140,7 +143,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Asset_Pipes_0
+      name: Asset_Pipes(1)_0
       rect:
         serializedVersion: 2
         x: 16
@@ -155,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5bd9d27708d9a7590800000000000000
-      internalID: -7675649439818736203
+      spriteID: 5bbba324e76d4c090800000000000000
+      internalID: -8015045599047271499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Pipes_1
+      name: Asset_Pipes(1)_1
       rect:
         serializedVersion: 2
-        x: 520
+        x: 522
         y: 1648
-        width: 460
-        height: 451
+        width: 458
+        height: 449
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +180,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b63abec0d4653570800000000000000
-      internalID: 8445767524187518648
+      spriteID: 0e0167f664eac2640800000000000000
+      internalID: 5056608099171176672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Pipes_2
+      name: Asset_Pipes(1)_2
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 1641
+        width: 457
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f996deb968c5ca80800000000000000
+      internalID: -8447125169564640775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_Pipes(1)_3
       rect:
         serializedVersion: 2
         x: 497
         y: 1085
-        width: 459
-        height: 428
+        width: 458
+        height: 426
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f93a042c8ea9123b0800000000000000
-      internalID: -5538975742206893153
+      spriteID: 9159778eff6fe2610800000000000000
+      internalID: 1598486496740349209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Asset_Pipes_5
+      name: Asset_Pipes(1)_6
       rect:
         serializedVersion: 2
         x: 68
         y: 0
         width: 849
-        height: 570
+        height: 571
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +246,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f8f5454c3b6ff7d0800000000000000
-      internalID: -2882467329889404682
+      spriteID: fabbf7c5e7ca366a0800000000000000
+      internalID: -6457127782001427537
       vertices: []
       indices: 
       edges: []
@@ -231,7 +256,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 59f6f110bd5b7cc4fb3b6a879639a087
     internalID: 0
     vertices: []
     indices: 
@@ -241,16 +266,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Asset_Pipes_0: -7675649439818736203
-      Asset_Pipes_1: 8445767524187518648
-      Asset_Pipes_2: -5538975742206893153
-      Asset_Pipes_3: 4147803256086813404
-      Asset_Pipes_4: -2729993711031002902
-      Asset_Pipes_5: -2882467329889404682
-      Asset_Pipes_6: 4447362303448133688
-      Asset_Pipes_7: -7707112054796945227
-      Asset_Pipes_8: 2269040755779009492
-      Asset_Pipes_9: -3210881916124224119
+      Asset_Pipes(1)_0: -8015045599047271499
+      Asset_Pipes(1)_1: 5056608099171176672
+      Asset_Pipes(1)_10: 8557910519724914732
+      Asset_Pipes(1)_2: -8447125169564640775
+      Asset_Pipes(1)_3: 1598486496740349209
+      Asset_Pipes(1)_4: 1015081288981936577
+      Asset_Pipes(1)_5: -5132571224000465645
+      Asset_Pipes(1)_6: -6457127782001427537
+      Asset_Pipes(1)_7: 807037887083536758
+      Asset_Pipes(1)_8: -6787321802323694600
+      Asset_Pipes(1)_9: -2162686556482656916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
