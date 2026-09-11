@@ -2285,7 +2285,7 @@ GameObject:
   - component: {fileID: 392545345}
   - component: {fileID: 392545344}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: BlackoutScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2345,7 +2345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4162,13 +4162,14 @@ GameObject:
   - component: {fileID: 752537314}
   - component: {fileID: 752537313}
   - component: {fileID: 752537312}
+  - component: {fileID: 752537316}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &752537312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4252,6 +4253,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &752537316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752537311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76dce9b97a5b15b4291e52144cf7e472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  blackoutObject: {fileID: 392545342}
 --- !u!1 &754795274
 GameObject:
   m_ObjectHideFlags: 0
