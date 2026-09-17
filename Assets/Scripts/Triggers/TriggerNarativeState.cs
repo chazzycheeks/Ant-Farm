@@ -7,6 +7,7 @@ public class TriggerNarativeState : MonoBehaviour
     EntityStateTriggers entityStateTriggers;
 
     [SerializeField]Transform narativeStuckSpot;
+    bool hasTriggered = false;
     private void Start() {
         stateManager = FindFirstObjectByType<StateManager>();
         patrolLocomotionController = FindFirstObjectByType<PatrolLocomotionController>();
@@ -22,14 +23,16 @@ public class TriggerNarativeState : MonoBehaviour
         patrolLocomotionController.staticPointTransform = narativeStuckSpot;
         entityStateTriggers.narativeStuckInSpot = true;
         stateManager.SwapToNarativeStuck();
+        hasTriggered = true;
     }
     private void OnTriggerExit2D(Collider2D collision) {
         
     }
 
     public void LeaveNarativeState() {
-        Debug.Log("Leaving Narative Spot");
-        entityStateTriggers.narativeStuckInSpot = false;
-        //gameObject.SetActive(false);
+        if (hasTriggered) {
+            Debug.Log("Leaving Narative Spot");
+            entityStateTriggers.narativeStuckInSpot = false;
+        }
     }
 }
