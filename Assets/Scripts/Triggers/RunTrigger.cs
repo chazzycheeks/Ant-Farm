@@ -7,8 +7,9 @@ public class RunTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<CharacterRun>().enabled = true;
-            collision.GetComponent<CharacterJump>().enabled = true;
+            collision.GetComponent<CharacterRun>().AbilityPermitted = true;
+            collision.GetComponent<CharacterJump>().JumpHeight = 3f;
+            collision.GetComponent<CharacterHorizontalMovement>().WalkSpeed = 6f;
             gameObject.SetActive(false);
         }
     }

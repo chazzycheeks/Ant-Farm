@@ -12,11 +12,12 @@ public class VisibilityManager : MonoBehaviour
     }
     public bool isVisible => _isVisible;
     public float visibilityTrigger = 2.5f;
+    public float caughtTrigger = 5f;
     public float visibilityTimer;
     public float distanceUntilDiscoverable = 30f; // decides how far the entity can be until it can go into survey
     
     [SerializeField]bool debuggingDistance = false;
-    public UnityEvent onSeen;
+    public UnityEvent onCaught;
     private bool seenEventPlaying = false;
     public Vector2 lastPlayerPositionSeen;
     Transform playerT;
@@ -120,7 +121,7 @@ public class VisibilityManager : MonoBehaviour
             
         }
 
-        CheckIfSpotted();
+        CheckIfCaught();
     }
 
     public void UpdateTimer()
@@ -131,14 +132,14 @@ public class VisibilityManager : MonoBehaviour
         }
     }
 
-    public void CheckIfSpotted()
+    public void CheckIfCaught()
     {
-        if (visibilityTimer >= visibilityTrigger && seenEventPlaying == false)
+        if (visibilityTimer >= caughtTrigger && seenEventPlaying == false)
         {
             visibilityTimer = 0f;
             seenEventPlaying = true;
-            //onSeen?.Invoke(); <<<< 
-            Debug.Log("Seen");
+            onCaught?.Invoke();
+            Debug.Log("Dead");
         }
     }
 
