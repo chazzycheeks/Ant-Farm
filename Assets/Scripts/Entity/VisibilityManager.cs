@@ -106,7 +106,7 @@ public class VisibilityManager : MonoBehaviour
                 }
 
 
-                if(entityTriggers._isSameRoomAndChasing) UpdateTimer();
+                if(entityTriggers.sameRoomAndChasing) UpdateTimer();
             }
 
             lastPlayerPositionSeen = playerT.position;
