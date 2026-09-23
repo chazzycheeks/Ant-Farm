@@ -21,6 +21,7 @@ public class Spotting : State {
         spottingTimer = 0;
         isTimeOver = false;
         StartCoroutine(TimerSpoting());
+        entityStateTriggers.isActivelyChasing = true;
     }
 
     public override void ExitState() {

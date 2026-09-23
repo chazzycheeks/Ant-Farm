@@ -37,6 +37,7 @@ public class Surveying : State {
             StartTimer();
             isReturning = false;
         }
+        entityStateTriggers.isActivelyChasing = true;
     }
 
     public override void ExitState() {

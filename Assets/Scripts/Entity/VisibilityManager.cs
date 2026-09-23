@@ -13,8 +13,7 @@ public class VisibilityManager : MonoBehaviour
     public bool isVisible => _isVisible;
     public float visibilityTrigger = 2.5f;
     public float caughtTrigger = 5f;
-    public float visibilityTimer;
-    public float distanceUntilDiscoverable = 30f; // decides how far the entity can be until it can go into survey
+    [HideInInspector]public float visibilityTimer;
     
     [SerializeField]bool debuggingDistance = false;
     public UnityEvent onCaught;
@@ -87,6 +86,7 @@ public class VisibilityManager : MonoBehaviour
             playerT = GameObject.FindGameObjectWithTag("Player").transform;
         }
         if (_isVisible == true && RoomTracker.Instance._canEntitySurvey == true) {
+
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
             if (entityTriggers.transitioned == true && CanBeSpotted)
             {
@@ -95,19 +95,18 @@ public class VisibilityManager : MonoBehaviour
                     entityTriggers.noticedPlayer = true;
                 }
 
-                if (stateManager.GetCurrentState() is Surveying)
+                if (stateManager.GetCurrentState() is Surveying && entityTriggers.sameRoomAndChasing)
                 {
                     entityTriggers.isSpotting = true;
                 }
 
-                if (stateManager.GetCurrentState() is Spotting)
+                if (stateManager.GetCurrentState() is Spotting && entityTriggers.sameRoomAndChasing)
                 {
                     entityTriggers.isSpotting = true;
                 }
 
 
-
-                UpdateTimer();
+                if(entityTriggers._isSameRoomAndChasing) UpdateTimer();
             }
 
             lastPlayerPositionSeen = playerT.position;

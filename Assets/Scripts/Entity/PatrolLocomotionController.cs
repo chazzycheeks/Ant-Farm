@@ -11,13 +11,20 @@ public class PatrolLocomotionController : MonoBehaviour
     public PathCache PatrolPath => _patrolPath;
     /// <summary> The path used during surveying, it should retroactively get set by <see cref="AssignPathTrigger"/>. </summary>
     PathCache _surveyPath;
-    public PathCache SurveyPath => _surveyPath;
+    /// <summary>
+    /// The path used during surveying, cannot get set while in already existing survey/spotting
+    /// </summary>
+    PathCache _surveyPathActive;
+    public PathCache SurveyPath => entityStateTriggers.isActivelyChasing ? _surveyPathActive : _surveyPath;
     [Tooltip("The point where the entity is stuck still while it's in a naratting spot")]
     public Transform staticPointTransform;
-    PathCache lastSurveyPathUsed;
     //Vector3 targetCoordinates;
     PathCache _spottingPath;
-    public PathCache SpottingPath => _spottingPath;
+    /// <summary>
+    /// The path used during spotting, cannot get set while in already existing survey/spotting
+    /// </summary>
+    PathCache _spottingPathActive;
+    public PathCache SpottingPath =>  entityStateTriggers.isActivelyChasing ? _spottingPathActive : _spottingPath;
     [Tooltip("The anchor point used to add offset to position when spotting so the eye is focused on the player, not the body")]
 
     [SerializeField] Transform offsetAnchorLeft;
@@ -39,7 +46,7 @@ public class PatrolLocomotionController : MonoBehaviour
     [Tooltip("The amount of time you stop at a point(in seconds")]
     [SerializeField] float arrivalStopTime = 5f;
     private bool _isWaiting = false;
-
+    
     float _speed {
         get {
             return currentPath == PathType.Roaming ? roamingSpeed : surveySpeed;
@@ -52,12 +59,13 @@ public class PatrolLocomotionController : MonoBehaviour
     PathType currentPath = PathType.Roaming;
     //References
     Rigidbody2D rb;
-    
+    EntityStateTriggers entityStateTriggers;
     
 
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
+        entityStateTriggers = GetComponent<EntityStateTriggers>();
     }
     private void Start() {
         //StartCoroutine(MoveLoop());
@@ -68,19 +76,17 @@ public class PatrolLocomotionController : MonoBehaviour
     }
 
     public void SetSurveyPath(PathCache newPath) {
-        if(_surveyPath != null) {
-            lastSurveyPathUsed = _surveyPath;
-            _surveyPath = newPath;
-        } else {
-            _surveyPath = newPath;
-        }
+        if (!entityStateTriggers.isActivelyChasing) _surveyPathActive = newPath;
+        _surveyPath = newPath;
     }
     public void SetSpottingPath(PathCache newPath) {
-        if (_patrolPath != null) {
-            _spottingPath = newPath;
-        } else {
-            _spottingPath = newPath;
-        }
+        if (!entityStateTriggers.isActivelyChasing) _spottingPathActive = newPath;
+        _spottingPath = newPath;
+    }
+
+    public void OutOfChaseUpdate() {
+        _surveyPathActive = _surveyPath;
+        _spottingPathActive = _spottingPath;
     }
     public Vector3 GetCurrentPointLocation(PathType path) {
         if(path == PathType.Roaming) {
@@ -214,10 +220,10 @@ public class PatrolLocomotionController : MonoBehaviour
     private void FixedUpdate() {
         switch (currentPath) {
             case PathType.Roaming:
-                MoveAlongPath(_patrolPath);
+                MoveAlongPath(PatrolPath);
                 break;
             case PathType.Surveying:
-                MoveAlongPath(_surveyPath);
+                MoveAlongPath(SurveyPath);
                 break;
             case PathType.FreeMoving:
                 //if (isFixating) MoveToTargetPoint();

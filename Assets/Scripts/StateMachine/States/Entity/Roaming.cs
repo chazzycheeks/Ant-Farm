@@ -17,7 +17,8 @@ public class Roaming : State {
         } else {
             animator.Play("Emerge");
         }
-        
+        entityStateTriggers.isActivelyChasing = false;
+        patrolController.OutOfChaseUpdate();
     }
 
     public override void ExitState() {

@@ -21,6 +21,7 @@ public class StaticEntityState : State {
     }
     public override void DefaultState() {
         animator.Play("Submerge");
+        entityStateTriggers.isActivelyChasing = false;
     }
 
     public override void ExitState() {

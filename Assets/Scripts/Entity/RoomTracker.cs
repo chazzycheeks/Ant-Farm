@@ -13,6 +13,8 @@ public class RoomTracker : MonoBehaviour {
     [SerializeField] int roomDistanceBeforeSurveying;
     public Room CurrentRoom_Player => currentRoom_Player;
     public Room CurrentRoom_Entity => currentRoom_Entity;
+    public bool isInTheSameRoom => CurrentRoom_Entity.roomNumber == CurrentRoom_Player.roomNumber;
+    
     public int minRoomNumberAway(int maxValue){
         int number = Mathf.Clamp(currentRoom_Player.roomNumber - distanceBeforeOutsideRange, 0, maxValue);
         return number;

@@ -19,4 +19,17 @@ public class EntityStateTriggers : MonoBehaviour
     /// </summary>
     public bool inFrontOfEntity;
     public bool narativeStuckInSpot;
+    /// <summary>
+    /// Toggle whether it's spotted a player and is trying to chase them or not
+    /// </summary>
+    public bool isActivelyChasing = false;
+
+    bool _isSameRoomAndChasing => isActivelyChasing && RoomTracker.Instance.isInTheSameRoom;
+
+    public bool sameRoomAndChasing;
+
+    private void Update() {
+        sameRoomAndChasing = _isSameRoomAndChasing;
+    }
+
 }
