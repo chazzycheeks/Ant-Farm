@@ -147,7 +147,8 @@ public class VisibilityManager : MonoBehaviour
             player.GetComponent<CharacterRun>().AbilityPermitted = false;
             player.GetComponent<CharacterJump>().AbilityPermitted = false;
             player.GetComponentInChildren<Animator>().SetBool("Dead", true);*/
-            player.GetComponent<Health>().SetHealth(0f, player);
+            // player.GetComponent<Health>().SetHealth(0f, player);
+            player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
             Debug.Log("Dead");
         }
     }
