@@ -107,7 +107,8 @@ public class VisibilityManager : MonoBehaviour
                 }
 
 
-                if(entityTriggers.sameRoomAndChasing) UpdateTimer();
+                if (entityTriggers.sameRoomAndChasing || stateManager.GetCurrentState() is StaticEntityState) UpdateTimer();
+
             }
 
             lastPlayerPositionSeen = playerT.position;
@@ -140,12 +141,13 @@ public class VisibilityManager : MonoBehaviour
             seenEventPlaying = true;
             //onCaught?.Invoke();
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.GetComponent<CharacterHorizontalMovement>().ReadInput = false;
+            /*player.GetComponent<CharacterHorizontalMovement>().ReadInput = false;
             player.GetComponent<CharacterLadder>().AbilityPermitted = false;
             player.GetComponent<CharacterDash>().AbilityPermitted = false;
             player.GetComponent<CharacterRun>().AbilityPermitted = false;
             player.GetComponent<CharacterJump>().AbilityPermitted = false;
-            player.GetComponentInChildren<Animator>().SetBool("Dead", true);
+            player.GetComponentInChildren<Animator>().SetBool("Dead", true);*/
+            player.GetComponent<Health>().SetHealth(0f, player);
             Debug.Log("Dead");
         }
     }
