@@ -1,3 +1,4 @@
+using MoreMountains.CorgiEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -137,7 +138,14 @@ public class VisibilityManager : MonoBehaviour
         {
             visibilityTimer = 0f;
             seenEventPlaying = true;
-            onCaught?.Invoke();
+            //onCaught?.Invoke();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<CharacterHorizontalMovement>().ReadInput = false;
+            player.GetComponent<CharacterLadder>().AbilityPermitted = false;
+            player.GetComponent<CharacterDash>().AbilityPermitted = false;
+            player.GetComponent<CharacterRun>().AbilityPermitted = false;
+            player.GetComponent<CharacterJump>().AbilityPermitted = false;
+            player.GetComponentInChildren<Animator>().SetBool("Dead", true);
             Debug.Log("Dead");
         }
     }
