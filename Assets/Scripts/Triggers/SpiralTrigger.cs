@@ -5,6 +5,7 @@ public class SpiralTrigger : MonoBehaviour
     [SerializeField] private GameObject wallsIn;
     [SerializeField] private GameObject wallsOut;
     [SerializeField] private GameObject spiralArm;
+    [SerializeField] private GameObject dropLadder;
     private bool spiralTriggerEntered = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,7 @@ public class SpiralTrigger : MonoBehaviour
         wallsIn.SetActive(false);
         wallsOut.SetActive(true);
         spiralArm.SetActive(true);
+        dropLadder.SetActive(true);
         spiralTriggerEntered = true;
 
     }
