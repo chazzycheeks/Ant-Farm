@@ -7,12 +7,18 @@ using UnityEngine;
 /// </summary>
 public class RoamingStatic : Roaming {
     public float immunityToSpotting = 2.5f;
+    float timeRunning = 0;
+    Coroutine immunityCoroutine;
     public override void DefaultState() {
         transform.root.position = patrolController.GetCurrentPointLocation(PathType.Roaming);
         entityStateTriggers.isActivelyChasing = false;
         patrolController.OutOfChaseUpdate();
         entityStateTriggers.transitioned = true;
-        StartCoroutine(ImmunityToSpottingTimer());
+        if(immunityCoroutine == null) {
+            immunityCoroutine = StartCoroutine(ImmunityToSpottingTimer());
+        } else {
+            timeRunning = 0;
+        }
     }
 
     public override void ExitState() {
@@ -29,7 +35,7 @@ public class RoamingStatic : Roaming {
     }
 
     IEnumerator ImmunityToSpottingTimer() {
-        float timeRunning = 0;
+        timeRunning = 0;
         entityStateTriggers.transitioned = false;
         Debug.Log("Can't spot");
         while(timeRunning < immunityToSpotting) {
@@ -39,6 +45,7 @@ public class RoamingStatic : Roaming {
         }
         Debug.Log("Can spot");
         entityStateTriggers.transitioned = true;
+        immunityCoroutine = null;
     }
 
    
