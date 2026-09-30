@@ -33,7 +33,7 @@ public class StaticEntityState : State {
             if(stateManager.LastStateUsed is Surveying) {
                 patrolController.ReturnToPath(PathType.Surveying);
                 patrolController.TogglePatrol(true, PathType.Surveying);
-                surveyingState.isReturning = true;
+                entityStateTriggers.hasLeftRoom = true;
                 return surveyingState;
             } else {
                 roamingState.isReturning = true;

@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class EntityStateTriggers : MonoBehaviour
 {
+    public static EntityStateTriggers Instance {
+        get {
+            return instance;
+        }
+    }
+
+    static EntityStateTriggers instance;
     /// <summary>
     /// Used in Roaming state to detect whether a player is in sight of the entity or not, if it is then swap to survey.
     /// </summary>
@@ -24,10 +31,19 @@ public class EntityStateTriggers : MonoBehaviour
     /// </summary>
     public bool isActivelyChasing = false;
 
+    public bool hasLeftRoom = false; // Did player leave the room? Then leave survey state
     bool _isSameRoomAndChasing => isActivelyChasing && RoomTracker.Instance.isInTheSameRoom;
 
     public bool sameRoomAndChasing;
 
+
+    private void Awake() {
+        if (instance != null && instance != this) {
+            Destroy(gameObject);
+        } else {
+            instance = this;
+        }
+    }
     private void Update() {
         sameRoomAndChasing = _isSameRoomAndChasing;
     }

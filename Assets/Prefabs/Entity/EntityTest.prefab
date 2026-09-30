@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StaticEntityState
   entityStateTriggers: {fileID: 0}
   surveyingState: {fileID: 5796884253702939600}
-  roamingState: {fileID: 2351734432959435531}
+  roamingState: {fileID: 9000113883761175545}
   bDebugLog: 0
 --- !u!1 &2350512422756661318
 GameObject:
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1525505332323553127}
-  - component: {fileID: 2351734432959435531}
+  - component: {fileID: 9000113883761175545}
   m_Layer: 0
   m_Name: Roaming
   m_TagString: Untagged
@@ -194,7 +194,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7691615646201392314}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2351734432959435531
+--- !u!114 &9000113883761175545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3472147350851595824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e2cf396489857543a18a46e9a7207fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 4950d44df8f07484395f641a29760070, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Roaming
+  m_EditorClassIdentifier: Assembly-CSharp::RoamingStatic
   entityStateTriggers: {fileID: 0}
   surveyState: {fileID: 5796884253702939600}
   isReturning: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spotting
   entityStateTriggers: {fileID: 0}
   spottingTimer: 0
-  timeToSpot: 5
+  timeToSpot: 2.5
   surveyingState: {fileID: 5796884253702939600}
   bDebugLog: 0
 --- !u!1 &4913771812838199901
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046382ef1efd6e741a042188164714e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StateManager
-  defaultState: {fileID: 2351734432959435531}
+  defaultState: {fileID: 0}
   LastStateUsed: {fileID: 0}
   narativeState: {fileID: 7772505593753644149}
 --- !u!114 &1882783734275103574
@@ -521,10 +521,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Surveying
   entityStateTriggers: {fileID: 0}
-  surveyingTimer: 0
-  timeToSurvey: 20
+  triggerHasLeftRoom: 0
   spottingState: {fileID: 4167869913638561631}
-  roamingState: {fileID: 2351734432959435531}
+  roamingState: {fileID: 9000113883761175545}
   isReturning: 0
   _gracePeriodTimerSpotting: 2
   _gracePeriodMeterAmplifier: 1

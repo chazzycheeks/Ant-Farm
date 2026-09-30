@@ -91,7 +91,7 @@ public class VisibilityManager : MonoBehaviour
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
             if (entityTriggers.transitioned == true && CanBeSpotted)
             {
-                if (stateManager.GetCurrentState() is Roaming)
+                if (stateManager.GetCurrentState() is RoamingStatic)
                 {
                     entityTriggers.noticedPlayer = true;
                 }
