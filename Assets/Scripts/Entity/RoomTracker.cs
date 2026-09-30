@@ -85,6 +85,9 @@ public class RoomTracker : MonoBehaviour {
     public void SetRoom(bool _isPlayer, Room _Room) {
         if (_isPlayer) {
             currentRoom_Player = _Room;
+            if(currentRoom_Entity == null) {
+                currentRoom_Entity = _Room;
+            }
         } else {
             currentRoom_Entity = _Room;
         }
