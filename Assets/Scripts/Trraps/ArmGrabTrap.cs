@@ -36,6 +36,7 @@ public class ArmGrabTrap : MonoBehaviour {
 
     public IEnumerator TrapTriggered() {
         trappedStateHandler.enabled = true;
+        //Play grab animation
         breakProgress = 0;
         if(UseSpline) SplineToggle(true);
         struggleMeter = trappedStateHandler.SliderComponent;

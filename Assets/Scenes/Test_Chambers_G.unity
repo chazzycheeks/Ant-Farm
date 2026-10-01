@@ -21389,6 +21389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ladder (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 413992, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.446
+      objectReference: {fileID: 0}
     - target: {fileID: 419996, guid: fe33994298be8d445a3955144199d82b, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.86241686
@@ -21432,6 +21436,38 @@ PrefabInstance:
     - target: {fileID: 419996, guid: fe33994298be8d445a3955144199d82b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109806, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3556652
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109806, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: m_Size.y
+      value: 5.217279
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109806, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.24382496
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109806, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.14136052
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174176, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3341431
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174176, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.13792846
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466226, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: CenterCharacterOnLadder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466226, guid: fe33994298be8d445a3955144199d82b, type: 3}
+      propertyPath: AutoPositionLadderPlatform
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21202470, guid: fe33994298be8d445a3955144199d82b, type: 3}
       propertyPath: m_Enabled
