@@ -37,6 +37,8 @@ public class ArmGrabTrap : MonoBehaviour {
     public IEnumerator TrapTriggered() {
         trappedStateHandler.enabled = true;
         //Play grab animation
+        PlayerController.instance.Animator.SetBool("Grabbed", true);
+        PlayerController.instance.Animator.SetBool("Idle", false);
         breakProgress = 0;
         if(UseSpline) SplineToggle(true);
         struggleMeter = trappedStateHandler.SliderComponent;
@@ -73,6 +75,8 @@ public class ArmGrabTrap : MonoBehaviour {
             struggleMeter = null;
             trappedStateHandler.enabled = false;
             trappedStateHandler.trap = null;
+            PlayerController.instance.Animator.SetBool("Grabbed", false);
+            PlayerController.instance.Animator.SetBool("Idle", true);
             StartCoroutine(DisarmTrap());
         }
     }
