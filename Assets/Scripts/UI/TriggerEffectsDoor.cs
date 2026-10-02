@@ -9,6 +9,7 @@ public class TriggerEffectsDoor : MonoBehaviour {
         if (EntityStateTriggers.Instance.isActivelyChasing) {
             EntityStateTriggers.Instance.hasLeftRoom = true;
         }
+        EntityStateTriggers.Instance.repeatImmunity = true;
     }
 
 }

@@ -14,6 +14,7 @@ public class RoamingStatic : Roaming {
         entityStateTriggers.isActivelyChasing = false;
         patrolController.OutOfChaseUpdate();
         entityStateTriggers.transitioned = true;
+        entityStateTriggers.repeatImmunity = false;
         if(immunityCoroutine == null) {
             immunityCoroutine = StartCoroutine(ImmunityToSpottingTimer());
         } else {
@@ -25,6 +26,10 @@ public class RoamingStatic : Roaming {
     }
 
     public override State RunCurrentState() {
+        if(entityStateTriggers.repeatImmunity) {
+            timeRunning = 0;
+            entityStateTriggers.repeatImmunity = false;
+        }
         if (entityStateTriggers.noticedPlayer) {
             if (bDebugLog) Debug.Log("Noticed player, swaping to survey");
             return surveyState;

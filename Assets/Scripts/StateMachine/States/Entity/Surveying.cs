@@ -25,7 +25,7 @@ public class Surveying : State {
     }
     public override void DefaultState() {
         if (!isReturning) {
-            transform.root.position = patrolController.GetCurrentPointLocation(PathType.Surveying);
+            transform.root.position = patrolController.GetStartPointLocation(PathType.Surveying);
         }
         isReturning = false;
         patrolController.TogglePatrol(true, PathType.Surveying);

@@ -70,6 +70,8 @@ public class RoomTracker : MonoBehaviour {
             //    return false;
             //}
 
+
+            // Only return as true as we do not need any patrolling logic
             return true;
         }
     }

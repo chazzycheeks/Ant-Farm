@@ -10,8 +10,13 @@ public class PatrolPath : MonoBehaviour {
     public bool inverseLoop = false;
     [Tooltip("The waypoints existent in the path, null transforms get deleted on play")]
     public List<Transform> waypoints = new List<Transform>();
+    [Tooltip("The waypoint the entity starts surveying from")]
+    public Transform waypointStart;
+    public bool surveyWaypoint;
     private void Awake() {
         waypoints.RemoveAll(t => t == null);
+
+        if (waypointStart == null && surveyWaypoint) Debug.LogError("Waypoint start missing from: " + gameObject.name);
     }
     public void CreateWaypoint() {
         // Cleanup nulls first

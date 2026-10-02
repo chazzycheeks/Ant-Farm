@@ -36,7 +36,7 @@ public class EntityStateTriggers : MonoBehaviour
 
     public bool sameRoomAndChasing;
 
-
+    public bool repeatImmunity;
     private void Awake() {
         if (instance != null && instance != this) {
             Destroy(gameObject);
