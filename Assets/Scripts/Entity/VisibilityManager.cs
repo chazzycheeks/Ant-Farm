@@ -139,23 +139,32 @@ public class VisibilityManager : MonoBehaviour
         {
             visibilityTimer = 0f;
             seenEventPlaying = true;
-            //onCaught?.Invoke();
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            /*player.GetComponent<CharacterHorizontalMovement>().ReadInput = false;
-            player.GetComponent<CharacterLadder>().AbilityPermitted = false;
-            player.GetComponent<CharacterDash>().AbilityPermitted = false;
-            player.GetComponent<CharacterRun>().AbilityPermitted = false;
-            player.GetComponent<CharacterJump>().AbilityPermitted = false;
-            player.GetComponentInChildren<Animator>().SetBool("Dead", true);*/
-            // player.GetComponent<Health>().SetHealth(0f, player);
-            player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
-            Debug.Log("Dead");
+            StartCoroutine(EarlyDeath());
         }
     }
 
     public void ResetOnSeenEvent()
     {
         seenEventPlaying = false;
+    }
+
+    private IEnumerator EarlyDeath()
+    {
+        PlayerController.instance.Animator.SetBool("EarlyDeath", true);
+        yield return new WaitForSeconds(3f);
+        //onCaught?.Invoke();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<CharacterHorizontalMovement>().ReadInput = false;
+       /* player.GetComponent<CharacterLadder>().AbilityPermitted = false;
+        player.GetComponent<CharacterDash>().AbilityPermitted = false;
+        player.GetComponent<CharacterRun>().AbilityPermitted = false;
+        player.GetComponent<CharacterJump>().AbilityPermitted = false;*/
+        /*player.GetComponentInChildren<Animator>().SetBool("Dead", true);*/
+        // player.GetComponent<Health>().SetHealth(0f, player);
+        player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
+        Debug.Log("Dead");
+        PlayerController.instance.Animator.SetBool("EarlyDeath", false);
+        
     }
 
 }
