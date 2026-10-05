@@ -14,7 +14,8 @@ public class VisibilityManager : MonoBehaviour
     public bool isVisible => _isVisible;
     public float visibilityTrigger = 2.5f;
     public float caughtTrigger = 5f;
-    [HideInInspector]public float visibilityTimer;
+    public float visibilityTimer;
+    public float caughtTimer;
     
     [SerializeField]bool debuggingDistance = false;
     public UnityEvent onCaught;
@@ -131,13 +132,19 @@ public class VisibilityManager : MonoBehaviour
         {
             visibilityTimer += Time.deltaTime * 1f;
         }
+        if (visibilityTimer >= visibilityTrigger)
+        {
+            visibilityTimer = 0f;
+            caughtTimer += Time.deltaTime * 1f;
+        }
     }
+   
 
     public void CheckIfCaught()
     {
-        if (visibilityTimer >= caughtTrigger && seenEventPlaying == false)
+        if (caughtTimer >= caughtTrigger && seenEventPlaying == false)
         {
-            visibilityTimer = 0f;
+            caughtTimer = 0f;
             seenEventPlaying = true;
             StartCoroutine(EarlyDeath());
         }
@@ -152,9 +159,9 @@ public class VisibilityManager : MonoBehaviour
     {
         PlayerController.instance.Animator.SetBool("EarlyDeath", true);
         yield return new WaitForSeconds(3f);
-        //onCaught?.Invoke();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<CharacterHorizontalMovement>().ReadInput = false;
+       // player.GetComponent<CharacterHorizontalMovement>().ReadInput = false;
+        //onCaught?.Invoke();
        /* player.GetComponent<CharacterLadder>().AbilityPermitted = false;
         player.GetComponent<CharacterDash>().AbilityPermitted = false;
         player.GetComponent<CharacterRun>().AbilityPermitted = false;
@@ -164,7 +171,8 @@ public class VisibilityManager : MonoBehaviour
         player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
         Debug.Log("Dead");
         PlayerController.instance.Animator.SetBool("EarlyDeath", false);
-        
+       // player.GetComponent<CharacterHorizontalMovement>().ReadInput = true;
+
     }
 
 }
