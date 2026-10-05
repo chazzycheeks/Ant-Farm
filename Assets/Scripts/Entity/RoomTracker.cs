@@ -10,7 +10,7 @@ public class RoomTracker : MonoBehaviour {
     Room currentRoom_Player;
     Room currentRoom_Entity;
     [Tooltip("How many rooms away can the entity be before it starts spotting the player ")]
-    [SerializeField] int roomDistanceBeforeSurveying;
+    [SerializeField] int roomDistanceBeforeSurveying = 100;
     public Room CurrentRoom_Player => currentRoom_Player;
     public Room CurrentRoom_Entity => currentRoom_Entity;
     public bool isInTheSameRoom => CurrentRoom_Entity.roomNumber == CurrentRoom_Player.roomNumber;
@@ -42,7 +42,8 @@ public class RoomTracker : MonoBehaviour {
             }
 
             int distance = Mathf.Abs(currentRoom_Player.roomNumber - currentRoom_Entity.roomNumber);
-            return distance >= distanceBeforeOutsideRange;
+            //return distance >= distanceBeforeOutsideRange;
+            return false; // returning false because we no longer need to account for distance while roaming
         }
     }
     [Tooltip("Indicate if the entity is too far away from the player")]
@@ -52,21 +53,25 @@ public class RoomTracker : MonoBehaviour {
     public int distanceBeforeOutsideRange = 5;
     public bool _canEntitySurvey {
         get {
-            if(currentRoom_Entity == null ||currentRoom_Player == null) {
-                return false;
-            }
-            int roomNumber_P = currentRoom_Player.roomNumber;
-            int roomNumber_E = currentRoom_Entity.roomNumber;
-            //Checks if the floor is different than the one the player is currently on
-            if (currentRoom_Player.floorNumber != currentRoom_Entity.floorNumber) {
-                return false;
-            }
-            // Checks if the entity can spot from the room it's in compared to the player.
-            int distance = Mathf.Abs(roomNumber_P - roomNumber_E);
-            if (distance >= roomDistanceBeforeSurveying) {
-                return false;
-            }
+            //if(currentRoom_Entity == null ||currentRoom_Player == null) {
+            //    return false;
+            //}
+            //int roomNumber_P = currentRoom_Player.roomNumber;
+            //int roomNumber_E = currentRoom_Entity.roomNumber;
 
+            ////Checks if the floor is different than the one the player is currently on
+            //if (currentRoom_Player.floorNumber != currentRoom_Entity.floorNumber) {
+            //    return false;
+            //}
+
+            //// Checks if the entity can spot from the room it's in compared to the player.
+            //int distance = Mathf.Abs(roomNumber_P - roomNumber_E);
+            //if (distance >= roomDistanceBeforeSurveying) {
+            //    return false;
+            //}
+
+
+            // Only return as true as we do not need any patrolling logic
             return true;
         }
     }
@@ -82,6 +87,9 @@ public class RoomTracker : MonoBehaviour {
     public void SetRoom(bool _isPlayer, Room _Room) {
         if (_isPlayer) {
             currentRoom_Player = _Room;
+            if(currentRoom_Entity == null) {
+                currentRoom_Entity = _Room;
+            }
         } else {
             currentRoom_Entity = _Room;
         }

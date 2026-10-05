@@ -89,10 +89,24 @@ public class PatrolLocomotionController : MonoBehaviour
         _spottingPathActive = _spottingPath;
     }
     public Vector3 GetCurrentPointLocation(PathType path) {
-        if(path == PathType.Roaming) {
-            return _patrolPath.path.waypoints[_patrolPath.currentIndex].transform.position;
+        Vector3 result;
+        if (path == PathType.Roaming) {
+            result = _patrolPath.path.waypoints[_patrolPath.currentIndex].transform.position;
+            return result;
         } else {
-            return _surveyPath.path.waypoints[_surveyPath.currentIndex].transform.position;
+            result = _surveyPath.path.waypoints[_surveyPath.currentIndex].transform.position;
+            return result;
+        }
+    }
+
+    public Vector3 GetStartPointLocation(PathType path) {
+        Vector3 result;
+        if (path == PathType.Roaming) {
+            result = _patrolPath.path.waypointStart.transform.position;
+            return result;
+        } else {
+            result = _surveyPath.path.waypointStart.transform.position;
+            return result;
         }
     }
     /// <summary>
@@ -287,6 +301,7 @@ public class PatrolLocomotionController : MonoBehaviour
             StartCoroutine(WaitAtWaypoint(pathCache));
         }
     }
+
     private IEnumerator WaitAtWaypoint(PathCache pathCache) {
         if (_isWaiting) yield break;
 
