@@ -305,10 +305,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: FMODUnity::FMODUnity.Settings
   switchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
-  sourceProjectPath: ANT_FARM_v2/ANT_FARM_v2.fspro
-  sourceBankPath: ANT_FARM_v2/Build
+  HasSourceProject: 0
+  HasPlatforms: 0
+  sourceProjectPath: ../../ANT_FARM_v2/ANT_FARM_v2.fspro
+  sourceBankPath: Fmod/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -320,6 +320,7 @@ MonoBehaviour:
   TargetAssetPath: FMODBanks
   TargetBankFolder: 
   EventLinkage: 0
+  SerializeGUIDsOnly: 0
   LoggingLevel: 2
   SpeakerModeSettings: []
   SampleRateSettings: []
@@ -329,8 +330,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Music
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -342,8 +345,8 @@ MonoBehaviour:
   EnableErrorCallback: 0
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
-  CurrentVersion: 131637
-  HideSetupWizard: 1
+  CurrentVersion: 131860
+  HideSetupWizard: 0
   LastEventReferenceScanVersion: 131637
   Platforms:
   - {fileID: -7727801058073615538}

@@ -1,5 +1,399 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9043645515904760316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Outro/Progress_Outro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Outro
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3490038747
+    data2: 3795017372
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 13
+  - Out
+  Exists: 1
+--- !u!114 &-8996003334495994431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Death
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Death
+  Guid:
+    Data1: 1328792652
+    Data2: 1189389188
+    Data3: -708071779
+    Data4: -504516543
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12500
+--- !u!114 &-8574316559988184603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Outro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Outro
+  Guid:
+    Data1: 280406247
+    Data2: 1310623545
+    Data3: 1862460347
+    Data4: 344510069
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -9043645515904760316}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 88421
+--- !u!114 &-7002315031641392934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Room 5/Progress_Room 5
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Room 5
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1826691573
+    data2: 873149125
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 5
+  - Room 4
+  Exists: 1
+--- !u!114 &-6794126975824679046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Menu
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Menu
+  Guid:
+    Data1: 1181123899
+    Data2: 1190634555
+    Data3: 846309032
+    Data4: -668405676
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 102000
+--- !u!114 &-6260140501990449549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Fmod/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639269070896824578
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3619159506335603565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Needle 1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Needle 1
+  Guid:
+    Data1: 2034478316
+    Data2: 1213684045
+    Data3: 709953425
+    Data4: -304621695
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10750
+--- !u!114 &-2981935090141377502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Room 5
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Room 5
+  Guid:
+    Data1: -46682573
+    Data2: 1182308802
+    Data3: 2111045777
+    Data4: -2048233391
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7002315031641392934}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75192
+--- !u!114 &-2487326704974183145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Progress_Room 5
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Room 5
+  StudioPath: parameter:/Progress_Room 5
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1826691573
+    data2: 873149125
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 5
+  - Room 4
+  Exists: 1
+--- !u!114 &-2405122822758753282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Room 7
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Room 7
+  Guid:
+    Data1: -2065741860
+    Data2: 1326156569
+    Data3: -56693358
+    Data4: -1979864866
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -754500530756950411}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75192
+--- !u!114 &-2122421493057042092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Wall
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Wall
+  Guid:
+    Data1: -1333470625
+    Data2: 1140949039
+    Data3: 912374924
+    Data4: -1658044882
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23225
+--- !u!114 &-2072214319573718029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Progress_Room 11
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Room 11
+  StudioPath: parameter:/Progress_Room 11
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3495105583
+    data2: 224040974
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 11
+  - Room 12
+  Exists: 1
+--- !u!114 &-931806640608966706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Looming x3/Progress_Looming
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Looming
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 1641722883
+    data2: 100195306
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Looming
+  - Leaving
+  - Scaring small
+  - Scaring big
+  Exists: 1
+--- !u!114 &-754500530756950411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Room 7/Progress_Room 7
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Room 7
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 219735873
+    data2: 899478789
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 7
+  - Room 8
+  Exists: 1
+--- !u!114 &-738749325243128708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Room 11/Progress_Room 11
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Room 11
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3495105583
+    data2: 224040974
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 11
+  - Room 12
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +406,366 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
-  EditorBanks: []
-  EditorEvents: []
-  EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  cacheTime: 0
-  cacheVersion: 131637
+  EditorBanks:
+  - {fileID: 4267219060366563090}
+  - {fileID: -6260140501990449549}
+  - {fileID: 7330063630522798983}
+  EditorEvents:
+  - {fileID: 5721382894490292344}
+  - {fileID: -2981935090141377502}
+  - {fileID: -6794126975824679046}
+  - {fileID: -8996003334495994431}
+  - {fileID: 6625860841280245600}
+  - {fileID: -2122421493057042092}
+  - {fileID: 7312775380882818053}
+  - {fileID: 723200610958282590}
+  - {fileID: -2405122822758753282}
+  - {fileID: 5528818035695856996}
+  - {fileID: -8574316559988184603}
+  - {fileID: -3619159506335603565}
+  EditorParameters:
+  - {fileID: -2487326704974183145}
+  - {fileID: 8703321606726082552}
+  - {fileID: -2072214319573718029}
+  - {fileID: 3062821280675648190}
+  - {fileID: 6249099258546002913}
+  - {fileID: 9195776893684274109}
+  MasterBanks:
+  - {fileID: -6260140501990449549}
+  StringsBanks:
+  - {fileID: 4267219060366563090}
+  cacheVersion: 131860
+  cacheTime: 639269070916312546
+  SerializableEventsDict:
+  - key: event:/Music/Arm
+    index: 0
+  - key: event:/Music/Room 5
+    index: 1
+  - key: event:/Music/Menu
+    index: 2
+  - key: event:/Music/Death
+    index: 3
+  - key: event:/Music/Intro
+    index: 4
+  - key: event:/Music/Wall
+    index: 5
+  - key: event:/Music/Room 11
+    index: 6
+  - key: event:/Music/Needle 2
+    index: 7
+  - key: event:/Music/Room 7
+    index: 8
+  - key: event:/Music/Looming x3
+    index: 9
+  - key: event:/Music/Outro
+    index: 10
+  - key: event:/Music/Needle 1
+    index: 11
+--- !u!114 &723200610958282590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Needle 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Needle 2
+  Guid:
+    Data1: 886632085
+    Data2: 1215490721
+    Data3: -18059604
+    Data4: -1829395847
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10750
+--- !u!114 &3062821280675648190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Progress_Room 7
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Room 7
+  StudioPath: parameter:/Progress_Room 7
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 219735873
+    data2: 899478789
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 7
+  - Room 8
+  Exists: 1
+--- !u!114 &4267219060366563090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Fmod/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639269070896846416
+  FileSizes:
+  - Name: 
+    Value: 1490
+  Exists: 1
+--- !u!114 &5528818035695856996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Looming x3
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Looming x3
+  Guid:
+    Data1: 853298397
+    Data2: 1112617978
+    Data3: 23158170
+    Data4: -984606991
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -931806640608966706}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 83478
+--- !u!114 &5721382894490292344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Arm
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Arm
+  Guid:
+    Data1: 1083373576
+    Data2: 1115483326
+    Data3: -1371785554
+    Data4: 749624139
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6249099258546002913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Progress_Looming
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Looming
+  StudioPath: parameter:/Progress_Looming
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 1641722883
+    data2: 100195306
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Looming
+  - Leaving
+  - Scaring small
+  - Scaring big
+  Exists: 1
+--- !u!114 &6625860841280245600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Intro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Intro
+  Guid:
+    Data1: -1432235169
+    Data2: 1094963026
+    Data3: -492970353
+    Data4: -422163943
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 9039673216852737959}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 90947
+--- !u!114 &7312775380882818053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Room 11
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Room 11
+  Guid:
+    Data1: 99504484
+    Data2: 1147050095
+    Data3: -1408680803
+    Data4: -1814823516
+  Banks:
+  - {fileID: 7330063630522798983}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -738749325243128708}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75192
+--- !u!114 &7330063630522798983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Fmod/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 639269070916312546
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8703321606726082552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Progress_Intro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Intro
+  StudioPath: parameter:/Progress_Intro
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3482448462
+    data2: 31333668
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 1
+  - Room 9
+  Exists: 1
+--- !u!114 &9039673216852737959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Intro/Progress_Intro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Intro
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3482448462
+    data2: 31333668
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 1
+  - Room 9
+  Exists: 1
+--- !u!114 &9195776893684274109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Progress_Outro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Progress_Outro
+  StudioPath: parameter:/Progress_Outro
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3490038747
+    data2: 3795017372
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Room 13
+  - Out
+  Exists: 1
