@@ -15,7 +15,6 @@ public class VisibilityManager : MonoBehaviour
     public float visibilityTrigger = 2.5f;
     public float caughtTrigger = 5f;
     public float visibilityTimer;
-    public float caughtTimer;
     
     [SerializeField]bool debuggingDistance = false;
     public UnityEvent onCaught;
@@ -105,6 +104,8 @@ public class VisibilityManager : MonoBehaviour
                 if (stateManager.GetCurrentState() is Spotting && entityTriggers.sameRoomAndChasing)
                 {
                     entityTriggers.isSpotting = true;
+
+                    if(visibilityTimer < visibilityTrigger) visibilityTimer = visibilityTrigger;
                 }
 
 
@@ -128,25 +129,31 @@ public class VisibilityManager : MonoBehaviour
 
     public void UpdateTimer()
     {
-        if (seenEventPlaying == false)
-        {
-            visibilityTimer += Time.deltaTime * 1f;
-        }
-        if (visibilityTimer >= visibilityTrigger)
-        {
-            visibilityTimer = 0f;
-            caughtTimer += Time.deltaTime * 1f;
-        }
+        visibilityTimer += Time.deltaTime * 1f;
+
+        //if (seenEventPlaying == false)
+        //{
+        //    visibilityTimer += Time.deltaTime * 1f;
+        //}
+        //if (visibilityTimer >= visibilityTrigger)
+        //{
+        //    visibilityTimer = 0f;
+        //    caughtTimer += Time.deltaTime * 1f;
+        //}
     }
    
 
     public void CheckIfCaught()
     {
-        if (caughtTimer >= caughtTrigger && seenEventPlaying == false)
+        //if (caughtTimer >= caughtTrigger && seenEventPlaying == false)
+        if (visibilityTimer >= caughtTrigger && seenEventPlaying == false)
         {
-            caughtTimer = 0f;
+            visibilityTimer = 0f;
             seenEventPlaying = true;
-            StartCoroutine(EarlyDeath());
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
+            player.GetComponent<Animator>().SetBool("Awakening", true);
+            Debug.Log("Dead");
         }
     }
 
@@ -155,24 +162,9 @@ public class VisibilityManager : MonoBehaviour
         seenEventPlaying = false;
     }
 
-    private IEnumerator EarlyDeath()
-    {
-        PlayerController.instance.Animator.SetBool("EarlyDeath", true);
-        yield return new WaitForSeconds(3f);
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-       // player.GetComponent<CharacterHorizontalMovement>().ReadInput = false;
-        //onCaught?.Invoke();
-       /* player.GetComponent<CharacterLadder>().AbilityPermitted = false;
-        player.GetComponent<CharacterDash>().AbilityPermitted = false;
-        player.GetComponent<CharacterRun>().AbilityPermitted = false;
-        player.GetComponent<CharacterJump>().AbilityPermitted = false;*/
-        /*player.GetComponentInChildren<Animator>().SetBool("Dead", true);*/
-        // player.GetComponent<Health>().SetHealth(0f, player);
-        player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
-        Debug.Log("Dead");
-        PlayerController.instance.Animator.SetBool("EarlyDeath", false);
-       // player.GetComponent<CharacterHorizontalMovement>().ReadInput = true;
+    
+      
 
-    }
+    
 
 }

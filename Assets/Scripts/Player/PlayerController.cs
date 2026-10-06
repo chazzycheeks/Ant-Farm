@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        StartCoroutine(AwakeningBool());
+        /*StartCoroutine(AwakeningBool());*/
     }
     private IEnumerator AwakeningBool()
     {
