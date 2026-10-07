@@ -1,19 +1,22 @@
+using System.Collections;
 using UnityEngine;
 
 public class ArmTriggerAdd : MonoBehaviour
 {
-    [SerializeField] private GameObject arm;
+    [SerializeField] private Animator arm;
     private bool armTriggerEntered = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (armTriggerEntered == false && collision.CompareTag("Player")) {
-            AddArm();
+            StartCoroutine(AddArm());
         }
     }
 
-    public void AddArm()
+    public IEnumerator AddArm()
     {
-        arm.SetActive(true);
+        arm.SetTrigger("trapped");
+        yield return new WaitForSeconds(1f);
+        arm.SetTrigger("untrapped");
         armTriggerEntered = true;
 
     }

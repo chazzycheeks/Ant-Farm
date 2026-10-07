@@ -3,6 +3,7 @@ using UnityEngine;
 public class ArmTriggerRemove : MonoBehaviour
 {
     [SerializeField] private GameObject arm;
+    [SerializeField] private GameObject armblock;
     private bool armTriggerEntered = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,6 +15,7 @@ public class ArmTriggerRemove : MonoBehaviour
     public void RemoveArm()
     {
         arm.SetActive(false);
+        armblock.SetActive(false);
         armTriggerEntered = true;
 
     }
