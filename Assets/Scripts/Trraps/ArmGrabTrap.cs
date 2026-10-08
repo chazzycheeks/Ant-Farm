@@ -61,7 +61,7 @@ public class ArmGrabTrap : MonoBehaviour {
     }
 
     IEnumerator BreakOutArmTrapTimer() {
-        while (breakProgress < breakGoal && !disarmed) {
+        while (breakProgress < breakGoal && !disarmed && PlayerController.instance.Animator.GetBool("Alive")) {
             if (breakProgress > 0) {
                 breakProgress -= decayRate * Time.deltaTime;
                 breakProgress = Mathf.Max(0, breakProgress);
@@ -71,7 +71,7 @@ public class ArmGrabTrap : MonoBehaviour {
             yield return null;
         }
 
-        if (breakProgress >= breakGoal && !disarmed) {
+        if ((breakProgress >= breakGoal && !disarmed)|| !PlayerController.instance.Animator.GetBool("Alive")) {
             if (struggleMeter != null) struggleMeter.gameObject.SetActive(false);
             struggleMeter = null;
             trappedStateHandler.enabled = false;

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class VisibilityManager : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class VisibilityManager : MonoBehaviour
     StateManager stateManager;
     EntityStateTriggers entityTriggers;
     static VisibilityManager instance;
+
+    private float visiblityPercentage;
+    [SerializeField] private Image vignette;
+    [SerializeField] private GameObject blackCut;
 
     [Tooltip("Grace period variable to be used while transitioning between rooms.")]
     public bool CanBeSpotted = true;
@@ -70,7 +75,8 @@ public class VisibilityManager : MonoBehaviour
         entity = GameObject.FindGameObjectWithTag("Entity");
         stateManager = entity.GetComponent<StateManager>();
         entityTriggers = entity.GetComponent<EntityStateTriggers>();
-        
+        vignette.color = new Color(vignette.color.r, vignette.color.g, vignette.color.b, 0f);
+
     }
 
     public float distanceToEntity() {
@@ -123,7 +129,10 @@ public class VisibilityManager : MonoBehaviour
             }
             
         }
-
+        visiblityPercentage = visibilityTimer / visibilityTrigger;
+        float currentAlpha = vignette.color.a;
+        float newAlpha = Mathf.Lerp(currentAlpha,visiblityPercentage, Time.deltaTime*8f);
+        vignette.color = new Color(vignette.color.r,vignette.color.g,vignette.color.b,newAlpha);
         CheckIfCaught();
     }
 
@@ -152,14 +161,24 @@ public class VisibilityManager : MonoBehaviour
             seenEventPlaying = true;
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
-            player.GetComponent<Animator>().SetBool("Awakening", true);
+            player.GetComponent<CorgiController>().GravityActive(false);
+            player.GetComponentInChildren<Animator>().SetBool("Awakening", true);
             Debug.Log("Dead");
+            StartCoroutine(CutToBlack());
         }
     }
 
     public void ResetOnSeenEvent()
     {
         seenEventPlaying = false;
+    }
+
+    private IEnumerator CutToBlack()
+    {
+        yield return new WaitForSeconds(3.5f);
+        blackCut.SetActive(true);
+        yield return new WaitForSeconds(3.5f);
+        blackCut.SetActive(false);
     }
 
     

@@ -35,13 +35,16 @@ public class TrappedStateHandler : MonoBehaviour
         charMov.ResetHorizontalSpeed();
         charMov.ResetInput();
 
-        controller.SetForce(Vector2.zero);
-        character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Normal);
-        character.MovementState.ChangeState(CharacterStates.MovementStates.Falling);
-
         charMov.AbilityPermitted = toggle;
         charDash.AbilityPermitted = toggle;
         charJump.AbilityPermitted = toggle;
+
+        if (!PlayerController.instance.Animator.GetBool("Alive"))
+            { return; }
+
+        controller.SetForce(Vector2.zero);
+        character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Normal);
+        character.MovementState.ChangeState(CharacterStates.MovementStates.Falling);
     }
 
     // Update is called once per frame

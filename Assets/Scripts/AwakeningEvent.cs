@@ -4,6 +4,6 @@ public class AwakeningEvent : MonoBehaviour
 {
     public void AwakeningEventTrigger()
     {
-        GetComponent<Animator>().SetBool("Awakening", false);
+        GetComponentInChildren<Animator>().SetBool("Awakening", false);
     }
 }
