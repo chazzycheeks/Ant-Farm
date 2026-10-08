@@ -492,7 +492,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639270730600160702
+  lastModified: 639270894738001126
   FileSizes: []
   Exists: 1
 --- !u!114 &-2981935090141377502
@@ -863,6 +863,7 @@ MonoBehaviour:
   - {fileID: -7375719136546955570}
   - {fileID: 5824259850983545480}
   - {fileID: -4229427400597907048}
+  - {fileID: 3589613661315853373}
   EditorParameters:
   - {fileID: 4815072152848806796}
   - {fileID: 6874577032959131890}
@@ -877,7 +878,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 8781020810319393366}
   cacheVersion: 131860
-  cacheTime: 639270730600160702
+  cacheTime: 639270894816989557
   SerializableEventsDict:
   - key: event:/Arm
     index: 0
@@ -903,6 +904,8 @@ MonoBehaviour:
     index: 10
   - key: event:/Needle 1
     index: 11
+  - key: event:/Hyena
+    index: 12
 --- !u!114 &692940846378105886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,6 +1012,33 @@ MonoBehaviour:
   - Menu
   - Out
   Exists: 1
+--- !u!114 &3589613661315853373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hyena
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Hyena
+  Guid:
+    Data1: -1719025547
+    Data2: 1146509212
+    Data3: -741996663
+    Data4: 343866857
+  Banks:
+  - {fileID: -3087520473800246875}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19200
 --- !u!114 &4152846651185438381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,10 +1525,10 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639270730599726445
+  lastModified: 639270894816989557
   FileSizes:
   - Name: 
-    Value: 1578
+    Value: 1614
   Exists: 1
 --- !u!114 &9039673216852737959
 MonoBehaviour:
