@@ -129,6 +129,7 @@ public class VisibilityManager : MonoBehaviour
             }
             
         }
+        /*if (seenEventPlaying == false) { }*/
         visiblityPercentage = visibilityTimer / visibilityTrigger;
         float currentAlpha = vignette.color.a;
         float newAlpha = Mathf.Lerp(currentAlpha,visiblityPercentage, Time.deltaTime*8f);
@@ -175,9 +176,9 @@ public class VisibilityManager : MonoBehaviour
 
     private IEnumerator CutToBlack()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         blackCut.SetActive(true);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(2.5f);
         blackCut.SetActive(false);
     }
 
