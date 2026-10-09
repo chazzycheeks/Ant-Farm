@@ -3,6 +3,7 @@ using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 using UnityEngine.Events;
+using UnityEditor.Experimental.GraphView;
 
 namespace MoreMountains.CorgiEngine
 {
@@ -59,6 +60,11 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("a UnityEvent fired when a character exits the platform")]
 		public UnityEvent OnCharacterExit;
 
+		[Tooltip("A unity event fired when the platform is moving")]
+		public UnityEvent OnPlatformMoving;
+		[Tooltip("A unity event fired when the platform stopped moving")]
+		public UnityEvent OnPlatformStopMoving;
+
 		protected Collider2D _collider2D;
 		protected float _platformTopY;
 		protected const float _toleranceY = 0.05f;
@@ -100,7 +106,13 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 
-			_corgiControllerLastFrame = _collidingController;
+			if(CurrentSpeed.magnitude > 0) {
+				OnPlatformMoving?.Invoke();
+			} else if(CurrentSpeed.magnitude == 0) {
+				OnPlatformStopMoving?.Invoke();
+			}
+
+				_corgiControllerLastFrame = _collidingController;
 		}
 
 		/// <summary>
