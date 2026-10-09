@@ -492,7 +492,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639270940579940198
+  lastModified: 639271058988696301
   FileSizes: []
   Exists: 1
 --- !u!114 &-2981935090141377502
@@ -671,7 +671,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639270940576050166
+  lastModified: 639270994745902518
   FileSizes: []
   Exists: 1
 --- !u!114 &-1792195187182893357
@@ -865,6 +865,9 @@ MonoBehaviour:
   - {fileID: 5824259850983545480}
   - {fileID: -4229427400597907048}
   - {fileID: 3589613661315853373}
+  - {fileID: 4252706876922531059}
+  - {fileID: 7323392742656825781}
+  - {fileID: 3742229675003496371}
   EditorParameters:
   - {fileID: 4815072152848806796}
   - {fileID: 6874577032959131890}
@@ -879,7 +882,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 8781020810319393366}
   cacheVersion: 131860
-  cacheTime: 639270940579940198
+  cacheTime: 639271058988696301
   SerializableEventsDict:
   - key: event:/Arm
     index: 0
@@ -976,7 +979,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Sound Design.bank
   Name: Sound Design
   StudioPath: 
-  lastModified: 639270939563814012
+  lastModified: 639270994746345924
   FileSizes: []
   Exists: 1
 --- !u!114 &3062821280675648190
@@ -1058,6 +1061,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 19200
+--- !u!114 &3742229675003496371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jumpscare 2 alt
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Jumpscare 2 alt
+  Guid:
+    Data1: -1607689797
+    Data2: 1248471255
+    Data3: 1844911511
+    Data4: 972956487
+  Banks:
+  - {fileID: -3087520473800246875}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14000
 --- !u!114 &4152846651185438381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,6 +1140,33 @@ MonoBehaviour:
   - Room 1
   - Room 9
   Exists: 1
+--- !u!114 &4252706876922531059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jumpscare 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Jumpscare 2
+  Guid:
+    Data1: 301819274
+    Data2: 1113429770
+    Data3: 295853466
+    Data4: 985887850
+  Banks:
+  - {fileID: -3087520473800246875}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8125
 --- !u!114 &4252847671344485097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1429,6 +1486,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75192
+--- !u!114 &7323392742656825781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jumpscare 2 trem
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Jumpscare 2 trem
+  Guid:
+    Data1: -156732518
+    Data2: 1316547773
+    Data3: 1038673544
+    Data4: -1808120415
+  Banks:
+  - {fileID: -3087520473800246875}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &7330063630522798983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,10 +1628,10 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639270940577767877
+  lastModified: 639271058988243444
   FileSizes:
   - Name: 
-    Value: 1614
+    Value: 1748
   Exists: 1
 --- !u!114 &9039673216852737959
 MonoBehaviour:
