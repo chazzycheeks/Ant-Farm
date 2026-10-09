@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class SpiralTrigger : MonoBehaviour
@@ -7,11 +8,16 @@ public class SpiralTrigger : MonoBehaviour
     [SerializeField] private GameObject spiralArm;
     [SerializeField] private GameObject dropLadder;
     private bool spiralTriggerEntered = false;
+    public Animator shutterAnims;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (spiralTriggerEntered == false && collision.CompareTag("Player"))
         {
             RemoveWalls();
+            ActivateShutters();
+            
         }
     }
 
@@ -23,5 +29,19 @@ public class SpiralTrigger : MonoBehaviour
         dropLadder.SetActive(true);
         spiralTriggerEntered = true;
 
+    }
+
+    public void ActivateShutters()
+    {
+
+        foreach (var foundObject in FindObjectsByType<Animator>(sortMode: FindObjectsSortMode.InstanceID))
+        {
+            Debug.Log(foundObject.name);
+            if (foundObject.CompareTag("Shutter"))
+            {
+                Debug.Log("TAG");
+                foundObject.SetTrigger("close");
+            }
+        }
     }
 }
