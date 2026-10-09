@@ -1,9 +1,12 @@
 using UnityEngine;
 using FMODUnity;
+using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance {  get; private set; }
+
+    private EventInstance musicEventInstance;
 
     private void Awake()
     {
@@ -26,4 +29,18 @@ public class AudioManager : MonoBehaviour
     {
         /*RuntimeManager.paus*/
     }
+
+    /*public EventInstance CreateInstance(EventReference eventReference)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+    }
+    private void InitialiseMusic(EventReference musicEventReference)
+    {
+        musicEventInstance = CreateIn
+    }
+
+    public void SetMusic(MusicTransitions transition)
+    {
+        musicEventInstance
+    }*/
 }

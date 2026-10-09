@@ -125,7 +125,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1920689194}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 447942416}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d67c8b1f0cc0f1c46901ec3b398875b9, type: 3}
@@ -25800,6 +25800,43 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &447942416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5654350258254656659, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1920689194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &447942419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447942416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -1432235169
+      Data2: 1094963026
+      Data3: -492970353
+      Data4: -422163943
+    Path: event:/Intro
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &452735761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40753,12 +40790,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 791314025}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &792081173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 145898, guid: f58a667c8217aaf42b28e20ef609767b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1261519533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &792081174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b,
     type: 3}
   m_PrefabInstance: {fileID: 1261519533}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &792081177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792081173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 161542711
+      Data2: 1259359596
+      Data3: -1937225054
+      Data4: -712679849
+    Path: event:/Music_2/Intro
+  Event: 
+  EventPlayTrigger: 5
+  EventStopTrigger: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &792961491
 GameObject:
   m_ObjectHideFlags: 0
@@ -66336,19 +66410,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.11133801
+      value: 4.422395
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.9471345
+      value: 37.276165
+      objectReference: {fileID: 0}
+    - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.5349
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.14
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.94
+      value: -1.16
       objectReference: {fileID: 0}
     - target: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -66386,7 +66464,11 @@ PrefabInstance:
     - {fileID: 21292480, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 145898, guid: f58a667c8217aaf42b28e20ef609767b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 792081177}
   m_SourcePrefab: {fileID: 100100000, guid: f58a667c8217aaf42b28e20ef609767b, type: 3}
 --- !u!1 &1263861768
 GameObject:
@@ -72387,7 +72469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefabs:
-  - {fileID: 11485350, guid: 4319fcfed238e0541b48b71e737f6a95, type: 3}
+  - {fileID: 11485350, guid: 76c077f0a4a9e2c4497ab7567a4ecaa7, type: 3}
   AutoAttributePlayerIDs: 1
   SceneCharacters: []
   DebugSpawn: {fileID: 0}
@@ -96485,18 +96567,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc8e0f194b7579e49aee87fbe7c155be, type: 3}
---- !u!114 &1827520550 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7098521212440477895, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1920689194}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62875afbb6f9a43408c8b102b587af52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!4 &1827855747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 264539866310955447, guid: 6f97e5b38ad30524a9a2352acb334362,
@@ -101303,7 +101373,7 @@ PrefabInstance:
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
@@ -101314,7 +101384,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1827520550}
+      objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
@@ -101323,12 +101393,12 @@ PrefabInstance:
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: LeaveRoomEntity
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: TriggerCameraEffects, Assembly-CSharp
+      value: FMODUnity.StudioEventEmitter, FMODUnity
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
@@ -101338,7 +101408,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5654350258254656659, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 447942419}
   m_SourcePrefab: {fileID: 100100000, guid: 38e73b10e4bfbe549aecdd2c45bea28f, type: 3}
 --- !u!1001 &1922564618
 PrefabInstance:
@@ -104234,8 +104308,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985794208}
-  - component: {fileID: 1985794207}
   - component: {fileID: 1985794209}
+  - component: {fileID: 1985794210}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -104243,37 +104317,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1985794207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985794206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
-  CollisionTag: Track1Stop
-  EventReference:
-    Guid:
-      Data1: -1432235169
-      Data2: 1094963026
-      Data3: -492970353
-      Data4: -422163943
-    Path: event:/Intro
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 5
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!4 &1985794208
 Transform:
   m_ObjectHideFlags: 0
@@ -104301,6 +104344,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f624fd0926e764c802e9a5e50666bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+--- !u!114 &1985794210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985794206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 377702268
+      Data2: 1332606083
+      Data3: -1468863318
+      Data4: -2069026202
+    Path: event:/NON FIXED DURATION/AntFarm_SmallAtmos_v1
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1987762383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109227,12 +109301,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &2084323343 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8040196612442320894, guid: 67e9e6648638ca94eaaa9e41373f42f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 8040196612217246658}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2085159247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b,
@@ -113825,7 +113893,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attenuationObject
       value: 
-      objectReference: {fileID: 2084323343}
+      objectReference: {fileID: 119040, guid: 4319fcfed238e0541b48b71e737f6a95, type: 3}
     - target: {fileID: 6651406206867608696, guid: 67e9e6648638ca94eaaa9e41373f42f2,
         type: 3}
       propertyPath: Lens.FieldOfView
