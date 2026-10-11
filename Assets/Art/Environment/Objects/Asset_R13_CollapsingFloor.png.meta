@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,12 +116,12 @@ TextureImporter:
       name: Asset_R13_CollapsingFloor_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 858
-        height: 206
+        x: 0
+        y: 0
+        width: 140
+        height: 208
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -130,6 +130,138 @@ TextureImporter:
       bones: []
       spriteID: d39e75847a95efe20800000000000000
       internalID: 3386242544837323069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_R13_CollapsingFloor_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 142
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8103843169b8cfb4dbffcea254f75f9f
+      internalID: 191389354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_R13_CollapsingFloor_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 100
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ccb8546ccf7364994235936b8ac199
+      internalID: -512496666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_R13_CollapsingFloor_3
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 0
+        width: 134
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4202f48712c1d4ca3571c50bbc5e67
+      internalID: 473792053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_R13_CollapsingFloor_4
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 50
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b2081ede7fdd44fa449108173349ec
+      internalID: 259831069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_R13_CollapsingFloor_5
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 0
+        width: 194
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc014d46215d35748aee6792710923d1
+      internalID: -929730244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset_R13_CollapsingFloor_6
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 0
+        width: 94
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c54665324924943b186bcf8cb8047d
+      internalID: 241401863
       vertices: []
       indices: 
       edges: []
@@ -146,9 +278,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":122.0,"y":208.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Asset_R13_CollapsingFloor_0: 3386242544837323069
+      Asset_R13_CollapsingFloor_1: 191389354
+      Asset_R13_CollapsingFloor_2: -512496666
+      Asset_R13_CollapsingFloor_3: 473792053
+      Asset_R13_CollapsingFloor_4: 259831069
+      Asset_R13_CollapsingFloor_5: -929730244
+      Asset_R13_CollapsingFloor_6: 241401863
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
