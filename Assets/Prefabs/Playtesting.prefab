@@ -137,7 +137,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &11469900
 MonoBehaviour:
@@ -393,7 +393,7 @@ MonoBehaviour:
   SuccessiveDashesLeft: 1
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
-  InvincibleWhileDashing: 1
+  InvincibleWhileDashing: 0
 --- !u!114 &11421110
 MonoBehaviour:
   m_ObjectHideFlags: 0

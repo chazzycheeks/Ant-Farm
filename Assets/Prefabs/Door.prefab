@@ -196,7 +196,7 @@ MonoBehaviour:
   AlsoPerformChecksOnStay: 0
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
   UnlimitedActivations: 1
   MaxNumberOfActivations: 0
   DelayBetweenUses: 0
@@ -252,13 +252,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnlyAffectsPlayer: 1
-  ExitOffset: {x: 0, y: 0, z: 0}
+  ExitOffset: {x: 1, y: 0, z: 0}
   TeleportationMode: 0
   TweenCurve: 4
   MaintainXEntryPositionOnExit: 0
   MaintainYEntryPositionOnExit: 0
   Destination: {fileID: 0}
-  AddToDestinationIgnoreList: 1
+  AddToDestinationIgnoreList: 0
   CameraMode: 2
   CurrentRoom: {fileID: 0}
   TargetRoom: {fileID: 0}
