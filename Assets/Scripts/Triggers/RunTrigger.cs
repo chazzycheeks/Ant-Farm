@@ -6,6 +6,10 @@ public class RunTrigger : MonoBehaviour
 {
     [SerializeField] private Animator stingerArm;
     [SerializeField] private Animator cameraZoom;
+
+    private void Awake()
+    {
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -20,6 +24,8 @@ public class RunTrigger : MonoBehaviour
     private IEnumerator FreezeAndSting()
     {
         cameraZoom.SetTrigger("zoomingIn");
+        CameraUIAnimationController.Instance.TriggerBlackBarDownIn();
+        CameraUIAnimationController.Instance.TriggerBlackBarUpIn();
         stingerArm.SetTrigger("stinging");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character>().Freeze();
@@ -29,6 +35,8 @@ public class RunTrigger : MonoBehaviour
         yield return new WaitForSeconds(3f);
         player.GetComponentInChildren<Animator>().SetBool("Startled", false);
         cameraZoom.SetTrigger("zoomingOut");
+        CameraUIAnimationController.Instance.TriggerBlackBarDownOut();
+        CameraUIAnimationController.Instance.TriggerBlackBarUpOut();
         /*player.GetComponent<CharacterHorizontalMovement>().AbilityPermitted = true;*/
         player.GetComponent<Character>().UnFreeze();
         gameObject.SetActive(false);

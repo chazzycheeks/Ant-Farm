@@ -1,10 +1,12 @@
 using MoreMountains.CorgiEngine;
+using MoreMountains.FeedbacksForThirdParty;
 using System.Collections;
 using UnityEngine;
 
 public class DashTrigger : MonoBehaviour
 {
     [SerializeField] private Animator stingerArmDash;
+    [SerializeField] private Animator cameraZoom;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -14,6 +16,9 @@ public class DashTrigger : MonoBehaviour
     }
     private IEnumerator FreezeAndStingDash()
     {
+        cameraZoom.SetTrigger("zoomingIn");
+        CameraUIAnimationController.Instance.TriggerBlackBarDownIn();
+        CameraUIAnimationController.Instance.TriggerBlackBarUpIn();
         stingerArmDash.SetTrigger("stinging");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character>().Freeze();
@@ -22,6 +27,9 @@ public class DashTrigger : MonoBehaviour
         player.GetComponentInChildren<Animator>().SetBool("Startled", true);
         yield return new WaitForSeconds(3f);
         player.GetComponentInChildren<Animator>().SetBool("Startled", false);
+        cameraZoom.SetTrigger("zoomingOut");
+        CameraUIAnimationController.Instance.TriggerBlackBarDownOut();
+        CameraUIAnimationController.Instance.TriggerBlackBarUpOut();
         /*player.GetComponent<CharacterHorizontalMovement>().AbilityPermitted = true;*/
         player.GetComponent<Character>().UnFreeze();
         gameObject.SetActive(false);

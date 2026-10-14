@@ -21251,7 +21251,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.30924332, y: 0}
+  m_Offset: {x: -0.057578206, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -21261,7 +21261,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0048468, y: 4.66}
+  m_Size: {x: 1.508177, y: 4.66}
   m_EdgeRadius: 0
 --- !u!1001 &350239762
 PrefabInstance:
@@ -67256,6 +67256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DashTrigger
   stingerArmDash: {fileID: 239011564}
+  cameraZoom: {fileID: 484551305}
 --- !u!114 &1164075165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116719,11 +116720,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -361.36
+      value: -90.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.93
+      value: -11.47
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.z
