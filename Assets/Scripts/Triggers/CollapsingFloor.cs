@@ -25,11 +25,11 @@ public class CollapsingFloor : MonoBehaviour
         CameraUIAnimationController.Instance.TriggerBlackBarUpIn();*/
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character>().Freeze();
-        player.GetComponentInChildren<Animator>().SetBool("Alive", false);
+        player.GetComponentInChildren<Animator>().SetBool("Ending", true);
         yield return new WaitForSeconds(2.5f);
-        player.GetComponentInChildren<Animator>().SetBool("Alive", true);
-        floorCollider.SetActive(false);
+        player.GetComponentInChildren<Animator>().SetBool("Ending", false);
         player.GetComponent<Character>().UnFreeze();
+        floorCollider.SetActive(false);
         floorPiece0.SetTrigger("drop");
         floorPiece1.SetTrigger("drop");
         floorPiece2.SetTrigger("drop");
