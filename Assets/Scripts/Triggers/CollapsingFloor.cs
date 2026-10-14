@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using MoreMountains.CorgiEngine;
 
 public class CollapsingFloor : MonoBehaviour
 {
@@ -11,15 +12,24 @@ public class CollapsingFloor : MonoBehaviour
     public Animator floorPiece5;
     public Animator floorPiece6;
     public GameObject floorCollider;
+    public Animator cameraZoom;
 
     public void StartDroppingFloor()
     {
-        StartCoroutine(DropFloor());
+        StartCoroutine(DropFloorEvent());
     }
-    public IEnumerator DropFloor()
+    public IEnumerator DropFloorEvent()
     {
+        cameraZoom.SetTrigger("zoomingIn");
+        /*CameraUIAnimationController.Instance.TriggerBlackBarDownIn();
+        CameraUIAnimationController.Instance.TriggerBlackBarUpIn();*/
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Character>().Freeze();
+        player.GetComponentInChildren<Animator>().SetBool("Alive", false);
         yield return new WaitForSeconds(2.5f);
+        player.GetComponentInChildren<Animator>().SetBool("Alive", true);
         floorCollider.SetActive(false);
+        player.GetComponent<Character>().UnFreeze();
         floorPiece0.SetTrigger("drop");
         floorPiece1.SetTrigger("drop");
         floorPiece2.SetTrigger("drop");
@@ -27,5 +37,22 @@ public class CollapsingFloor : MonoBehaviour
         floorPiece4.SetTrigger("drop");
         floorPiece5.SetTrigger("drop");
         floorPiece6.SetTrigger("drop");
+        cameraZoom.SetTrigger("zoomingOut");
+        /*CameraUIAnimationController.Instance.TriggerBlackBarDownOut();
+        CameraUIAnimationController.Instance.TriggerBlackBarUpOut();*/
     }
+
+    public void StartRoom14Couroutine()
+    {
+        StartCoroutine(Room14EntryFreeze());
+    }
+
+    private IEnumerator Room14EntryFreeze()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Character>().Freeze();
+        yield return new WaitForSeconds(1.5f);
+        player.GetComponent<Character>().UnFreeze();
+    }
+
 }

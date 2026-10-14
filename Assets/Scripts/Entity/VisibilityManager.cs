@@ -182,9 +182,11 @@ public class VisibilityManager : MonoBehaviour
         blackCut.SetActive(false);
     }
 
-    
-      
 
-    
+
+
+
+
+
 
 }
