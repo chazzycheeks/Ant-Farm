@@ -76,11 +76,15 @@ public class PatrolLocomotionController : MonoBehaviour
     }
 
     public void SetSurveyPath(PathCache newPath) {
-        if (!entityStateTriggers.isActivelyChasing) _surveyPathActive = newPath;
+        //Enable if we want to prevent it from swapping between rooms
+        //if (!entityStateTriggers.isActivelyChasing)
+            _surveyPathActive = newPath;
         _surveyPath = newPath;
     }
     public void SetSpottingPath(PathCache newPath) {
-        if (!entityStateTriggers.isActivelyChasing) _spottingPathActive = newPath;
+        //Enable if we want to prevent it from swapping between rooms
+        //if (!entityStateTriggers.isActivelyChasing) 
+        _spottingPathActive = newPath;
         _spottingPath = newPath;
     }
 

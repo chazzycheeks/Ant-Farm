@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StateManager : MonoBehaviour {
     State currentState;
@@ -32,6 +33,11 @@ public class StateManager : MonoBehaviour {
 
     public void ForceSwapState(State stateForced) {
         SwitchToNextState(stateForced);
+    }
+    
+
+    public void ResetToDefault() {
+        SwitchToNextState(defaultState);
     }
 
     public State GetCurrentState() {

@@ -180,6 +180,8 @@ public class VisibilityManager : MonoBehaviour
         blackCut.SetActive(true);
         yield return new WaitForSeconds(2.5f);
         blackCut.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        stateManager.ResetToDefault();
     }
 
 
