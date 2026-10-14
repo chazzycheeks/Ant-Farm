@@ -29655,6 +29655,34 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &484551298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8040196612289779002, guid: 67e9e6648638ca94eaaa9e41373f42f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8040196612217246658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &484551305
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484551298}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ca7b5880983f674e8dbc59c5247896d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &490557647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90478,6 +90506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunTrigger
   stingerArm: {fileID: 1038779015}
+  cameraZoom: {fileID: 484551305}
 --- !u!61 &1537101232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125715,7 +125744,11 @@ PrefabInstance:
     - {fileID: 5374159356361054361, guid: 67e9e6648638ca94eaaa9e41373f42f2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8040196612289779002, guid: 67e9e6648638ca94eaaa9e41373f42f2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484551305}
   m_SourcePrefab: {fileID: 100100000, guid: 67e9e6648638ca94eaaa9e41373f42f2, type: 3}
 --- !u!1001 &8930811105287634105
 PrefabInstance:

@@ -5,6 +5,7 @@ using UnityEngine;
 public class RunTrigger : MonoBehaviour
 {
     [SerializeField] private Animator stingerArm;
+    [SerializeField] private Animator cameraZoom;
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -18,6 +19,7 @@ public class RunTrigger : MonoBehaviour
     }
     private IEnumerator FreezeAndSting()
     {
+        cameraZoom.SetTrigger("zoomingIn");
         stingerArm.SetTrigger("stinging");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character>().Freeze();
@@ -26,6 +28,7 @@ public class RunTrigger : MonoBehaviour
         player.GetComponentInChildren<Animator>().SetBool("Startled", true);
         yield return new WaitForSeconds(3f);
         player.GetComponentInChildren<Animator>().SetBool("Startled", false);
+        cameraZoom.SetTrigger("zoomingOut");
         /*player.GetComponent<CharacterHorizontalMovement>().AbilityPermitted = true;*/
         player.GetComponent<Character>().UnFreeze();
         gameObject.SetActive(false);
