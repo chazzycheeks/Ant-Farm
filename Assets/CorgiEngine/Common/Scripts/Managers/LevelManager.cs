@@ -719,7 +719,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			foreach (Character player in Players)
 			{
-				player.Freeze();
+				//player.Freeze();
 			}
 		}
 
