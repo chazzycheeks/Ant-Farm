@@ -32,20 +32,15 @@ public class CameraUIAnimationController : MonoBehaviour
         blackoutObjectAnimator.SetTrigger("FadeTrigger");
     }
 
-    public void TriggerBlackBarUpIn()
+    public void TriggerBlackBarsIn()
     {
         blackBarUpAnim.SetTrigger("In");
-    }
-    public void TriggerBlackBarUpOut()
-    {
-        blackBarUpAnim.SetTrigger("Out");
-    }
-    public void TriggerBlackBarDownIn()
-    {
         blackBarDownAnim.SetTrigger("In");
     }
-    public void TriggerBlackBarDownOut()
+    public void TriggerBlackBarsOut()
     {
+        blackBarUpAnim.SetTrigger("Out");
         blackBarDownAnim.SetTrigger("Out");
     }
+   
 }

@@ -16,8 +16,7 @@ public class DashTrigger : MonoBehaviour
     private IEnumerator FreezeAndStingDash()
     {
         cameraZoom.SetTrigger("zoomingIn");
-        CameraUIAnimationController.Instance.TriggerBlackBarDownIn();
-        CameraUIAnimationController.Instance.TriggerBlackBarUpIn();
+        CameraUIAnimationController.Instance.TriggerBlackBarsIn();
         stingerArmDash.SetTrigger("stinging");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character>().Freeze();
@@ -27,8 +26,7 @@ public class DashTrigger : MonoBehaviour
         yield return new WaitForSeconds(3f);
         player.GetComponentInChildren<Animator>().SetBool("Startled", false);
         cameraZoom.SetTrigger("zoomingOut");
-        CameraUIAnimationController.Instance.TriggerBlackBarDownOut();
-        CameraUIAnimationController.Instance.TriggerBlackBarUpOut();
+        CameraUIAnimationController.Instance.TriggerBlackBarsOut();
         /*player.GetComponent<CharacterHorizontalMovement>().AbilityPermitted = true;*/
         player.GetComponent<Character>().UnFreeze();
         gameObject.SetActive(false);
