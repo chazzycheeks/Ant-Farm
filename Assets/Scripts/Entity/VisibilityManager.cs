@@ -95,7 +95,7 @@ public class VisibilityManager : MonoBehaviour
         if (_isVisible == true && RoomTracker.Instance._canEntitySurvey == true) {
 
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
-            if (entityTriggers.transitioned == true && CanBeSpotted)
+            if (entityTriggers.transitioned == true && CanBeSpotted )
             {
                 if (stateManager.GetCurrentState() is RoamingStatic)
                 {
@@ -158,7 +158,7 @@ public class VisibilityManager : MonoBehaviour
         //if (caughtTimer >= caughtTrigger && seenEventPlaying == false)
         if (visibilityTimer >= caughtTrigger && seenEventPlaying == false)
         {
-            visibilityTimer = 0f;
+            //visibilityTimer = 0f; resets vignette as well
             seenEventPlaying = true;
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
@@ -168,7 +168,6 @@ public class VisibilityManager : MonoBehaviour
             StartCoroutine(CutToBlack());
         }
     }
-
     public void ResetOnSeenEvent()
     {
         seenEventPlaying = false;
@@ -179,9 +178,9 @@ public class VisibilityManager : MonoBehaviour
         yield return new WaitForSeconds(4f);
         blackCut.SetActive(true);
         yield return new WaitForSeconds(2.5f);
+        EntityStateTriggers.Instance.hasLeftRoom = true; // Will send the entity back to standby mode when player gets caught
         blackCut.SetActive(false);
-        yield return new WaitForSeconds(1f);
-        stateManager.ResetToDefault();
+        
     }
 
 
