@@ -771,13 +771,13 @@ namespace MoreMountains.CorgiEngine
 				return;
 			}
 
-			UnFreeze();
+			//UnFreeze();
 
 			// we make sure the character is facing right
 			Face(facingDirection);
 
 			// we raise it from the dead (if it was dead)
-			ConditionState.ChangeState(CharacterStates.CharacterConditions.Normal);
+			ConditionState.ChangeState(CharacterStates.CharacterConditions.Frozen);
 			// we re-enable its 2D collider
 			this.gameObject.MMGetComponentNoAlloc<Collider2D>().enabled = true;
 			// we make it handle collisions again
