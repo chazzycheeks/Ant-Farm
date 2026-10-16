@@ -1536,7 +1536,7 @@ Transform:
   m_GameObject: {fileID: 233152305}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.62, y: -4.41, z: 0}
+  m_LocalPosition: {x: -8.1, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2100,6 +2100,37 @@ MonoBehaviour:
   - {fileID: 981857872}
   waypointStart: {fileID: 848870084}
   surveyWaypoint: 1
+--- !u!1 &315196595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 315196596}
+  m_Layer: 0
+  m_Name: Point_0 (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &315196596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315196595}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.82, y: -4.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1555244152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &319917233
 GameObject:
   m_ObjectHideFlags: 0
@@ -5269,7 +5300,7 @@ Transform:
   m_GameObject: {fileID: 907731186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.03, y: -2.16, z: 0}
+  m_LocalPosition: {x: 0.86, y: 3.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6452,7 +6483,7 @@ Transform:
   m_GameObject: {fileID: 1150767224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.07, y: -4.3, z: 0}
+  m_LocalPosition: {x: 15.2, y: -4.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8933,6 +8964,7 @@ Transform:
   - {fileID: 1853112271}
   - {fileID: 907731187}
   - {fileID: 1150767225}
+  - {fileID: 315196596}
   - {fileID: 2084079176}
   - {fileID: 872065535}
   - {fileID: 233152306}
@@ -8961,6 +8993,7 @@ MonoBehaviour:
   - {fileID: 2084079176}
   - {fileID: 872065535}
   - {fileID: 233152306}
+  - {fileID: 315196596}
   waypointStart: {fileID: 0}
   surveyWaypoint: 0
 --- !u!1 &1558013522
@@ -10507,7 +10540,7 @@ Transform:
   m_GameObject: {fileID: 1853112270}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7, y: -4.37, z: 0}
+  m_LocalPosition: {x: -5.08, y: -4.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
