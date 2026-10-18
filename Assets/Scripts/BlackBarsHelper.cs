@@ -24,4 +24,15 @@ public class BlackBarsHelper : MonoBehaviour
     {
         PlayerController.instance.GetComponent<Character>().UnFreeze();
     }
+
+    public void TurnOnEndScreen()
+    {
+        PlayerController.instance.GetComponent<Character>().Freeze();
+        CameraUIAnimationController.Instance.TriggerEndScreen();
+    }
+
+    public void PlayIdleAnim()
+    {
+        PlayerController.instance.GetComponent<Animator>().SetBool("Idle", true);
+    }
 }
