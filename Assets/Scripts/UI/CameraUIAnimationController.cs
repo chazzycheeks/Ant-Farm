@@ -15,6 +15,7 @@ public class CameraUIAnimationController : MonoBehaviour
     Animator blackBarDownAnim;
 
     [SerializeField] GameObject endScreen;
+    [SerializeField] GameObject dashScreen;
 
     string fadeInAnim = "FadeIn";
 
@@ -48,5 +49,10 @@ public class CameraUIAnimationController : MonoBehaviour
     public void TriggerEndScreen()
     {
         endScreen.SetActive(true);
+    }
+
+    public void TriggerDashScreen()
+    {
+        dashScreen.SetActive(true);
     }
 }

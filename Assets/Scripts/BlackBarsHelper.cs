@@ -47,4 +47,9 @@ public class BlackBarsHelper : MonoBehaviour
     {
         PlayerController.instance.GetComponentInChildren<Animator>().SetBool("Cutscene", false);
     }
+
+/*    public void TurnOnDashScreen()
+    {
+        CameraUIAnimationController.Instance.TriggerDashScreen();
+    }*/
 }
