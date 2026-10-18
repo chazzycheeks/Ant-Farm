@@ -1,4 +1,5 @@
 using MoreMountains.CorgiEngine;
+using System.Collections;
 using UnityEngine;
 
 public class BlackBarsHelper : MonoBehaviour
@@ -33,6 +34,17 @@ public class BlackBarsHelper : MonoBehaviour
 
     public void PlayIdleAnim()
     {
-        PlayerController.instance.GetComponent<Animator>().SetBool("Idle", true);
+/*        yield return new WaitForSeconds(1.25f);*/
+       /* PlayerController.instance.GetComponent<Animator>().SetBool("Walking", false);*/
+        PlayerController.instance.GetComponentInChildren<Animator>().SetBool("Cutscene", true);
+    }
+
+    /*public void IdleAnimCouroutine()
+    {
+        StartCoroutine(PlayIdleAnim());
+    }*/
+    public void StopIdleAnim()
+    {
+        PlayerController.instance.GetComponentInChildren<Animator>().SetBool("Cutscene", false);
     }
 }

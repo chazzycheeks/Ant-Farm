@@ -1,10 +1,15 @@
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class ShutterTrigger : MonoBehaviour
 {
-    [SerializeField] private GameObject shutter;
-    [SerializeField] private GameObject shutterArt;
-    private bool shutterTriggerEntered = false;
+    [SerializeField] private Animator shutter;
+    [SerializeField] private Animator shutterArt;
+    public bool shutterTriggerEntered = false;
+    [SerializeField] private GameObject resetTriggers;
+    [SerializeField] private PlayableDirector cutscene6A;
 
     private void Start()
     {
@@ -23,9 +28,18 @@ public class ShutterTrigger : MonoBehaviour
 
     public void StartShutter()
     {
-        shutter.GetComponent<Animator>().enabled = true;
-        shutterArt.GetComponent<Animator>().enabled = true;
+        cutscene6A.Play();
+        shutter.SetBool("Opening", true);
+        shutterArt.SetBool("Opening", true);
         shutterTriggerEntered = true;
+        resetTriggers.SetActive(true);
 
+    }
+
+    public void ResetShutter()
+    {
+        shutter.SetBool("Opening", false);
+        shutterArt.SetBool("Opening", false);
+        shutterTriggerEntered = false;
     }
 }
