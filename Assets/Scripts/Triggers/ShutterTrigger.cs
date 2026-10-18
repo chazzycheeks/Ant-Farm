@@ -11,13 +11,7 @@ public class ShutterTrigger : MonoBehaviour
     [SerializeField] private GameObject resetTriggers;
     [SerializeField] private PlayableDirector cutscene6A;
 
-    private void Start()
-    {
-        shutter.GetComponent<Animator>().enabled = false;
-        shutterArt.GetComponent<Animator>().enabled = false;
-
-
-    }
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (shutterTriggerEntered == false && collision.CompareTag("Player"))
