@@ -752,6 +752,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssignPathTrigger (2U)
       objectReference: {fileID: 0}
+    - target: {fileID: 4029663608386281436, guid: ef559135798a12a4d883a01a928bacc6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6140401063984358265, guid: ef559135798a12a4d883a01a928bacc6,
         type: 3}
       propertyPath: surveyPath.path
@@ -966,6 +971,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1955213898}
+  - {fileID: 1532890810}
   - {fileID: 134368924}
   - {fileID: 1997836700}
   - {fileID: 135104699}
@@ -996,9 +1003,6 @@ Transform:
   - {fileID: 1596984331}
   - {fileID: 1203679996}
   - {fileID: 619115279}
-  - {fileID: 628754256}
-  - {fileID: 1509020505}
-  - {fileID: 327076574}
   m_Father: {fileID: 546932401371613305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &150621014
@@ -1017,6 +1021,8 @@ MonoBehaviour:
   loopPath: 1
   inverseLoop: 0
   waypoints:
+  - {fileID: 1955213898}
+  - {fileID: 1532890810}
   - {fileID: 134368924}
   - {fileID: 1997836700}
   - {fileID: 135104699}
@@ -1047,9 +1053,6 @@ MonoBehaviour:
   - {fileID: 1596984331}
   - {fileID: 1203679996}
   - {fileID: 619115279}
-  - {fileID: 628754256}
-  - {fileID: 1509020505}
-  - {fileID: 327076574}
   waypointStart: {fileID: 0}
   surveyWaypoint: 0
 --- !u!1 &152885886
@@ -2319,11 +2322,11 @@ Transform:
   m_GameObject: {fileID: 327076573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.48, y: 4.36, z: 0}
+  m_LocalPosition: {x: 31.479996, y: 4.3600006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 150621013}
+  m_Father: {fileID: 1558013523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &331878258
 GameObject:
@@ -3531,11 +3534,11 @@ Transform:
   m_GameObject: {fileID: 628754255}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.36, y: 2.93, z: 0}
+  m_LocalPosition: {x: 47.36, y: 2.9300003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 150621013}
+  m_Father: {fileID: 1558013523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &639618421
 PrefabInstance:
@@ -6260,6 +6263,13 @@ MonoBehaviour:
   lastPlayerPositionSeen: {x: 0, y: 0}
   vignette: {fileID: 1057328921}
   blackCut: {fileID: 649486745}
+  deathSound:
+    Guid:
+      Data1: 840545206
+      Data2: 1155780855
+      Data3: 883355571
+      Data4: 158505476
+    Path: event:/Music_2/Death
   CanBeSpotted: 1
   spottingPeriodTimeImmunity: 10
   coverObjects: []
@@ -8903,11 +8913,11 @@ Transform:
   m_GameObject: {fileID: 1509020504}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.11, y: 2.48, z: 0}
+  m_LocalPosition: {x: 38.11, y: 2.4799995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 150621013}
+  m_Father: {fileID: 1558013523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1515041798
 GameObject:
@@ -9119,7 +9129,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1558013523}
+  m_Father: {fileID: 150621013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1551807745
 PrefabInstance:
@@ -9281,7 +9291,7 @@ Transform:
   m_GameObject: {fileID: 1554130092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.76, y: 39.82, z: 0}
+  m_LocalPosition: {x: 8.76, y: 39.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9403,11 +9413,9 @@ Transform:
   - {fileID: 1554130093}
   - {fileID: 2125254486}
   - {fileID: 737008583}
-  - {fileID: 1955213898}
   - {fileID: 1287099731}
   - {fileID: 947921244}
   - {fileID: 1244934193}
-  - {fileID: 1532890810}
   - {fileID: 393692019}
   - {fileID: 942669213}
   - {fileID: 2006406630}
@@ -9433,6 +9441,9 @@ Transform:
   - {fileID: 415914564}
   - {fileID: 1333144551}
   - {fileID: 1423879534}
+  - {fileID: 327076574}
+  - {fileID: 1509020505}
+  - {fileID: 628754256}
   m_Father: {fileID: 546932401371613305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1558013524
@@ -9471,11 +9482,9 @@ MonoBehaviour:
   - {fileID: 1554130093}
   - {fileID: 2125254486}
   - {fileID: 737008583}
-  - {fileID: 1955213898}
   - {fileID: 1287099731}
   - {fileID: 947921244}
   - {fileID: 1244934193}
-  - {fileID: 1532890810}
   - {fileID: 393692019}
   - {fileID: 942669213}
   - {fileID: 2006406630}
@@ -9501,6 +9510,9 @@ MonoBehaviour:
   - {fileID: 415914564}
   - {fileID: 1333144551}
   - {fileID: 1423879534}
+  - {fileID: 327076574}
+  - {fileID: 1509020505}
+  - {fileID: 628754256}
   waypointStart: {fileID: 0}
   surveyWaypoint: 0
 --- !u!1 &1569740294
@@ -11389,11 +11401,11 @@ Transform:
   m_GameObject: {fileID: 1955213897}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50.21, y: -1.7, z: 0}
+  m_LocalPosition: {x: 50.20999, y: -2.0299997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1558013523}
+  m_Father: {fileID: 150621013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1959004391
 GameObject:
@@ -12584,6 +12596,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167869913638561631, guid: 24d57e1aca2dad04bad124e1da67af2e,
+        type: 3}
+      propertyPath: jumpscareSound.Path
+      value: event:/Music_2/Jumpscare 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167869913638561631, guid: 24d57e1aca2dad04bad124e1da67af2e,
+        type: 3}
+      propertyPath: jumpscareSound.Guid.Data1
+      value: 1094010336
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167869913638561631, guid: 24d57e1aca2dad04bad124e1da67af2e,
+        type: 3}
+      propertyPath: jumpscareSound.Guid.Data2
+      value: 1094298951
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167869913638561631, guid: 24d57e1aca2dad04bad124e1da67af2e,
+        type: 3}
+      propertyPath: jumpscareSound.Guid.Data3
+      value: 2092499329
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167869913638561631, guid: 24d57e1aca2dad04bad124e1da67af2e,
+        type: 3}
+      propertyPath: jumpscareSound.Guid.Data4
+      value: 1158621005
       objectReference: {fileID: 0}
     - target: {fileID: 4913771812838199901, guid: 24d57e1aca2dad04bad124e1da67af2e,
         type: 3}

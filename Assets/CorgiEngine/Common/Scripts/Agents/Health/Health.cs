@@ -732,7 +732,7 @@ namespace MoreMountains.CorgiEngine
 
 			if (_character != null)
 			{
-				_character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Normal);
+				_character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Frozen);
 			}
 
 			if (RespawnAtInitialLocation)

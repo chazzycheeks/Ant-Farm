@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using FMODUnity;
 
 public class Spotting : State {
     [HideInInspector] public float spottingTimer;
@@ -9,6 +10,8 @@ public class Spotting : State {
     bool isTimeOver = false;
     [Tooltip("The surveying state we return to if the entity fails spotting")]
     [SerializeField] Surveying surveyingState;
+
+    [SerializeField] private EventReference jumpscareSound;
 
     [SerializeField] Roaming roamingState;
     public bool bDebugLog = false;
@@ -19,6 +22,7 @@ public class Spotting : State {
         }
     }
     public override void DefaultState() {
+        AudioManager.instance.PlayOneShotSound(jumpscareSound, this.transform.position);
         patrolController.TogglePatrol(false, PathType.Spotting);
         spottingTimer = 0;
         isTimeOver = false;

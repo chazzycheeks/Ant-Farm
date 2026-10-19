@@ -1,11 +1,15 @@
 using MoreMountains.CorgiEngine;
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
 public class RunTrigger : MonoBehaviour
 {
     [SerializeField] private Animator stingerArm;
     [SerializeField] private Animator cameraZoom;
+
+    [SerializeField] private EventReference stingerSound;
+    [SerializeField] private EventReference injectionSound;
 
     private void Awake()
     {
@@ -31,6 +35,8 @@ public class RunTrigger : MonoBehaviour
         /*player.GetComponent<CharacterHorizontalMovement>().AbilityPermitted = false;*/
         /*player.GetComponent<CorgiController>().SetForce(Vector2.zero);*/
         player.GetComponentInChildren<Animator>().SetBool("Startled", true);
+        AudioManager.instance.PlayOneShotSound(stingerSound, this.transform.position);
+        AudioManager.instance.PlayOneShotSound(injectionSound, this.transform.position);
         yield return new WaitForSeconds(3f);
         player.GetComponentInChildren<Animator>().SetBool("Startled", false);
         cameraZoom.SetTrigger("zoomingOut");

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class VisibilityManager : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class VisibilityManager : MonoBehaviour
     private float visiblityPercentage;
     [SerializeField] private Image vignette;
     [SerializeField] private GameObject blackCut;
+
+    [SerializeField] private EventReference deathSound;
 
     [Tooltip("Grace period variable to be used while transitioning between rooms.")]
     public bool CanBeSpotted = true;
@@ -160,6 +163,7 @@ public class VisibilityManager : MonoBehaviour
         {
             //visibilityTimer = 0f; resets vignette as well
             seenEventPlaying = true;
+            AudioManager.instance.PlayOneShotSound(deathSound, this.transform.position);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<Health>().Damage(300f, player, 0f, 0f, Vector3.up);
             player.GetComponent<CorgiController>().GravityActive(false);
