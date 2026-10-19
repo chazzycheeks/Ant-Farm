@@ -16,6 +16,6 @@ public class Track1Stopper : MonoBehaviour
 
     public void StopMusic()
     {
-        AudioManager.instance.PlayMusicTrack(music);
+        
     }
 }

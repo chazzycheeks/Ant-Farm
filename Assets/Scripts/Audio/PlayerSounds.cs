@@ -7,7 +7,7 @@ public class PlayerSounds : MonoBehaviour
     public void Footsteps()
     {
         Debug.Log("step");
-        AudioManager.instance.PlayMusicTrack(music);
+        /*AudioManager.instance.PlayMusicTrack(music);*/
     }
 
     public void Test()

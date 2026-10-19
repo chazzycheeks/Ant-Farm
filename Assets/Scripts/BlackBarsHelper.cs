@@ -34,8 +34,9 @@ public class BlackBarsHelper : MonoBehaviour
 
     public void PlayIdleAnim()
     {
-/*        yield return new WaitForSeconds(1.25f);*/
-       /* PlayerController.instance.GetComponent<Animator>().SetBool("Walking", false);*/
+        /*        yield return new WaitForSeconds(1.25f);*/
+        /* PlayerController.instance.GetComponent<Animator>().SetBool("Walking", false);*/
+        PlayerController.instance.GetComponentInChildren<Animator>().SetTrigger("StartCutscene");
         PlayerController.instance.GetComponentInChildren<Animator>().SetBool("Cutscene", true);
     }
 
