@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{fb3d61d7-7c44-4cb4-9bab-9eab0917a36f}">
+		<property name="name">
+			<value>Progress_Room 11</value>
+		</property>
+		<relationship name="folder">
+			<destination>{86f6e430-98f9-4a86-a12a-2830633ce505}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{b7e7f75f-25b2-4725-8e17-f73ac7e7978f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{b7e7f75f-25b2-4725-8e17-f73ac7e7978f}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Room 11</value>
+			<value>Room 12</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
