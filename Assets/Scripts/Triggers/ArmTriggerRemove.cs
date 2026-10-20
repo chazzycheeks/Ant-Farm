@@ -1,11 +1,13 @@
 using UnityEngine;
-
+using FMODUnity;
 public class ArmTriggerRemove : MonoBehaviour
 {
     [SerializeField] private GameObject arm;
     [SerializeField] private GameObject armblock;
     [SerializeField] private GameObject armFallen;
     private bool armTriggerEntered = false;
+
+    [SerializeField] private EventReference armDropSound;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (armTriggerEntered == false && collision.CompareTag("Player")) {
@@ -19,6 +21,6 @@ public class ArmTriggerRemove : MonoBehaviour
         armblock.SetActive(false);
         armTriggerEntered = true;
         armFallen.SetActive(true);
-
+        AudioManager.instance.PlayOneShotSound(armDropSound, this.transform.position);
     }
 }

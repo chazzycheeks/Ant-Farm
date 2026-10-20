@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using MoreMountains.CorgiEngine;
+using FMODUnity;
 
 public class CollapsingFloor : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class CollapsingFloor : MonoBehaviour
     public GameObject floorCollider;
     public Animator cameraZoom;
 
+    [SerializeField] private EventReference entitySound;
+    [SerializeField] private EventReference floorSound;
+
+
     public void StartDroppingFloor()
     {
         StartCoroutine(DropFloorEvent());
@@ -25,11 +30,13 @@ public class CollapsingFloor : MonoBehaviour
         CameraUIAnimationController.Instance.TriggerBlackBarUpIn();*/
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character>().Freeze();
+        AudioManager.instance.PlayOneShotSound(entitySound, this.transform.position);
         player.GetComponentInChildren<Animator>().SetBool("Ending", true);
         yield return new WaitForSeconds(2.5f);
         player.GetComponentInChildren<Animator>().SetBool("Ending", false);
         player.GetComponent<Character>().UnFreeze();
         floorCollider.SetActive(false);
+        AudioManager.instance.PlayOneShotSound(floorSound, this.transform.position);
         floorPiece0.SetTrigger("drop");
         floorPiece1.SetTrigger("drop");
         floorPiece2.SetTrigger("drop");

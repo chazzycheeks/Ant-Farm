@@ -1,5 +1,8 @@
 using System.Linq;
 using UnityEngine;
+using FMODUnity;
+using UnityEngine.Timeline;
+using UnityEngine.Playables;
 
 public class SpiralTrigger : MonoBehaviour
 {
@@ -9,14 +12,16 @@ public class SpiralTrigger : MonoBehaviour
     private bool spiralTriggerEntered = false;
     public Animator shutterAnims;
 
+    [SerializeField] private PlayableDirector cutsceneR4B;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (spiralTriggerEntered == false && collision.CompareTag("Player"))
         {
-            RemoveWalls();
-            ActivateShutters();
-            
+            /*RemoveWalls();
+            ActivateShutters();*/
+            cutsceneR4B.Play();
         }
     }
 

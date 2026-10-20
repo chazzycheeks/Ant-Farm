@@ -2672,6 +2672,13 @@ MonoBehaviour:
   arm: {fileID: 648355374}
   armblock: {fileID: 653198662}
   armFallen: {fileID: 1926599781}
+  armDropSound:
+    Guid:
+      Data1: -893827366
+      Data2: 1144094506
+      Data3: 1572118426
+      Data4: -317445401
+    Path: event:/NON FIXED DURATION/AntFarm_BT_ArmCrash
 --- !u!1 &42227604
 GameObject:
   m_ObjectHideFlags: 0
@@ -11074,6 +11081,7 @@ GameObject:
   - component: {fileID: 183544276}
   - component: {fileID: 183544277}
   - component: {fileID: 183544278}
+  - component: {fileID: 183544279}
   m_Layer: 0
   m_Name: Windowsprialtrigger
   m_TagString: Untagged
@@ -11158,6 +11166,52 @@ MonoBehaviour:
   wallsOut: {fileID: 1777222662}
   spiralArm: {fileID: 845026567}
   shutterAnims: {fileID: 0}
+  cutsceneR4B: {fileID: 1874899328}
+--- !u!114 &183544279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183544275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: f5690d77c4bd0f74b8de4726339fec26, type: 2}
+    - {fileID: 11400000, guid: d99cdf64addd05f469b9162006038142, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 183544278}
+          m_TargetAssemblyTypeName: SpiralTrigger, Assembly-CSharp
+          m_MethodName: ActivateShutters
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 183544278}
+          m_TargetAssemblyTypeName: SpiralTrigger, Assembly-CSharp
+          m_MethodName: RemoveWalls
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &184895223
 GameObject:
   m_ObjectHideFlags: 0
@@ -45914,6 +45968,20 @@ MonoBehaviour:
   floorPiece6: {fileID: 1863046244}
   floorCollider: {fileID: 1144460181}
   cameraZoom: {fileID: 484551305}
+  entitySound:
+    Guid:
+      Data1: 1689234938
+      Data2: 1140383236
+      Data3: -351539577
+      Data4: 2029103909
+    Path: event:/Music/Jumpscare_3
+  floorSound:
+    Guid:
+      Data1: -1578718682
+      Data2: 1151411081
+      Data3: -1695442768
+      Data4: -1672305680
+    Path: event:/NON FIXED DURATION/AntFarm_BT_CollapseFloor
 --- !u!1001 &692741841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127517,6 +127585,160 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2105300636}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1874899325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1874899329}
+  - component: {fileID: 1874899328}
+  - component: {fileID: 1874899327}
+  - component: {fileID: 1874899326}
+  m_Layer: 0
+  m_Name: CutsceneR4B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1874899326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874899325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d0cea19575422484cb80152d385831a0, type: 2}
+    - {fileID: 11400000, guid: 07ea996c426b18f49a2404c842fc10b7, type: 2}
+    - {fileID: 11400000, guid: 3c190cd7c6634b745b00007af19a3298, type: 2}
+    - {fileID: 11400000, guid: 0e95946414e30e84b9ff459b7b688b0c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1874899327}
+          m_TargetAssemblyTypeName: BlackBarsHelper, Assembly-CSharp
+          m_MethodName: ShowBlackBars
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1874899327}
+          m_TargetAssemblyTypeName: BlackBarsHelper, Assembly-CSharp
+          m_MethodName: HideBlackBars
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1874899327}
+          m_TargetAssemblyTypeName: BlackBarsHelper, Assembly-CSharp
+          m_MethodName: PlayIdleAnim
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1874899327}
+          m_TargetAssemblyTypeName: BlackBarsHelper, Assembly-CSharp
+          m_MethodName: StopIdleAnim
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1874899327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874899325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad86e170a1f26e41b602b9d21b36681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlackBarsHelper
+--- !u!320 &1874899328
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874899325}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 274f1fb07b549204abe14e16476284c4, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 0
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 3154516437311069589, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 1304118963}
+  - key: {fileID: 2673338375547199910, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 1644268061}
+  - key: {fileID: 3587867495928411959, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 250592652}
+  - key: {fileID: 1880255875319354303, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 1874899326}
+  - key: {fileID: 97300268867665062, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 1985794206}
+  - key: {fileID: -8597254645079586039, guid: 274f1fb07b549204abe14e16476284c4, type: 2}
+    value: {fileID: 183544279}
+  - key: {fileID: 8541191324507527990, guid: 274f1fb07b549204abe14e16476284c4, type: 2}
+    value: {fileID: 1985794206}
+  m_ExposedReferences:
+    m_References:
+    - 42218eba87d33db4e8e34a26c2a1efd6: {fileID: 0}
+    - 449a68c0bc10e7d41a4c09619d887176: {fileID: 0}
+--- !u!4 &1874899329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874899325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1875713338
 GameObject:
   m_ObjectHideFlags: 0
@@ -127661,6 +127883,8 @@ PlayableDirector:
   - key: {fileID: -4621869575492999370, guid: 8a515a4a43d1052429921f3df349e3b7, type: 2}
     value: {fileID: 1684273608}
   - key: {fileID: -549328667804431379, guid: 8a515a4a43d1052429921f3df349e3b7, type: 2}
+    value: {fileID: 1985794206}
+  - key: {fileID: -6371363578832391609, guid: 8a515a4a43d1052429921f3df349e3b7, type: 2}
     value: {fileID: 1985794206}
   m_ExposedReferences:
     m_References:
@@ -146286,6 +146510,7 @@ SceneRoots:
   - {fileID: 2030003248}
   - {fileID: 1875713342}
   - {fileID: 1778380913}
+  - {fileID: 1874899329}
   - {fileID: 1375261940}
   - {fileID: 1948590792}
   - {fileID: 58392232}
