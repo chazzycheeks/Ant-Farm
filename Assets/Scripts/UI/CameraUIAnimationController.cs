@@ -17,6 +17,9 @@ public class CameraUIAnimationController : MonoBehaviour
     [SerializeField] GameObject endScreen;
     [SerializeField] GameObject dashScreen;
 
+    [SerializeField] GameObject checkpointUI;
+    Animator checkpointUIAnim;
+
     string fadeInAnim = "FadeIn";
 
     private void Awake() {
@@ -30,6 +33,8 @@ public class CameraUIAnimationController : MonoBehaviour
 
         blackBarUpAnim = blackBarUp.GetComponent<Animator>();
         blackBarDownAnim = blackBarDown.GetComponent<Animator>();
+
+        checkpointUIAnim = checkpointUI.GetComponent<Animator>();
     }
     public void TriggerFade() {
         blackoutObjectAnimator.SetTrigger("FadeTrigger");
@@ -54,5 +59,10 @@ public class CameraUIAnimationController : MonoBehaviour
     public void TriggerDashScreen()
     {
         dashScreen.SetActive(true);
+    }
+
+    public void TriggerCheckpointUI()
+    {
+        checkpointUIAnim.SetTrigger("Activated");
     }
 }

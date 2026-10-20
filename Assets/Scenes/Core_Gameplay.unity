@@ -2235,6 +2235,104 @@ MonoBehaviour:
   - {fileID: 981857872}
   waypointStart: {fileID: 848870084}
   surveyWaypoint: 1
+--- !u!1 &304959738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304959739}
+  - component: {fileID: 304959741}
+  - component: {fileID: 304959740}
+  - component: {fileID: 304959742}
+  m_Layer: 5
+  m_Name: CheckpointUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &304959739
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304959738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 752537315}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 355}
+  m_SizeDelta: {x: 414.25, y: 211.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &304959740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304959738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 86890a7326553494aa93bf8bc2cfddc7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &304959741
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304959738}
+  m_CullTransparentMesh: 1
+--- !u!95 &304959742
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304959738}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c181c00baf718054bbbda723e33e4021, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &315196595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,10 +3016,10 @@ RectTransform:
   - {fileID: 1301408851}
   m_Father: {fileID: 752537315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -1268, y: -1232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &477484429
 GameObject:
@@ -4595,6 +4693,7 @@ RectTransform:
   - {fileID: 456733629}
   - {fileID: 1728965424}
   - {fileID: 750244401}
+  - {fileID: 304959739}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4619,6 +4718,7 @@ MonoBehaviour:
   blackBarDown: {fileID: 1301408850}
   endScreen: {fileID: 1728965423}
   dashScreen: {fileID: 750244400}
+  checkpointUI: {fileID: 304959738}
 --- !u!114 &752537317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6313,11 +6413,11 @@ MonoBehaviour:
   blackCut: {fileID: 649486745}
   deathSound:
     Guid:
-      Data1: 840545206
-      Data2: 1155780855
-      Data3: 883355571
-      Data4: 158505476
-    Path: event:/Music_2/Death
+      Data1: 1328792652
+      Data2: 1189389188
+      Data3: -708071779
+      Data4: -504516543
+    Path: event:/Music/Death_Long
   CanBeSpotted: 1
   spottingPeriodTimeImmunity: 10
   coverObjects: []
@@ -7970,15 +8070,15 @@ RectTransform:
   m_GameObject: {fileID: 1301408850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.31673, z: 1}
+  m_LocalScale: {x: 0.66675, y: 0.31673, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 456733629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -812}
-  m_SizeDelta: {x: 2225, y: 1252}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 6.5009766, y: -976}
+  m_SizeDelta: {x: 3800.4, y: 2223.5146}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301408852
 MonoBehaviour:
@@ -12134,15 +12234,15 @@ RectTransform:
   m_GameObject: {fileID: 2067810971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.31673, z: 1}
+  m_LocalScale: {x: 0.61691, y: 0.31673, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 456733629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 803}
-  m_SizeDelta: {x: 2225, y: 1252}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 6.493042, y: 982}
+  m_SizeDelta: {x: 3800.3418, y: 2264.518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067810973
 MonoBehaviour:
