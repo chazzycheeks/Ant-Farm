@@ -345,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264539866310955447}
   - component: {fileID: 5455148439871704623}
+  - component: {fileID: -4784032833929669548}
   m_Layer: 8
   m_Name: WallGrabIdle
   m_TagString: Untagged
@@ -390,6 +391,52 @@ MonoBehaviour:
   disarmed: 0
   DisarmTime: 2
   UseSpline: 0
+  armGrabSound:
+    Guid:
+      Data1: -1786758321
+      Data2: 1112984561
+      Data3: 1632256695
+      Data4: 54260286
+    Path: event:/SFX/ENEMIES/AntFarm_BT_MetalArmGrab
+  armReleaseSound:
+    Guid:
+      Data1: 54835761
+      Data2: 1187519422
+      Data3: -350611789
+      Data4: -1874306995
+    Path: event:/SFX/ENEMIES/AntFarm_BT_ArmRelease
+  emitter: {fileID: -4784032833929669548}
+--- !u!114 &-4784032833929669548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623628006786388880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 901453130
+      Data2: 1312811930
+      Data3: 104985991
+      Data4: -688405956
+    Path: event:/SFX/ENEMIES/AntFarm_BT_ArmHolding
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5257431229384208829
 GameObject:
   m_ObjectHideFlags: 0

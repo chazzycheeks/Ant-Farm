@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Splines;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class ArmGrabTrap : MonoBehaviour {
     // References
@@ -26,6 +27,10 @@ public class ArmGrabTrap : MonoBehaviour {
     public bool UseSpline = false;
     SplineAnimate splineComponent;
 
+    [SerializeField] private EventReference armGrabSound;
+    [SerializeField] private EventReference armReleaseSound;
+    [SerializeField] private StudioEventEmitter emitter;
+
     private void Awake() {
         if (UseSpline) {
             gameObject.TryGetComponent<SplineAnimate>(out splineComponent);
@@ -37,6 +42,8 @@ public class ArmGrabTrap : MonoBehaviour {
     public IEnumerator TrapTriggered() {
         trappedStateHandler.enabled = true;
         //Play grab animation
+        AudioManager.instance.PlayOneShotSound(armGrabSound, this.transform.position);
+        emitter.Play();
         GetComponentInChildren<Animator>().SetBool("grabbed", true);
         PlayerController.instance.Animator.SetBool("Grabbed", true);
         PlayerController.instance.Animator.SetBool("Idle", false);
@@ -76,6 +83,8 @@ public class ArmGrabTrap : MonoBehaviour {
             struggleMeter = null;
             trappedStateHandler.enabled = false;
             trappedStateHandler.trap = null;
+            emitter.Stop();
+            AudioManager.instance.PlayOneShotSound(armReleaseSound, this.transform.position);
             GetComponentInChildren<Animator>().SetBool("grabbed", false);
             PlayerController.instance.Animator.SetBool("Grabbed", false);
             PlayerController.instance.Animator.SetBool("Idle", true);

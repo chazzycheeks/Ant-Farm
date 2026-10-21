@@ -312,6 +312,21 @@ MonoBehaviour:
   disarmed: 0
   DisarmTime: 2
   UseSpline: 0
+  armGrabSound:
+    Guid:
+      Data1: -1786758321
+      Data2: 1112984561
+      Data3: 1632256695
+      Data4: 54260286
+    Path: event:/SFX/ENEMIES/AntFarm_BT_MetalArmGrab
+  armReleaseSound:
+    Guid:
+      Data1: 54835761
+      Data2: 1187519422
+      Data3: -350611789
+      Data4: -1874306995
+    Path: event:/SFX/ENEMIES/AntFarm_BT_ArmRelease
+  emitter: {fileID: 0}
 --- !u!1 &5814870455003330819
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,12 +616,22 @@ PrefabInstance:
     - target: {fileID: 3648154965105640959, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.999099
+      value: 0.99911493
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648154965105640959, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648154965105640959, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3648154965105640959, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.042440522
+      value: -0.0420631
       objectReference: {fileID: 0}
     - target: {fileID: 4228896996867349686, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
         type: 3}
@@ -721,22 +746,22 @@ PrefabInstance:
     - target: {fileID: 8028974020951700499, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98681736
+      value: 0.9868002
       objectReference: {fileID: 0}
     - target: {fileID: 8028974020951700499, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.16183817
+      value: 0.16194278
       objectReference: {fileID: 0}
     - target: {fileID: 8140143664842584553, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9993787
+      value: 0.9993956
       objectReference: {fileID: 0}
     - target: {fileID: 8140143664842584553, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.035248138
+      value: 0.03476457
       objectReference: {fileID: 0}
     - target: {fileID: 8213234260350539037, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
         type: 3}
@@ -777,7 +802,15 @@ PrefabInstance:
         type: 3}
       insertIndex: 1
       addedObject: {fileID: 6247734533496982051}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8305379517936825798, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7433265374463720864}
+    - targetCorrespondingSourceObject: {fileID: 8305379517936825798, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9215535275712876541}
   m_SourcePrefab: {fileID: 100100000, guid: 4e6ea74dc2a68fd48bfececdecd1e24d, type: 3}
 --- !u!4 &5052392332558090047 stripped
 Transform:
@@ -803,3 +836,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 697332356386950481}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8858526314273536151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8305379517936825798, guid: 4e6ea74dc2a68fd48bfececdecd1e24d,
+    type: 3}
+  m_PrefabInstance: {fileID: 697332356386950481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7433265374463720864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858526314273536151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1667525821
+      Data2: 1274842698
+      Data3: 1446500266
+      Data4: -888439156
+    Path: event:/SFX/ENEMIES/Metal Arm Creak_Short
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 4.96
+  OverrideMaxDistance: 7.57
+--- !u!114 &9215535275712876541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858526314273536151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e87ebff4d72a84ebafb24b8a81959d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArmCreak
+  emitter: {fileID: 7433265374463720864}
