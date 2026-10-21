@@ -8,7 +8,7 @@ public class GamepadUISelector : MonoBehaviour
     [SerializeField] private Button playButton;
     [SerializeField] private PlayerInput playerInput;
 
-    private void Awake()
+    private void Start()
     {
         playerInput.onControlsChanged += TrySelecting;
     }

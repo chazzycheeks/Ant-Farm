@@ -4,9 +4,9 @@ using Unity.VisualScripting;
 
 public class FMODEvents : MonoBehaviour
 {
-   /* [field: Header("Button SFX")]
-    [field: SerializeField] public EventReference buttonSFX { get; private set; }
-    public static FMODEvents instance {  get; private set; }
+    [field: Header("Moving Walls SFX")]
+    [field: SerializeField] public EventReference movingWalls { get; private set; }
+    public static FMODEvents instance { get; private set; }
 
     private void Awake()
     {
@@ -15,5 +15,5 @@ public class FMODEvents : MonoBehaviour
             Debug.LogError("Found more than one FMOD instance in the scene");
         }
         instance = this;
-    }*/
+    }
 }

@@ -322,7 +322,7 @@ MonoBehaviour:
       Data2: 1166730285
       Data3: -481529415
       Data4: -556334858
-    Path: event:/FIXED DURATION/AntFarm_BT_LadderFall
+    Path: event:/SFX/OBJECTS/AntFarm_BT_LadderFall
   StopType: 0
   Parameters: []
 --- !u!114 &1880255875319354303
@@ -547,25 +547,7 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -802,7 +784,7 @@ MonoBehaviour:
       Data2: 1311739654
       Data3: -1542175842
       Data4: 1472890357
-    Path: event:/FIXED DURATION/AntFarm_BT_BigDoorOpen
+    Path: event:/SFX/OBJECTS/AntFarm_BT_BigDoorOpen
   StopType: 0
   Parameters: []
 --- !u!114 &6958349679566668341

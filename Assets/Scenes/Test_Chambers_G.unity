@@ -2830,7 +2830,7 @@ MonoBehaviour:
       Data2: 1144094506
       Data3: 1572118426
       Data4: -317445401
-    Path: event:/NON FIXED DURATION/AntFarm_BT_ArmCrash
+    Path: event:/SFX/ENEMIES/AntFarm_BT_ArmCrash
 --- !u!1 &42227604
 GameObject:
   m_ObjectHideFlags: 0
@@ -4732,6 +4732,8 @@ GameObject:
   - component: {fileID: 88324919}
   - component: {fileID: 88324918}
   - component: {fileID: 88324921}
+  - component: {fileID: 88324922}
+  - component: {fileID: 88324923}
   m_Layer: 0
   m_Name: Wall (7)
   m_TagString: Untagged
@@ -4893,6 +4895,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &88324922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88324916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 300355617
+      Data2: 1161633869
+      Data3: -889908349
+      Data4: 501544991
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 6.88
+  OverrideMaxDistance: 15.01
+--- !u!114 &88324923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88324916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
 --- !u!4 &89635389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b,
@@ -15801,6 +15846,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4369592146309888829, guid: 075cb3d5214dab34abb6ba4508f4aab7,
         type: 3}
+      propertyPath: buttonPressSound.Path
+      value: event:/SFX/OBJECTS/AntFarm_BT_ButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4369592146309888829, guid: 075cb3d5214dab34abb6ba4508f4aab7,
+        type: 3}
       propertyPath: buttonPressSound.Guid.Data1
       value: -2110026125
       objectReference: {fileID: 0}
@@ -23882,7 +23932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26980,6 +27030,8 @@ GameObject:
   - component: {fileID: 381464391}
   - component: {fileID: 381464390}
   - component: {fileID: 381464393}
+  - component: {fileID: 381464394}
+  - component: {fileID: 381464395}
   m_Layer: 0
   m_Name: Wall (15)
   m_TagString: Untagged
@@ -27141,6 +27193,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &381464394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381464388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 300355617
+      Data2: 1161633869
+      Data3: -889908349
+      Data4: 501544991
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 6.88
+  OverrideMaxDistance: 15.01
+--- !u!114 &381464395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381464388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
 --- !u!1001 &382620943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31453,7 +31548,7 @@ MonoBehaviour:
       Data2: 1094963026
       Data3: -492970353
       Data4: -422163943
-    Path: event:/Intro
+    Path: event:/Music/Intro+Outro
   Event: 
   EventPlayTrigger: 3
   EventStopTrigger: 0
@@ -35620,6 +35715,8 @@ GameObject:
   - component: {fileID: 507584771}
   - component: {fileID: 507584770}
   - component: {fileID: 507584769}
+  - component: {fileID: 507584773}
+  - component: {fileID: 507584774}
   m_Layer: 0
   m_Name: Wall (18)
   m_TagString: Untagged
@@ -35781,6 +35878,49 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &507584773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507584767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 300355617
+      Data2: 1161633869
+      Data3: -889908349
+      Data4: 501544991
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 6.88
+  OverrideMaxDistance: 15.01
+--- !u!114 &507584774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507584767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
 --- !u!1 &507952492
 GameObject:
   m_ObjectHideFlags: 0
@@ -46431,7 +46571,7 @@ MonoBehaviour:
       Data2: 1151411081
       Data3: -1695442768
       Data4: -1672305680
-    Path: event:/NON FIXED DURATION/AntFarm_BT_CollapseFloor
+    Path: event:/SFX/OBJECTS/AntFarm_BT_CollapseFloor
 --- !u!1001 &692741841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59923,7 +60063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -69947,7 +70087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -72556,7 +72696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73900,7 +74040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -78755,7 +78895,7 @@ MonoBehaviour:
       Data2: 1268615272
       Data3: 1852430229
       Data4: -1521183908
-    Path: event:/FIXED DURATION/AntFarm_BT_Injection
+    Path: event:/SFX/ENEMIES/AntFarm_BT_Injection
 --- !u!114 &1164075165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92566,6 +92706,8 @@ GameObject:
   - component: {fileID: 1347767211}
   - component: {fileID: 1347767210}
   - component: {fileID: 1347767213}
+  - component: {fileID: 1347767214}
+  - component: {fileID: 1347767215}
   m_Layer: 0
   m_Name: Wall (8)
   m_TagString: Untagged
@@ -92727,6 +92869,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1347767214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347767208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 300355617
+      Data2: 1161633869
+      Data3: -889908349
+      Data4: 501544991
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 6.88
+  OverrideMaxDistance: 15.01
+--- !u!114 &1347767215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347767208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
 --- !u!1 &1351795375
 GameObject:
   m_ObjectHideFlags: 0
@@ -94684,7 +94869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefabs:
-  - {fileID: 11485350, guid: 76c077f0a4a9e2c4497ab7567a4ecaa7, type: 3}
+  - {fileID: 11485350, guid: 4319fcfed238e0541b48b71e737f6a95, type: 3}
   AutoAttributePlayerIDs: 1
   SceneCharacters: []
   DebugSpawn: {fileID: 0}
@@ -98859,6 +99044,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4369592146309888829, guid: 075cb3d5214dab34abb6ba4508f4aab7,
         type: 3}
+      propertyPath: buttonPressSound.Path
+      value: event:/SFX/OBJECTS/AntFarm_BT_ButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4369592146309888829, guid: 075cb3d5214dab34abb6ba4508f4aab7,
+        type: 3}
       propertyPath: buttonPressSound.Guid.Data1
       value: -2110026125
       objectReference: {fileID: 0}
@@ -101194,6 +101384,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1492419484}
     m_Modifications:
+    - target: {fileID: 4369592146309888829, guid: 075cb3d5214dab34abb6ba4508f4aab7,
+        type: 3}
+      propertyPath: buttonPressSound.Path
+      value: event:/SFX/OBJECTS/AntFarm_BT_ButtonPress
+      objectReference: {fileID: 0}
     - target: {fileID: 4369592146309888829, guid: 075cb3d5214dab34abb6ba4508f4aab7,
         type: 3}
       propertyPath: buttonPressSound.Guid.Data1
@@ -106254,7 +106449,7 @@ MonoBehaviour:
       Data2: 1268615272
       Data3: 1852430229
       Data4: -1521183908
-    Path: event:/FIXED DURATION/AntFarm_BT_Injection
+    Path: event:/SFX/ENEMIES/AntFarm_BT_Injection
 --- !u!61 &1537101232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108297,7 +108492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -111428,6 +111623,8 @@ GameObject:
   - component: {fileID: 1616447696}
   - component: {fileID: 1616447695}
   - component: {fileID: 1616447694}
+  - component: {fileID: 1616447698}
+  - component: {fileID: 1616447699}
   m_Layer: 0
   m_Name: Wall (16)
   m_TagString: Untagged
@@ -111589,6 +111786,49 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1616447698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616447692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 300355617
+      Data2: 1161633869
+      Data3: -889908349
+      Data4: 501544991
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 6.88
+  OverrideMaxDistance: 15.01
+--- !u!114 &1616447699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616447692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
 --- !u!1001 &1618492542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120695,6 +120935,8 @@ GameObject:
   - component: {fileID: 1753850944}
   - component: {fileID: 1753850943}
   - component: {fileID: 1753850942}
+  - component: {fileID: 1753850946}
+  - component: {fileID: 1753850947}
   m_Layer: 0
   m_Name: Wall (17)
   m_TagString: Untagged
@@ -120856,6 +121098,49 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1753850946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753850940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 300355617
+      Data2: 1161633869
+      Data3: -889908349
+      Data4: 501544991
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 6.88
+  OverrideMaxDistance: 15.01
+--- !u!114 &1753850947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753850940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
 --- !u!1 &1754623732
 GameObject:
   m_ObjectHideFlags: 0
@@ -124343,6 +124628,8 @@ GameObject:
   - component: {fileID: 1825244403}
   - component: {fileID: 1825244402}
   - component: {fileID: 1825244401}
+  - component: {fileID: 1825244405}
+  - component: {fileID: 1825244406}
   m_Layer: 0
   m_Name: Wall (9)
   m_TagString: Untagged
@@ -124504,6 +124791,49 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1825244405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825244399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 300355617
+      Data2: 1161633869
+      Data3: -889908349
+      Data4: 501544991
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 6.88
+  OverrideMaxDistance: 15.01
+--- !u!114 &1825244406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825244399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
 --- !u!1 &1825662196
 GameObject:
   m_ObjectHideFlags: 0
@@ -135671,6 +136001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1985794208}
   - component: {fileID: 1985794209}
+  - component: {fileID: 1985794210}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -135705,6 +136036,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f624fd0926e764c802e9a5e50666bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+--- !u!114 &1985794210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985794206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11453b58ac4773e499cd3b5dbe98b10a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
+  <movingWalls>k__BackingField:
+    Guid:
+      Data1: 300355617
+      Data2: 1161633869
+      Data3: -889908349
+      Data4: 501544991
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
 --- !u!1 &1986313539
 GameObject:
   m_ObjectHideFlags: 0
@@ -137221,15 +137571,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -375.4
+      value: -97.01
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.5
+      value: -11.72
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -138549,7 +138899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2030003246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146437,6 +146787,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4369592146309888829, guid: 075cb3d5214dab34abb6ba4508f4aab7,
         type: 3}
+      propertyPath: buttonPressSound.Path
+      value: event:/SFX/OBJECTS/AntFarm_BT_ButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4369592146309888829, guid: 075cb3d5214dab34abb6ba4508f4aab7,
+        type: 3}
       propertyPath: buttonPressSound.Guid.Data1
       value: -2110026125
       objectReference: {fileID: 0}
@@ -146667,7 +147022,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attenuationObject
       value: 
-      objectReference: {fileID: 119040, guid: 76c077f0a4a9e2c4497ab7567a4ecaa7, type: 3}
+      objectReference: {fileID: 119040, guid: 4319fcfed238e0541b48b71e737f6a95, type: 3}
     - target: {fileID: 6651406206867608696, guid: 67e9e6648638ca94eaaa9e41373f42f2,
         type: 3}
       propertyPath: Lens.FieldOfView

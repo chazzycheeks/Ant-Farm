@@ -6548,6 +6548,7 @@ GameObject:
   - component: {fileID: 1969997586185916737}
   - component: {fileID: 7798527774007179782}
   - component: {fileID: 8520983948082733924}
+  - component: {fileID: 5759197844698116891}
   m_Layer: 9
   m_Name: SpriteRenderer
   m_TagString: Untagged
@@ -6680,6 +6681,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d022fe973aff540bbed9dfbdaf69ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AwakeningEvent
+--- !u!114 &5759197844698116891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707816943335508271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 119040}
 --- !u!1 &7454299962818559771
 GameObject:
   m_ObjectHideFlags: 0
