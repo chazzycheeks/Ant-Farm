@@ -341,12 +341,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -7093795589980295658}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2739
+  Length: 1180
 --- !u!114 &-8008270760105995047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +548,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Sound.bank
   Name: Sound
   StudioPath: bank:/Sound
-  lastModified: 639282053223729003
+  lastModified: 639282111988321818
   FileSizes: []
   Exists: 1
 --- !u!114 &-7070318627682129863
@@ -2654,7 +2654,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8592619986620124609}
   cacheVersion: 131860
-  cacheTime: 639282053223729003
+  cacheTime: 639282111988321818
   SerializableEventsDict:
   - key: event:/MUSIC/Room_5+11
     index: 0
