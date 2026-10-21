@@ -17,6 +17,7 @@ public class CollapsingFloor : MonoBehaviour
 
     [SerializeField] private EventReference entitySound;
     [SerializeField] private EventReference floorSound;
+    [SerializeField] private EventReference windSound;
 
 
     public void StartDroppingFloor()
@@ -59,6 +60,7 @@ public class CollapsingFloor : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character>().Freeze();
         yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayOneShotSound(windSound, this.transform.position);
         player.GetComponent<Character>().UnFreeze();
     }
 

@@ -30,11 +30,11 @@ AnimationClip:
       - serializedVersion: 3
         time: 86
         value: {x: -237.94, y: 78.67, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0.5915583, z: 0}
+        outSlope: {x: 0, y: 0.5915583, z: 0}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        inWeight: {x: 0.33333334, y: 0.123922214, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -127,11 +127,11 @@ AnimationClip:
       - serializedVersion: 3
         time: 86
         value: 78.67
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        inSlope: 0.5915583
+        outSlope: 0.5915583
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.123922214
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -174,4 +174,25 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: StartShutterFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 85.96667
+    functionName: EndShutterSFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 85.98333
+    functionName: StopShutterSFX
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

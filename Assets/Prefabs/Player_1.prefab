@@ -6793,13 +6793,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1c117a7aa402d439b50e6483c969e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSounds
-  music:
+  footsteps:
     Guid:
-      Data1: 992402357
-      Data2: 1090129577
-      Data3: 1688310685
-      Data4: -696704002
-    Path: event:/FIXED DURATION/Footsteps Concrete
+      Data1: 769232352
+      Data2: 1137989647
+      Data3: 1450731429
+      Data4: -2139615290
+    Path: event:/SFX/PLAYER/Foot_Concrete_withReverb
+  jump:
+    Guid:
+      Data1: 1309052824
+      Data2: 1318782993
+      Data3: -823562062
+      Data4: -9195539
+    Path: event:/SFX/PLAYER/Jump_TakeOff
+  land:
+    Guid:
+      Data1: -1208999866
+      Data2: 1159449789
+      Data3: 1094513338
+      Data4: -2022696834
+    Path: event:/SFX/PLAYER/Concrete Jump Land
+  wakeup:
+    Guid:
+      Data1: 1935945763
+      Data2: 1080240606
+      Data3: -982302553
+      Data4: 147907999
+    Path: event:/SFX/PLAYER/AntFarm_BT_WakeUp_v4
+  getup:
+    Guid:
+      Data1: -1823474507
+      Data2: 1085742943
+      Data3: -1122250049
+      Data4: -697693508
+    Path: event:/SFX/PLAYER/GettingUp
+  dash:
+    Guid:
+      Data1: -1219828358
+      Data2: 1341321246
+      Data3: 1110588849
+      Data4: 954022821
+    Path: event:/SFX/PLAYER/Dash_V2
+  climb:
+    Guid:
+      Data1: 769766806
+      Data2: 1263349516
+      Data3: -288932214
+      Data4: -1013262863
+    Path: event:/SFX/PLAYER/AntFarm_BT_LadderClimb
 --- !u!114 &5758640146457888363
 MonoBehaviour:
   m_ObjectHideFlags: 0

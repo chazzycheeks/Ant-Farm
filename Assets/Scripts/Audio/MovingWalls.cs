@@ -10,7 +10,7 @@ public class MovingWalls : MonoBehaviour
     private void Start()
     {
         emitter = AudioManager.instance.InitialiseEventEmitter(FMODEvents.instance.movingWalls, this.gameObject);
-        emitter.Play();
+
     }
 
     public void StartWallSFX()

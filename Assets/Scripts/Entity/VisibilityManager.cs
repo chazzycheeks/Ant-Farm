@@ -137,6 +137,7 @@ public class VisibilityManager : MonoBehaviour
         float currentAlpha = vignette.color.a;
         float newAlpha = Mathf.Lerp(currentAlpha,visiblityPercentage, Time.deltaTime*8f);
         vignette.color = new Color(vignette.color.r,vignette.color.g,vignette.color.b,newAlpha);
+        //set fmod parameter to newAlpha
         CheckIfCaught();
     }
 

@@ -205,10 +205,10 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639281871127472447
+  lastModified: 639281991264548394
   FileSizes:
   - Name: 
-    Value: 4460
+    Value: 4550
   Exists: 1
 --- !u!114 &-8578605709154125867
 MonoBehaviour:
@@ -275,9 +275,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Death_Short
+  m_Name: event:/MUSIC/Death_Short
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Death_Short
+  Path: event:/MUSIC/Death_Short
   Guid:
     Data1: 1101196869
     Data2: 1291702461
@@ -548,7 +548,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Sound.bank
   Name: Sound
   StudioPath: bank:/Sound
-  lastModified: 639281900363069743
+  lastModified: 639282053223729003
   FileSizes: []
   Exists: 1
 --- !u!114 &-7070318627682129863
@@ -722,9 +722,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Wall
+  m_Name: event:/MUSIC/Wall
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Wall
+  Path: event:/MUSIC/Wall
   Guid:
     Data1: -1333470625
     Data2: 1140949039
@@ -776,9 +776,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Looming
+  m_Name: event:/MUSIC/Looming
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Looming
+  Path: event:/MUSIC/Looming
   Guid:
     Data1: 853298397
     Data2: 1112617978
@@ -948,9 +948,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Room_5+11
+  m_Name: event:/MUSIC/Room_5+11
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Room_5+11
+  Path: event:/MUSIC/Room_5+11
   Guid:
     Data1: -46682573
     Data2: 1182308802
@@ -1128,7 +1128,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2200
+  Length: 500
 --- !u!114 &-5651836143489986658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,9 +1139,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Room 7
+  m_Name: event:/MUSIC/Room 7
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Room 7
+  Path: event:/MUSIC/Room 7
   Guid:
     Data1: -2065741860
     Data2: 1326156569
@@ -1211,6 +1211,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1479
+--- !u!114 &-4981358216534866408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/PLAYER/GettingUp
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/PLAYER/GettingUp
+  Guid:
+    Data1: -1823474507
+    Data2: 1085742943
+    Data3: -1122250049
+    Data4: -697693508
+  Banks:
+  - {fileID: -7093795589980295658}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &-4896693041985245868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,7 +1318,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 9200
+  Length: 9527
 --- !u!114 &-4282545472734122295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,9 +1329,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Jumpscare_2
+  m_Name: event:/MUSIC/Jumpscare_2
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Jumpscare_2
+  Path: event:/MUSIC/Jumpscare_2
   Guid:
     Data1: -1607689797
     Data2: 1248471255
@@ -1491,9 +1518,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Menu
+  m_Name: event:/MUSIC/Menu
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Menu
+  Path: event:/MUSIC/Menu
   Guid:
     Data1: 1181123899
     Data2: 1190634555
@@ -1599,9 +1626,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Intro+Outro
+  m_Name: event:/MUSIC/Intro+Outro
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Intro+Outro
+  Path: event:/MUSIC/Intro+Outro
   Guid:
     Data1: -1432235169
     Data2: 1094963026
@@ -1725,9 +1752,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Room_14
+  m_Name: event:/MUSIC/Room_14
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Room_14
+  Path: event:/MUSIC/Room_14
   Guid:
     Data1: 1065240824
     Data2: 1087781117
@@ -1870,13 +1897,13 @@ MonoBehaviour:
     Data4: 1135447460
   Banks:
   - {fileID: -7093795589980295658}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1365
+  Length: 920
 --- !u!114 &-2122421493057042092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2267,7 +2294,7 @@ MonoBehaviour:
   - {fileID: -7093795589980295658}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -2282,9 +2309,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Jumpscare_1
+  m_Name: event:/MUSIC/Jumpscare_1
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Jumpscare_1
+  Path: event:/MUSIC/Jumpscare_1
   Guid:
     Data1: 301819274
     Data2: 1113429770
@@ -2598,7 +2625,6 @@ MonoBehaviour:
   - {fileID: -1799888270277160932}
   - {fileID: 8073672753924612135}
   - {fileID: -6479164730441331696}
-  - {fileID: 3083762779246253668}
   - {fileID: 2289213320505149823}
   - {fileID: 8448815916397989187}
   - {fileID: 2465438456874738995}
@@ -2609,6 +2635,8 @@ MonoBehaviour:
   - {fileID: -551575988516596605}
   - {fileID: -1174905681334009454}
   - {fileID: 4595025740959461317}
+  - {fileID: 150140479302543663}
+  - {fileID: -4981358216534866408}
   EditorParameters:
   - {fileID: -7309173017417677107}
   - {fileID: 4726268391514273025}
@@ -2626,39 +2654,39 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8592619986620124609}
   cacheVersion: 131860
-  cacheTime: 639281900363069743
+  cacheTime: 639282053223729003
   SerializableEventsDict:
-  - key: event:/Music/Room_5+11
+  - key: event:/MUSIC/Room_5+11
     index: 0
-  - key: event:/Music/Menu
+  - key: event:/MUSIC/Menu
     index: 1
-  - key: event:/Music/Death_Short
+  - key: event:/MUSIC/Death_Short
     index: 2
-  - key: event:/Music/Death_Long
+  - key: event:/MUSIC/Death_Long
     index: 3
-  - key: event:/Music/Intro+Outro
+  - key: event:/MUSIC/Intro+Outro
     index: 4
-  - key: event:/Music/Wall
+  - key: event:/MUSIC/Wall
     index: 5
-  - key: event:/Music/Hyena
+  - key: event:/MUSIC/Hyena
     index: 6
-  - key: event:/Music/Jumpscare_1
+  - key: event:/MUSIC/Jumpscare_1
     index: 7
-  - key: event:/Music/Jumpscare_Trem
+  - key: event:/MUSIC/Jumpscare_Trem
     index: 8
-  - key: event:/Music/Jumpscare_2
+  - key: event:/MUSIC/Jumpscare_2
     index: 9
-  - key: event:/Music/Room 7
+  - key: event:/MUSIC/Room 7
     index: 10
-  - key: event:/Music/Looming
+  - key: event:/MUSIC/Looming
     index: 11
-  - key: event:/Music/Needle
+  - key: event:/MUSIC/Needle
     index: 12
-  - key: event:/Music/Room_14
+  - key: event:/MUSIC/Room_14
     index: 13
-  - key: event:/Music/Jumpscare_3
+  - key: event:/MUSIC/Jumpscare_3
     index: 14
-  - key: event:/Music/Jumpscare_Random
+  - key: event:/MUSIC/Jumpscare_Random
     index: 15
   - key: event:/SFX/ENEMIES/Monster Sounds
     index: 16
@@ -2732,28 +2760,57 @@ MonoBehaviour:
     index: 50
   - key: event:/SFX/PLAYER/Jump_TakeOff
     index: 51
-  - key: event:/SFX/PLAYER/Waking Up
-    index: 52
   - key: event:/SFX/ENEMIES/Metal Arm Creak_Short
-    index: 53
+    index: 52
   - key: event:/SFX/OBJECTS/AntFarm_BT_BigDoorOpen
-    index: 54
+    index: 53
   - key: event:/SFX/ENEMIES/AntFarm_Roaming_v4
-    index: 55
+    index: 54
   - key: event:/SFX/OTHER/AntFarm_BT_Death
-    index: 56
+    index: 55
   - key: event:/SFX/ATMOS/AntFarm_BT_LargeAtmos_LessElements
-    index: 57
+    index: 56
   - key: event:/SFX/ENEMIES/AntFarm_BT_ArmCrash
-    index: 58
+    index: 57
   - key: event:/SFX/PLAYER/Foot_Concrete_withReverb
-    index: 59
+    index: 58
   - key: event:/SFX/ENEMIES/AntFarm_BT_Injection
-    index: 60
+    index: 59
   - key: event:/SFX/OBJECTS/AntFarm_BT_LadderFall
-    index: 61
+    index: 60
   - key: event:/SFX/OBJECTS/AntFarm_BT_GiantShutterOpening
+    index: 61
+  - key: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls_Small
     index: 62
+  - key: event:/SFX/PLAYER/GettingUp
+    index: 63
+--- !u!114 &150140479302543663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls_Small
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls_Small
+  Guid:
+    Data1: 1604370982
+    Data2: 1311609721
+    Data3: 2020944063
+    Data4: -1622662956
+  Banks:
+  - {fileID: -7093795589980295658}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7500
 --- !u!114 &435403859059878919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2976,9 +3033,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Hyena
+  m_Name: event:/MUSIC/Hyena
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Hyena
+  Path: event:/MUSIC/Hyena
   Guid:
     Data1: -1719025547
     Data2: 1146509212
@@ -3059,6 +3116,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 104000
+--- !u!114 &1711041766173700188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jumpscare_Trem/Visibility
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Visibility
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3326023205
+    data2: 3273059174
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2039853305813290043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3354,33 +3435,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10750
---- !u!114 &3083762779246253668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PLAYER/Waking Up
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/PLAYER/Waking Up
-  Guid:
-    Data1: -1823474507
-    Data2: 1085742943
-    Data3: -1122250049
-    Data4: -697693508
-  Banks:
-  - {fileID: -7093795589980295658}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
 --- !u!114 &3161072135120061296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3555,7 +3609,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639281871127462384
+  lastModified: 639281991264527389
   FileSizes: []
   Exists: 1
 --- !u!114 &3945851568501336352
@@ -3813,12 +3867,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -7093795589980295658}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5500
+  Length: 4900
 --- !u!114 &4615952549811583493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4091,7 +4145,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639281320346197348
+  lastModified: 639282000770044454
   FileSizes: []
   Exists: 1
 --- !u!114 &5824259850983545480
@@ -4212,9 +4266,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Jumpscare_3
+  m_Name: event:/MUSIC/Jumpscare_3
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Jumpscare_3
+  Path: event:/MUSIC/Jumpscare_3
   Guid:
     Data1: 1689234938
     Data2: 1140383236
@@ -4426,9 +4480,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Death_Long
+  m_Name: event:/MUSIC/Death_Long
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Death_Long
+  Path: event:/MUSIC/Death_Long
   Guid:
     Data1: 1328792652
     Data2: 1189389188
@@ -4526,9 +4580,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Jumpscare_Trem
+  m_Name: event:/MUSIC/Jumpscare_Trem
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Jumpscare_Trem
+  Path: event:/MUSIC/Jumpscare_Trem
   Guid:
     Data1: -156732518
     Data2: 1316547773
@@ -4538,11 +4592,12 @@ MonoBehaviour:
   - {fileID: 5813265149647818001}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1711041766173700188}
   MinDistance: 1
   MaxDistance: 20
-  Length: 8000
+  Length: 9000
 --- !u!114 &7616686991523777837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4553,9 +4608,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Needle
+  m_Name: event:/MUSIC/Needle
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Needle
+  Path: event:/MUSIC/Needle
   Guid:
     Data1: 2034478316
     Data2: 1213684045
@@ -4688,9 +4743,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Jumpscare_Random
+  m_Name: event:/MUSIC/Jumpscare_Random
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music/Jumpscare_Random
+  Path: event:/MUSIC/Jumpscare_Random
   Guid:
     Data1: -2135966048
     Data2: 1273576387
@@ -4754,11 +4809,11 @@ MonoBehaviour:
   - {fileID: -7093795589980295658}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 9000
+  Length: 410
 --- !u!114 &8129460728118663814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4940,7 +4995,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7093795589980295658}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1

@@ -4910,11 +4910,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 300355617
-      Data2: 1161633869
-      Data3: -889908349
-      Data4: 501544991
-    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+      Data1: 1604370982
+      Data2: 1311609721
+      Data3: 2020944063
+      Data4: -1622662956
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls_Small
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -4924,8 +4924,8 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 6.88
-  OverrideMaxDistance: 15.01
+  OverrideMinDistance: 4.44
+  OverrideMaxDistance: 9.18
 --- !u!114 &88324923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4935,9 +4935,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 88324916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f907aaf7ebd3bd4fb1ce369c76d46dd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
+  m_EditorClassIdentifier: Assembly-CSharp::SmallMovingWalls
 --- !u!4 &89635389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471364, guid: f58a667c8217aaf42b28e20ef609767b,
@@ -19592,6 +19592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274031867}
   - component: {fileID: 274031868}
+  - component: {fileID: 274031869}
   m_Layer: 0
   m_Name: GiantShutter
   m_TagString: Untagged
@@ -19665,6 +19666,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &274031869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274031866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438831f8229146249b8b8c6c2c9cf4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GinatShutterAudio
+  StartMovingEmitter: {fileID: 947780895}
+  EndMovingEmitter: {fileID: 707660240}
 --- !u!1001 &276868157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44044,6 +44059,12 @@ Transform:
   - {fileID: 755967818}
   m_Father: {fileID: 1788941260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &637443220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2901416388827506277, guid: e7e23daf906ac944287348665b0699cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 956924685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &638034289
 GameObject:
   m_ObjectHideFlags: 0
@@ -45842,6 +45863,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 667068047}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &670696622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2901416388827506277, guid: e7e23daf906ac944287348665b0699cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 849431900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &671988853
 GameObject:
   m_ObjectHideFlags: 0
@@ -46572,6 +46599,13 @@ MonoBehaviour:
       Data3: -1695442768
       Data4: -1672305680
     Path: event:/SFX/OBJECTS/AntFarm_BT_CollapseFloor
+  windSound:
+    Guid:
+      Data1: 1481632061
+      Data2: 1114917820
+      Data3: -1550198611
+      Data4: 1919645997
+    Path: event:/SFX/OTHER/AntFarm_BT_RushingWind_v2
 --- !u!1001 &692741841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47839,6 +47873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 707660239}
   - component: {fileID: 707660238}
+  - component: {fileID: 707660240}
   m_Layer: 0
   m_Name: Asset_R6_GiantShutterChunk (4)
   m_TagString: Untagged
@@ -47920,6 +47955,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 274031867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &707660240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707660237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1050362025
+      Data2: 1216501337
+      Data3: -1515769169
+      Data4: -1910511825
+    Path: event:/SFX/OBJECTS/AntFarm_BT_GiantShutterEnd
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 18.9
+  OverrideMaxDistance: 23.17
 --- !u!1001 &707676350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57893,6 +57959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
       objectReference: {fileID: 0}
@@ -57920,17 +57991,17 @@ PrefabInstance:
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 849431904}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 849431903}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 849431904}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
@@ -57954,17 +58025,17 @@ PrefabInstance:
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Activate
+      value: PlayElevatorStart
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: Activate
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: Activate
+      value: PlayElevatorEndRoom5
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
@@ -57974,17 +58045,17 @@ PrefabInstance:
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: ElevatorFreezer, Assembly-CSharp
+      value: ElevatorAudio, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: ElevatorFreezer, Assembly-CSharp
+      value: FMODUnity.StudioEventEmitter, FMODUnity
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: ElevatorFreezer, Assembly-CSharp
+      value: ElevatorAudio, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
@@ -58289,7 +58360,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1377703037}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2901416388827506277, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 849431904}
+    - targetCorrespondingSourceObject: {fileID: 2901416388827506277, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 849431903}
   m_SourcePrefab: {fileID: 100100000, guid: e7e23daf906ac944287348665b0699cc, type: 3}
 --- !u!4 &849431901 stripped
 Transform:
@@ -58297,6 +58376,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 849431900}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &849431903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670696622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2090133524
+      Data2: 1183873461
+      Data3: -1205472102
+      Data4: 190595700
+    Path: event:/SFX/OBJECTS/AntFarm_ElevatorMoving_v1
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &849431904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670696622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a26d0ed253e2e49aa7463e5595e7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ElevatorAudio
+  elevatorEndSound:
+    Guid:
+      Data1: 1643386373
+      Data2: 1185110503
+      Data3: 1356797109
+      Data4: 1135447460
+    Path: event:/SFX/OBJECTS/AntFarm_ElevatorStop_v1
+  elevatorStartSound:
+    Guid:
+      Data1: -509454735
+      Data2: 1142571090
+      Data3: -431469125
+      Data4: -1931976024
+    Path: event:/SFX/OBJECTS/AntFarm_BT_ElevatorStart
+  emitter: {fileID: 849431903}
 --- !u!1 &849477604
 GameObject:
   m_ObjectHideFlags: 0
@@ -65554,6 +65691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 947780894}
   - component: {fileID: 947780893}
+  - component: {fileID: 947780895}
   m_Layer: 0
   m_Name: Asset_R6_GiantShutterChunk (6)
   m_TagString: Untagged
@@ -65635,6 +65773,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 274031867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &947780895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947780892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -841738241
+      Data2: 1297764038
+      Data3: 989872040
+      Data4: 1467589016
+    Path: event:/SFX/OBJECTS/AntFarm_BT_GiantShutterOpening
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 23.7
+  OverrideMaxDistance: 32.6
 --- !u!1 &951393428
 GameObject:
   m_ObjectHideFlags: 0
@@ -66092,7 +66261,7 @@ PrefabInstance:
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
@@ -66102,12 +66271,17 @@ PrefabInstance:
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 6
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
@@ -66118,12 +66292,17 @@ PrefabInstance:
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1726776190}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1726776189}
+    - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1726776190}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
@@ -66136,18 +66315,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetActive
+      value: PlayElevatorStart
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: SetActive
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: PlayElevatorEndRoom4
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
@@ -66157,12 +66346,17 @@ PrefabInstance:
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: ElevatorAudio, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: ElevatorAudio, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
@@ -66176,12 +66370,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 930731309242711331, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
@@ -66201,8 +66405,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1726776190}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1726776189}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
       propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayElevatorStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
@@ -66211,13 +66475,83 @@ PrefabInstance:
       objectReference: {fileID: 547219048}
     - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1726776190}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1726776190}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
       propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayElevatorEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: PlayElevatorEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ElevatorAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
       propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ElevatorAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: ElevatorAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformMoving.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018374219771025822, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      propertyPath: OnPlatformStopMoving.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1071412696863720394, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
@@ -66398,6 +66732,14 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 547219049}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2901416388827506277, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1726776190}
+    - targetCorrespondingSourceObject: {fileID: 2901416388827506277, guid: e7e23daf906ac944287348665b0699cc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1726776189}
     - targetCorrespondingSourceObject: {fileID: 3587283559238914328, guid: e7e23daf906ac944287348665b0699cc,
         type: 3}
       insertIndex: -1
@@ -92884,11 +93226,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 300355617
-      Data2: 1161633869
-      Data3: -889908349
-      Data4: 501544991
-    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+      Data1: 1604370982
+      Data2: 1311609721
+      Data3: 2020944063
+      Data4: -1622662956
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls_Small
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -92898,8 +93240,8 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 6.88
-  OverrideMaxDistance: 15.01
+  OverrideMinDistance: 4.44
+  OverrideMaxDistance: 9.18
 --- !u!114 &1347767215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92909,9 +93251,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1347767208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f907aaf7ebd3bd4fb1ce369c76d46dd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
+  m_EditorClassIdentifier: Assembly-CSharp::SmallMovingWalls
 --- !u!1 &1351795375
 GameObject:
   m_ObjectHideFlags: 0
@@ -103198,12 +103540,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 691372252}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 691372252}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
@@ -103214,6 +103571,11 @@ PrefabInstance:
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartRoom14Couroutine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: StartRoom14Couroutine
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
@@ -103238,12 +103600,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CollapsingFloor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
       propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: CollapsingFloor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
         type: 3}
       propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
@@ -118637,6 +119009,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 956924685}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1726776189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637443220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2090133524
+      Data2: 1183873461
+      Data3: -1205472102
+      Data4: 190595700
+    Path: event:/SFX/OBJECTS/AntFarm_ElevatorMoving_v1
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1726776190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637443220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a26d0ed253e2e49aa7463e5595e7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ElevatorAudio
+  elevatorEndSound:
+    Guid:
+      Data1: 1643386373
+      Data2: 1185110503
+      Data3: 1356797109
+      Data4: 1135447460
+    Path: event:/SFX/OBJECTS/AntFarm_ElevatorStop_v1
+  elevatorStartSound:
+    Guid:
+      Data1: -509454735
+      Data2: 1142571090
+      Data3: -431469125
+      Data4: -1931976024
+    Path: event:/SFX/OBJECTS/AntFarm_BT_ElevatorStart
+  emitter: {fileID: 1726776189}
 --- !u!1 &1728406082
 GameObject:
   m_ObjectHideFlags: 0
@@ -124806,11 +125236,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 300355617
-      Data2: 1161633869
-      Data3: -889908349
-      Data4: 501544991
-    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+      Data1: 1604370982
+      Data2: 1311609721
+      Data3: 2020944063
+      Data4: -1622662956
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls_Small
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -124820,8 +125250,8 @@ MonoBehaviour:
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 6.88
-  OverrideMaxDistance: 15.01
+  OverrideMinDistance: 4.44
+  OverrideMaxDistance: 9.18
 --- !u!114 &1825244406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124831,9 +125261,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825244399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc17d69d4b638247936183261bfa0cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f907aaf7ebd3bd4fb1ce369c76d46dd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovingWalls
+  m_EditorClassIdentifier: Assembly-CSharp::SmallMovingWalls
 --- !u!1 &1825662196
 GameObject:
   m_ObjectHideFlags: 0
@@ -136055,6 +136485,13 @@ MonoBehaviour:
       Data3: -889908349
       Data4: 501544991
     Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
+  <smallMovingWalls>k__BackingField:
+    Guid:
+      Data1: 1604370982
+      Data2: 1311609721
+      Data3: 2020944063
+      Data4: -1622662956
+    Path: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls_Small
 --- !u!1 &1986313539
 GameObject:
   m_ObjectHideFlags: 0
@@ -137575,11 +138012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -97.01
+      value: -369.2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.72
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.z
