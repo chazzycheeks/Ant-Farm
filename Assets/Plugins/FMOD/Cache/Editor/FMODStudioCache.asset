@@ -161,7 +161,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3200
+  Length: 3000
 --- !u!114 &-8592619986620124609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,10 +177,10 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639282319187186801
+  lastModified: 639282359750771225
   FileSizes:
   - Name: 
-    Value: 4440
+    Value: 4422
   Exists: 1
 --- !u!114 &-8589802258646702889
 MonoBehaviour:
@@ -520,7 +520,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Sound.bank
   Name: Sound
   StudioPath: bank:/Sound
-  lastModified: 639282275844317433
+  lastModified: 639282376044065901
   FileSizes: []
   Exists: 1
 --- !u!114 &-7070318627682129863
@@ -2362,7 +2362,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7093795589980295658}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -2477,7 +2477,6 @@ MonoBehaviour:
   EditorParameters:
   - {fileID: 963158620451540951}
   - {fileID: 3161072135120061296}
-  - {fileID: 7690379768075546375}
   - {fileID: -7122334476984041369}
   - {fileID: 4878169991713654552}
   - {fileID: 6630410559597117817}
@@ -2486,7 +2485,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8592619986620124609}
   cacheVersion: 131860
-  cacheTime: 639282319187997102
+  cacheTime: 639282376044065901
   SerializableEventsDict:
   - key: event:/MUSIC/Room_5+11
     index: 0
@@ -3409,7 +3408,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639282319187176659
+  lastModified: 639282359750755931
   FileSizes: []
   Exists: 1
 --- !u!114 &3945851568501336352
@@ -3833,9 +3832,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Wall/Leave wall
+  m_Name: parameter:/Wall/Wall
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Leave wall
+  Name: Wall
   StudioPath: 
   Min: 0
   Max: 1
@@ -3844,7 +3843,7 @@ MonoBehaviour:
     data1: 2084911076
     data2: 485870964
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - Wall
   - No Wall
@@ -3919,7 +3918,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639282319187997102
+  lastModified: 639282359751553491
   FileSizes: []
   Exists: 1
 --- !u!114 &5824259850983545480
@@ -4373,32 +4372,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10953
---- !u!114 &7690379768075546375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Leave wall
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Leave wall
-  StudioPath: parameter:/Leave wall
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2084911076
-    data2: 485870964
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - Wall
-  - No Wall
-  Exists: 1
 --- !u!114 &7857730758337449122
 MonoBehaviour:
   m_ObjectHideFlags: 0

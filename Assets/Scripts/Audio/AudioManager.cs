@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private StudioEventEmitter roomSevenEmitter;
     [SerializeField] private StudioEventEmitter wallEmitter;
     [SerializeField] private StudioEventEmitter endingEmitter;
+    [SerializeField] private StudioEventEmitter spiralEmitter;
 
     private void Awake()
     {
@@ -77,7 +78,7 @@ public class AudioManager : MonoBehaviour
     }
     public void EndWallMusic()
     {
-        wallEmitter.SetParameter("Looming", 1);
+        wallEmitter.SetParameter("Wall", 1);
     }
     public void PlayEndingMusic()
     {
@@ -87,6 +88,15 @@ public class AudioManager : MonoBehaviour
     {
         endingEmitter.SetParameter("Intro", 1);
     }
+    public void PlaySpiralMusic()
+    {
+        spiralEmitter.Play();
+    }
+    public void EndSpiralMusic()
+    {
+        spiralEmitter.SetParameter("Looming", 1);
+    }
+
     public void PlayOneShotSound(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);

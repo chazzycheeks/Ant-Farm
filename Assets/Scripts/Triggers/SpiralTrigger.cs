@@ -22,6 +22,7 @@ public class SpiralTrigger : MonoBehaviour
             /*RemoveWalls();
             ActivateShutters();*/
             cutsceneR4B.Play();
+            AudioManager.instance.PlaySpiralMusic();
         }
     }
 
