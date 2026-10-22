@@ -34729,6 +34729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482407489}
   - component: {fileID: 482407490}
+  - component: {fileID: 482407491}
   m_Layer: 0
   m_Name: SpiralEndTrigger
   m_TagString: Untagged
@@ -34797,6 +34798,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 10.858549}
   m_EdgeRadius: 0
+--- !u!114 &482407491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482407488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d598cb1fec9b00a4c94a489a7345f2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiralEndTrigger
 --- !u!1 &482841613
 GameObject:
   m_ObjectHideFlags: 0
