@@ -1,3 +1,4 @@
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,9 +9,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Animator playAnim;
     [SerializeField] private Animator quitAnim;
 
+    [SerializeField] private StudioEventEmitter menuEmitter;
+
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
+        menuEmitter.Stop();
     }
     public void QuitGame()
     {

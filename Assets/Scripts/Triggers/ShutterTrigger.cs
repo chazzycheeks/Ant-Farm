@@ -16,6 +16,7 @@ public class ShutterTrigger : MonoBehaviour
         if (shutterTriggerEntered == false && collision.CompareTag("Player"))
         {
             StartShutter();
+            AudioManager.instance.PlayWallMusic();
         }
     }
 

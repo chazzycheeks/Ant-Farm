@@ -5383,8 +5383,8 @@ Transform:
   m_GameObject: {fileID: 104976776}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -632.4095, y: 5.8898, z: 0.5}
-  m_LocalScale: {x: 30.897263, y: 3.5047798, z: 1}
+  m_LocalPosition: {x: -631.7496, y: 5.8898, z: 0.5}
+  m_LocalScale: {x: 32.216576, y: 3.5047798, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 371489777}
@@ -6245,6 +6245,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 121075862}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &121237768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 121237769}
+  - component: {fileID: 121237770}
+  m_Layer: 0
+  m_Name: WallEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &121237769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121237768}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1985794208}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &121237770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121237768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 853298397
+      Data2: 1112617978
+      Data3: 23158170
+      Data4: -984606991
+    Path: event:/MUSIC/Looming
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Looming
+    Value: 0
+    ID:
+      data1: 0
+      data2: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &122270050
 GameObject:
   m_ObjectHideFlags: 0
@@ -9099,8 +9167,8 @@ Transform:
   m_GameObject: {fileID: 157222873}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -628.3601, y: 13.5595, z: 0.5}
-  m_LocalScale: {x: 22.796995, y: 7.4486637, z: 1}
+  m_LocalPosition: {x: -627.8674, y: 13.5595, z: 0.5}
+  m_LocalScale: {x: 23.781826, y: 7.4486637, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 371489777}
@@ -24815,6 +24883,41 @@ PrefabInstance:
       propertyPath: ExitOffset.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1985794209}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartRoomSevenMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30543,8 +30646,8 @@ Transform:
   m_GameObject: {fileID: 422923413}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -343.5756, y: 46.3618, z: 0.5}
-  m_LocalScale: {x: 37.59373, y: 32.272556, z: 1}
+  m_LocalPosition: {x: -341.4007, y: 46.3618, z: 0.5}
+  m_LocalScale: {x: 41.943325, y: 32.272556, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1116477765}
@@ -33761,6 +33864,74 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &470129268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 470129269}
+  - component: {fileID: 470129270}
+  m_Layer: 0
+  m_Name: EndingEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &470129269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470129268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1985794208}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &470129270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470129268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1432235169
+      Data2: 1094963026
+      Data3: -492970353
+      Data4: -422163943
+    Path: event:/MUSIC/Intro+Outro
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: Intro
+    Value: 0
+    ID:
+      data1: 0
+      data2: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &470182062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34516,6 +34687,18 @@ MonoBehaviour:
       - m_Target: {fileID: 58392231}
         m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1985794209}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayEndingMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57608,11 +57791,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -2065741860
-      Data2: 1326156569
-      Data3: -56693358
-      Data4: -1979864866
-    Path: event:/MUSIC/Room 7
+      Data1: 1065240824
+      Data2: 1087781117
+      Data3: -206480206
+      Data4: 1005423095
+    Path: event:/MUSIC/Room_14
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -57620,7 +57803,12 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   NonRigidbodyVelocity: 0
-  Params: []
+  Params:
+  - Name: RoomFourteen
+    Value: 0
+    ID:
+      data1: 0
+      data2: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -62714,6 +62902,41 @@ PrefabInstance:
       propertyPath: Destination
       value: 
       objectReference: {fileID: 350239764}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1985794209}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: EndRoomSevenMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758574105483329267, guid: 38e73b10e4bfbe549aecdd2c45bea28f,
+        type: 3}
+      propertyPath: OnActivation.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -95938,8 +96161,8 @@ Transform:
   m_GameObject: {fileID: 1385277153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -636.7365, y: 7.5063, z: 0.5}
-  m_LocalScale: {x: 11.91113, y: 6.871842, z: 1}
+  m_LocalPosition: {x: -636.9775, y: 7.5063, z: 0.5}
+  m_LocalScale: {x: 12.393531, y: 6.871842, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1255021238}
@@ -100435,6 +100658,97 @@ MonoBehaviour:
   - {x: 8.580955, y: -43.26472, z: 0}
   - {x: 1.9475021, y: 7.1985254, z: 0}
   - {x: -0.6189153, y: 7.1127496, z: 0}
+--- !u!1 &1461985438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461985439}
+  - component: {fileID: 1461985440}
+  - component: {fileID: 1461985441}
+  m_Layer: 0
+  m_Name: WallEndTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461985439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461985438}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -191.57, y: 47.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1985794208}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461985440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461985438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b8f8285f09d8e4ea69f3775d518d1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallEndTrigger
+--- !u!61 &1461985441
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461985438}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 2.26515}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 9.170376}
+  m_EdgeRadius: 0
 --- !u!1 &1462523326
 GameObject:
   m_ObjectHideFlags: 0
@@ -102449,8 +102763,8 @@ Transform:
   m_GameObject: {fileID: 1486017552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -618.5382, y: 13.4408, z: 0.5}
-  m_LocalScale: {x: 3.0005631, y: 13.046106, z: 1}
+  m_LocalPosition: {x: -617.9575, y: 13.4408, z: 0.5}
+  m_LocalScale: {x: 4.1620812, y: 13.046106, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 371489777}
@@ -107253,7 +107567,12 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   NonRigidbodyVelocity: 0
-  Params: []
+  Params:
+  - Name: SafeRoom
+    Value: 0
+    ID:
+      data1: 0
+      data2: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -121628,6 +121947,97 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1737124661}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1739240465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1739240466}
+  - component: {fileID: 1739240468}
+  - component: {fileID: 1739240467}
+  m_Layer: 0
+  m_Name: Room7Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1739240466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739240465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -67.07, y: -14.86, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1985794208}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1739240467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739240465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20034f9918ae3704dbb21a37e0dfb8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndRoomSevenTrigger
+--- !u!61 &1739240468
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739240465}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 2.901822}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 6.803644}
+  m_EdgeRadius: 0
 --- !u!1 &1739432115
 GameObject:
   m_ObjectHideFlags: 0
@@ -138405,7 +138815,11 @@ Transform:
   - {fileID: 687438287}
   - {fileID: 1529013912}
   - {fileID: 843384755}
+  - {fileID: 121237769}
+  - {fileID: 470129269}
   - {fileID: 1366043952}
+  - {fileID: 1739240466}
+  - {fileID: 1461985439}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1985794209
@@ -138421,8 +138835,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   ambienceEmitter: {fileID: 1985794211}
-  safeRoomEmitter: {fileID: 0}
-  roomSevenEmitter: {fileID: 0}
+  safeRoomEmitter: {fileID: 1529013913}
+  roomSevenEmitter: {fileID: 843384756}
+  wallEmitter: {fileID: 0}
+  endingEmitter: {fileID: 0}
 --- !u!114 &1985794210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138458,11 +138874,11 @@ MonoBehaviour:
     Path: event:/MUSIC/Room_5+11
   <roomSevenMusic>k__BackingField:
     Guid:
-      Data1: -2065741860
-      Data2: 1326156569
-      Data3: -56693358
-      Data4: -1979864866
-    Path: event:/MUSIC/Room 7
+      Data1: 1065240824
+      Data2: 1087781117
+      Data3: -206480206
+      Data4: 1005423095
+    Path: event:/MUSIC/Room_14
   <movingWalls>k__BackingField:
     Guid:
       Data1: 300355617

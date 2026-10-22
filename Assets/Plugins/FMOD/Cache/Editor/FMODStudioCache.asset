@@ -177,10 +177,10 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639282282412091871
+  lastModified: 639282319187186801
   FileSizes:
   - Name: 
-    Value: 4428
+    Value: 4440
   Exists: 1
 --- !u!114 &-8589802258646702889
 MonoBehaviour:
@@ -2254,9 +2254,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Looming/Progress_Looming
+  m_Name: parameter:/Looming/Looming
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Looming
+  Name: Looming
   StudioPath: 
   Min: 0
   Max: 1
@@ -2265,7 +2265,7 @@ MonoBehaviour:
     data1: 1641722883
     data2: 100195306
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - Looming
   - Leaving
@@ -2336,7 +2336,7 @@ MonoBehaviour:
     data1: 3482448462
     data2: 31333668
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - Start
   - Stop
@@ -2475,10 +2475,8 @@ MonoBehaviour:
   - {fileID: -4981358216534866408}
   - {fileID: 2649825343208374482}
   EditorParameters:
-  - {fileID: 4726268391514273025}
   - {fileID: 963158620451540951}
   - {fileID: 3161072135120061296}
-  - {fileID: 465243443475041666}
   - {fileID: 7690379768075546375}
   - {fileID: -7122334476984041369}
   - {fileID: 4878169991713654552}
@@ -2488,7 +2486,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -8592619986620124609}
   cacheVersion: 131860
-  cacheTime: 639282282412740480
+  cacheTime: 639282319187997102
   SerializableEventsDict:
   - key: event:/MUSIC/Room_5+11
     index: 0
@@ -2666,32 +2664,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12500
---- !u!114 &465243443475041666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Progress_Looming
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Looming
-  StudioPath: parameter:/Progress_Looming
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1641722883
-    data2: 100195306
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - Looming
-  - Leaving
-  Exists: 1
 --- !u!114 &692940846378105886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3437,7 +3409,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639282282412081714
+  lastModified: 639282319187176659
   FileSizes: []
   Exists: 1
 --- !u!114 &3945851568501336352
@@ -3729,32 +3701,6 @@ MonoBehaviour:
   - Scaring small
   - Scaring big
   Exists: 1
---- !u!114 &4726268391514273025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Intro
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Intro
-  StudioPath: parameter:/Intro
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3482448462
-    data2: 31333668
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - Start
-  - Stop
-  Exists: 1
 --- !u!114 &4815072152848806796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3973,7 +3919,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639282282412740480
+  lastModified: 639282319187997102
   FileSizes: []
   Exists: 1
 --- !u!114 &5824259850983545480
