@@ -7,7 +7,6 @@ public class ShutterTrigger : MonoBehaviour
     [SerializeField] private Animator shutterArt;
     public bool shutterTriggerEntered = false;
     [SerializeField] private GameObject resetTriggers;
-    [SerializeField] private PlayableDirector cutscene6A;
 
  
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +20,6 @@ public class ShutterTrigger : MonoBehaviour
 
     public void StartShutter()
     {
-        cutscene6A.Play();
         shutterArt.SetBool("Opening", true);
         shutterTriggerEntered = true;
         resetTriggers.SetActive(true);

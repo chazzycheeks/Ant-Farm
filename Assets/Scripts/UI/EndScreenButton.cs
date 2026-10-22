@@ -7,6 +7,8 @@ public class EndScreenButton : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         AudioManager.instance.StopEndingMusic();
+        AudioManager.instance.StopAmbience();
+
     }
     public void PauseMainMenuButton()
     {

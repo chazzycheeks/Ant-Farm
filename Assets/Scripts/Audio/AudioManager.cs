@@ -56,6 +56,11 @@ public class AudioManager : MonoBehaviour
         endingEmitter.Stop();
         spiralEmitter.Stop();
     }
+
+    public void StopAmbience()
+    {
+        ambienceEmitter.Stop();
+    }
     public void SwitchAmbienceBig()
     {
         ambienceEmitter.SetParameter("AtmosSwitch", 1);
