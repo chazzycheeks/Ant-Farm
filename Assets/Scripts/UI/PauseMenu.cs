@@ -9,17 +9,26 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+            if (isPaused == false)
+            {
+                PauseGame();
+            }
+            else
+            {
+                UnpauseGame();
+            }
         }
     }
 
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        isPaused = true;
     }
     public void UnpauseGame()
     {
         pauseMenu.SetActive(false);
+        isPaused = false;
     }
 
 }
