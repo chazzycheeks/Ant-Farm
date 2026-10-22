@@ -46,6 +46,16 @@ public class AudioManager : MonoBehaviour
         AmbienceInstance.setParameterByName("area", (float) area);
         Debug.Log("ambiencechange");
     }*/
+
+    public void StopAllMusic()
+    {
+        ambienceEmitter.Stop();
+        safeRoomEmitter.Stop();
+        roomSevenEmitter.Stop();
+        wallEmitter.Stop();
+        endingEmitter.Stop();
+        spiralEmitter.Stop();
+    }
     public void SwitchAmbienceBig()
     {
         ambienceEmitter.SetParameter("AtmosSwitch", 1);
