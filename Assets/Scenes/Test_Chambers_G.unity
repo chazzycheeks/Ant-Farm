@@ -19981,6 +19981,7 @@ GameObject:
   - component: {fileID: 274031867}
   - component: {fileID: 274031868}
   - component: {fileID: 274031869}
+  - component: {fileID: 274031870}
   m_Layer: 0
   m_Name: GiantShutter
   m_TagString: Untagged
@@ -20068,6 +20069,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GinatShutterAudio
   StartMovingEmitter: {fileID: 947780895}
   EndMovingEmitter: {fileID: 707660240}
+--- !u!114 &274031870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274031866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c5a262403ebbb438ac108c2642f74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShutterTrigger
+  shutterArt: {fileID: 274031868}
+  shutterTriggerEntered: 0
+  resetTriggers: {fileID: 1511112373}
+  cutscene6A: {fileID: 1375261939}
 --- !u!1001 &276868157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101961,7 +101978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c5a262403ebbb438ac108c2642f74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShutterTrigger
-  shutter: {fileID: 0}
   shutterArt: {fileID: 274031868}
   shutterTriggerEntered: 0
   resetTriggers: {fileID: 1511112373}
@@ -105761,7 +105777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1511112374
 Transform:
   m_ObjectHideFlags: 0

@@ -4,7 +4,6 @@ using UnityEngine.Timeline;
 
 public class ShutterTrigger : MonoBehaviour
 {
-    [SerializeField] private Animator shutter;
     [SerializeField] private Animator shutterArt;
     public bool shutterTriggerEntered = false;
     [SerializeField] private GameObject resetTriggers;
@@ -23,7 +22,6 @@ public class ShutterTrigger : MonoBehaviour
     public void StartShutter()
     {
         cutscene6A.Play();
-        shutter.SetBool("Opening", true);
         shutterArt.SetBool("Opening", true);
         shutterTriggerEntered = true;
         resetTriggers.SetActive(true);
@@ -32,7 +30,6 @@ public class ShutterTrigger : MonoBehaviour
 
     public void ResetShutter()
     {
-        shutter.SetBool("Opening", false);
         shutterArt.SetBool("Opening", false);
         shutterTriggerEntered = false;
     }
