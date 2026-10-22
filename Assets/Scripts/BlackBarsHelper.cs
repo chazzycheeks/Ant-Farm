@@ -40,17 +40,16 @@ public class BlackBarsHelper : MonoBehaviour
         PlayerController.instance.GetComponentInChildren<Animator>().SetBool("Cutscene", true);
     }
 
-    /*public void IdleAnimCouroutine()
-    {
-        StartCoroutine(PlayIdleAnim());
-    }*/
     public void StopIdleAnim()
     {
         PlayerController.instance.GetComponentInChildren<Animator>().SetBool("Cutscene", false);
     }
 
-/*    public void TurnOnDashScreen()
+    public void PlayInjectAnim()
     {
-        CameraUIAnimationController.Instance.TriggerDashScreen();
-    }*/
+        PlayerController.instance.GetComponentInChildren<Animator>().SetTrigger("StartCutscene");
+        PlayerController.instance.GetComponentInChildren<Animator>().SetBool("Startled", true);
+    }
+
+
 }

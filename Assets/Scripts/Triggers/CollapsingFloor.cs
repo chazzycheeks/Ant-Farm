@@ -32,6 +32,7 @@ public class CollapsingFloor : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Character>().Freeze();
         AudioManager.instance.PlayOneShotSound(entitySound, this.transform.position);
+        player.GetComponentInChildren<Animator>().SetTrigger("StartCutscene");
         player.GetComponentInChildren<Animator>().SetBool("Ending", true);
         yield return new WaitForSeconds(2.5f);
         player.GetComponentInChildren<Animator>().SetBool("Ending", false);

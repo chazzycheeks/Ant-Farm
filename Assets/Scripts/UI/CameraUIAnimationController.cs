@@ -1,3 +1,5 @@
+using MoreMountains.CorgiEngine;
+using System.Collections;
 using UnityEngine;
 
 public class CameraUIAnimationController : MonoBehaviour
@@ -35,6 +37,7 @@ public class CameraUIAnimationController : MonoBehaviour
         blackBarDownAnim = blackBarDown.GetComponent<Animator>();
 
         checkpointUIAnim = checkpointUI.GetComponent<Animator>();
+
     }
     public void TriggerFade() {
         blackoutObjectAnimator.SetTrigger("FadeTrigger");
@@ -55,10 +58,16 @@ public class CameraUIAnimationController : MonoBehaviour
     {
         endScreen.SetActive(true);
     }
-
     public void TriggerDashScreen()
     {
+        StartCoroutine(DashScreenCouroutine());
+    }
+    private IEnumerator DashScreenCouroutine()
+    {
         dashScreen.SetActive(true);
+        yield return new WaitForSeconds(4.5f);
+        dashScreen.SetActive(false);
+        PlayerController.instance.GetComponent<Character>().UnFreeze();
     }
 
     public void TriggerCheckpointUI()

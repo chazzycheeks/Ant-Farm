@@ -118677,6 +118677,172 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1678696256}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1678890296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678890300}
+  - component: {fileID: 1678890299}
+  - component: {fileID: 1678890298}
+  - component: {fileID: 1678890297}
+  m_Layer: 0
+  m_Name: CutsceneR7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1678890297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678890296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d0cea19575422484cb80152d385831a0, type: 2}
+    - {fileID: 11400000, guid: 07ea996c426b18f49a2404c842fc10b7, type: 2}
+    - {fileID: 11400000, guid: 3c190cd7c6634b745b00007af19a3298, type: 2}
+    - {fileID: 11400000, guid: 0e95946414e30e84b9ff459b7b688b0c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1678890298}
+          m_TargetAssemblyTypeName: BlackBarsHelper, Assembly-CSharp
+          m_MethodName: ShowBlackBars
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1678890298}
+          m_TargetAssemblyTypeName: BlackBarsHelper, Assembly-CSharp
+          m_MethodName: HideBlackBars
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1678890298}
+          m_TargetAssemblyTypeName: BlackBarsHelper, Assembly-CSharp
+          m_MethodName: PlayIdleAnim
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1678890298}
+          m_TargetAssemblyTypeName: BlackBarsHelper, Assembly-CSharp
+          m_MethodName: StopIdleAnim
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1678890298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678890296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad86e170a1f26e41b602b9d21b36681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlackBarsHelper
+--- !u!320 &1678890299
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678890296}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: ed7aa2ccbf431ac4cb528dba1ebc3d7f, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 0
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 3154516437311069589, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 1304118963}
+  - key: {fileID: 2673338375547199910, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 1644268061}
+  - key: {fileID: 3587867495928411959, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 250592652}
+  - key: {fileID: 1880255875319354303, guid: a718f0375aa32e24ca80c5e10242b426, type: 2}
+    value: {fileID: 1678890297}
+  - key: {fileID: 2847123833424950152, guid: 240987b6347ae3348955891c939d16de, type: 2}
+    value: {fileID: 1304118963}
+  - key: {fileID: 5964118436541008474, guid: 240987b6347ae3348955891c939d16de, type: 2}
+    value: {fileID: 36486363}
+  - key: {fileID: -339667256899134159, guid: 240987b6347ae3348955891c939d16de, type: 2}
+    value: {fileID: 1972469985}
+  - key: {fileID: 5594158984155641503, guid: 240987b6347ae3348955891c939d16de, type: 2}
+    value: {fileID: 1678890297}
+  - key: {fileID: -8970014793415328549, guid: 240987b6347ae3348955891c939d16de, type: 2}
+    value: {fileID: 480247315}
+  - key: {fileID: -6758571898326558690, guid: 240987b6347ae3348955891c939d16de, type: 2}
+    value: {fileID: 1969910606}
+  - key: {fileID: -3494664311603473621, guid: 240987b6347ae3348955891c939d16de, type: 2}
+    value: {fileID: 1985794206}
+  - key: {fileID: 3803690293990693638, guid: ed7aa2ccbf431ac4cb528dba1ebc3d7f, type: 2}
+    value: {fileID: 1678890297}
+  m_ExposedReferences:
+    m_References:
+    - 42218eba87d33db4e8e34a26c2a1efd6: {fileID: 0}
+    - 449a68c0bc10e7d41a4c09619d887176: {fileID: 0}
+    - 30853e7c7014ed54c8b610cf9c176ee4: {fileID: 0}
+    - aaae1306514553548a0add1b0e4d1278: {fileID: 0}
+--- !u!4 &1678890300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678890296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1681934841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140829,11 +140995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -394.5
+      value: -361.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.68
+      value: 57.2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 48dc28dc7a3a4304fb0dfd7a2f9f072e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -150800,6 +150966,7 @@ SceneRoots:
   - {fileID: 1778380913}
   - {fileID: 1874899329}
   - {fileID: 1948590792}
+  - {fileID: 1678890300}
   - {fileID: 58392232}
   - {fileID: 2109731994}
   - {fileID: 304959739}

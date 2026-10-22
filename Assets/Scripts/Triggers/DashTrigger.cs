@@ -27,6 +27,7 @@ public class DashTrigger : MonoBehaviour
         player.GetComponent<Character>().Freeze();
         /*player.GetComponent<CharacterHorizontalMovement>().AbilityPermitted = false;*/
         /*player.GetComponent<CorgiController>().SetForce(Vector2.zero);*/
+        player.GetComponentInChildren<Animator>().SetTrigger("StartCutscene");
         player.GetComponentInChildren<Animator>().SetBool("Startled", true);
         AudioManager.instance.PlayOneShotSound(stingerSound, this.transform.position);
         AudioManager.instance.PlayOneShotSound(injectionSound, this.transform.position);
