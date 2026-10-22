@@ -9,6 +9,12 @@ public class AudioManager : MonoBehaviour
     private List<StudioEventEmitter> eventEmitters;
     public static AudioManager instance {  get; private set; }
 
+    /*private EventInstance AmbienceInstance;*/
+
+    [SerializeField] private StudioEventEmitter ambienceEmitter;
+    [SerializeField] private StudioEventEmitter safeRoomEmitter;
+    [SerializeField] private StudioEventEmitter roomSevenEmitter;
+
 
     private void Awake()
     {
@@ -21,7 +27,48 @@ public class AudioManager : MonoBehaviour
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
     }
+    private void Start()
+    {
+        /*InitialiseAmbience(FMODEvents.instance.ambience);*/
+        ambienceEmitter.Play();
+    }
 
+    /*private void InitialiseAmbience(EventReference Ambience)
+    {
+        AmbienceInstance = CreateInstance(Ambience);
+        AmbienceInstance.start();
+    }*/
+
+    /*public void SetAmbienceArea(AmbienceAreas area)
+    {
+        AmbienceInstance.setParameterByName("area", (float) area);
+        Debug.Log("ambiencechange");
+    }*/
+    public void SwitchAmbienceBig()
+    {
+        ambienceEmitter.SetParameter("AtmosSwitch", 1);
+    }
+    public void SwitchAmbienceSmall()
+    {
+        ambienceEmitter.SetParameter("AtmosSwitch", 0);
+    }
+
+    public void StartSafeRoomMusic()
+    {
+        safeRoomEmitter.Play();
+    }
+    public void EndSafeRoomMusic()
+    {
+        safeRoomEmitter.SetParameter("SafeRoom", 1);
+    }
+    public void StartRoomSevenMusic()
+    {
+        roomSevenEmitter.Play();
+    }
+    public void EndRoomSevenMusic()
+    {
+        roomSevenEmitter.SetParameter("RoomSeven", 1);
+    }
     public void PlayOneShotSound(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);

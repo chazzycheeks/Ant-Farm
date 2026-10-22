@@ -1,33 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9199417198776878780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ATMOS/AntFarm_SmallAtmos_WithFade
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/ATMOS/AntFarm_SmallAtmos_WithFade
-  Guid:
-    Data1: 868020761
-    Data2: 1304056878
-    Data3: -749772130
-    Data4: 2000911548
-  Banks:
-  - {fileID: -7093795589980295658}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 7027361997123460264}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 74000
 --- !u!114 &-9178898789776203298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,10 +177,36 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639281991264548394
+  lastModified: 639282282412091871
   FileSizes:
   - Name: 
-    Value: 4550
+    Value: 4428
+  Exists: 1
+--- !u!114 &-8589802258646702889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/AtmosTracks/AtmosSwitch
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: AtmosSwitch
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3222341293
+    data2: 3889522457
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - SmallAtmos
+  - LargeAtmos
   Exists: 1
 --- !u!114 &-8578605709154125867
 MonoBehaviour:
@@ -481,32 +479,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 83478
---- !u!114 &-7309173017417677107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Progress_Room 5+11
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Room 5+11
-  StudioPath: parameter:/Progress_Room 5+11
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1826691573
-    data2: 873149125
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - In
-  - Out
-  Exists: 1
 --- !u!114 &-7122334476984041369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +520,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Sound.bank
   Name: Sound
   StudioPath: bank:/Sound
-  lastModified: 639282111988321818
+  lastModified: 639282275844317433
   FileSizes: []
   Exists: 1
 --- !u!114 &-7070318627682129863
@@ -847,7 +819,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1404
+  Length: 760
 --- !u!114 &-6430756358253120755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1492,9 +1464,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Room 7/Progress_Room 7
+  m_Name: parameter:/Room 7/RoomSeven
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Room 7
+  Name: RoomSeven
   StudioPath: 
   Min: 0
   Max: 1
@@ -1503,7 +1475,7 @@ MonoBehaviour:
     data1: 219735873
     data2: 899478789
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - In
   - Out
@@ -1536,33 +1508,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 104000
---- !u!114 &-3411075824115870023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ATMOS/AntFarm_BT_LargeAtmos_LessElements
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/ATMOS/AntFarm_BT_LargeAtmos_LessElements
-  Guid:
-    Data1: 1578205397
-    Data2: 1243962922
-    Data3: -1833534017
-    Data4: 2130610832
-  Banks:
-  - {fileID: -7093795589980295658}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 100000
 --- !u!114 &-3373608329175527656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,32 +1661,6 @@ MonoBehaviour:
   - Room 13
   - Out
   Exists: 1
---- !u!114 &-2808571460964207945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/AntFarm_BT_LargeAtmos_WithFade/atmos change
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: atmos change
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1609847331
-    data2: 226853410
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - in
-  - out
-  Exists: 1
 --- !u!114 &-2617742205684138849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1770,33 +1689,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 168000
---- !u!114 &-2589173766445796871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ATMOS/AntFarm_SmallAtmos_v1
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/ATMOS/AntFarm_SmallAtmos_v1
-  Guid:
-    Data1: -405210561
-    Data2: 1304386173
-    Data3: -852802394
-    Data4: 1184463282
-  Banks:
-  - {fileID: -7093795589980295658}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 77219
 --- !u!114 &-2487326704974183145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1851,32 +1743,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 75192
---- !u!114 &-2208331289787614205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Progress_Room14
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Room14
-  StudioPath: parameter:/Progress_Room14
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1382056065
-    data2: 1220995226
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - In
-  - Out
-  Exists: 1
 --- !u!114 &-2134635958736616135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2200,9 +2066,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Room_14/Progress_Room14
+  m_Name: parameter:/Room_14/RoomFourteen
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Room14
+  Name: RoomFourteen
   StudioPath: 
   Min: 0
   Max: 1
@@ -2211,7 +2077,7 @@ MonoBehaviour:
     data1: 1382056065
     data2: 1220995226
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - In
   - Out
@@ -2459,9 +2325,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Intro+Outro/Progress_Intro+Outro
+  m_Name: parameter:/Intro+Outro/Intro
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Intro+Outro
+  Name: Intro
   StudioPath: 
   Min: 0
   Max: 1
@@ -2529,32 +2395,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12500
---- !u!114 &-22717637349894720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Progress_Room 7
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Room 7
-  StudioPath: parameter:/Progress_Room 7
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 219735873
-    data2: 899478789
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - In
-  - Out
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2594,15 +2434,12 @@ MonoBehaviour:
   - {fileID: -848088542760968447}
   - {fileID: 3979581301895086125}
   - {fileID: -8040239271684301774}
-  - {fileID: -9199417198776878780}
   - {fileID: -4519997466051747370}
   - {fileID: -5069966393016302506}
   - {fileID: -5707505793680414712}
   - {fileID: 3945851568501336352}
   - {fileID: -5438865476594460291}
-  - {fileID: 3022401535191107970}
   - {fileID: -8763824136657042697}
-  - {fileID: -2589173766445796871}
   - {fileID: -5812758695630867780}
   - {fileID: -4188894710252307256}
   - {fileID: 2818467176108056996}
@@ -2629,7 +2466,6 @@ MonoBehaviour:
   - {fileID: 8448815916397989187}
   - {fileID: 2465438456874738995}
   - {fileID: -1107538825219581506}
-  - {fileID: -3411075824115870023}
   - {fileID: -431102098273576405}
   - {fileID: 2715929952097003281}
   - {fileID: -551575988516596605}
@@ -2637,24 +2473,22 @@ MonoBehaviour:
   - {fileID: 4595025740959461317}
   - {fileID: 150140479302543663}
   - {fileID: -4981358216534866408}
+  - {fileID: 2649825343208374482}
   EditorParameters:
-  - {fileID: -7309173017417677107}
   - {fileID: 4726268391514273025}
   - {fileID: 963158620451540951}
-  - {fileID: -22717637349894720}
   - {fileID: 3161072135120061296}
   - {fileID: 465243443475041666}
   - {fileID: 7690379768075546375}
   - {fileID: -7122334476984041369}
   - {fileID: 4878169991713654552}
-  - {fileID: -2208331289787614205}
   - {fileID: 6630410559597117817}
   MasterBanks:
   - {fileID: 3900340469749874266}
   StringsBanks:
   - {fileID: -8592619986620124609}
   cacheVersion: 131860
-  cacheTime: 639282111988321818
+  cacheTime: 639282282412740480
   SerializableEventsDict:
   - key: event:/MUSIC/Room_5+11
     index: 0
@@ -2698,92 +2532,86 @@ MonoBehaviour:
     index: 19
   - key: event:/SFX/OBJECTS/AntFarm_BT_ShutterStop
     index: 20
-  - key: event:/SFX/ATMOS/AntFarm_SmallAtmos_WithFade
-    index: 21
   - key: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls
-    index: 22
+    index: 21
   - key: event:/SFX/OTHER/UI_StartGame
-    index: 23
+    index: 22
   - key: event:/SFX/PLAYER/AntFarm_BT_WakeUp_v4
-    index: 24
+    index: 23
   - key: event:/SFX/OBJECTS/AntFarm_BT_CollapseFloor
-    index: 25
+    index: 24
   - key: event:/SFX/ENEMIES/AntFarm_BT_ArmRelease
-    index: 26
-  - key: event:/SFX/ATMOS/AntFarm_BT_LargeAtmos_WithFade
-    index: 27
+    index: 25
   - key: event:/SFX/OTHER/AntFarm_BT_RushingWind_v2
-    index: 28
-  - key: event:/SFX/ATMOS/AntFarm_SmallAtmos_v1
-    index: 29
+    index: 26
   - key: event:/SFX/PLAYER/Concrete Jump Land
-    index: 30
+    index: 27
   - key: event:/SFX/ENEMIES/AntFarm_BT_ArmHolding
-    index: 31
+    index: 28
   - key: event:/SFX/ENEMIES/AntFarm_BT_MetalArmGrab
-    index: 32
+    index: 29
   - key: event:/SFX/OBJECTS/AntFarm_BT_GiantShutterEnd
-    index: 33
+    index: 30
   - key: event:/SFX/OBJECTS/AntFarm_BT_ShutterGettingSmaller_End
-    index: 34
+    index: 31
   - key: event:/SFX/PLAYER/Foot_Concrete
-    index: 35
+    index: 32
   - key: event:/SFX/OBJECTS/AntFarm_BT_SmallDoorOpen
-    index: 36
+    index: 33
   - key: event:/SFX/OBJECTS/AntFarm_BT_ElevatorStart
-    index: 37
+    index: 34
   - key: event:/SFX/OBJECTS/AntFarm_BT_ButtonPress
-    index: 38
+    index: 35
   - key: event:/SFX/OBJECTS/AntFarm_BT_LightFlickering
-    index: 39
+    index: 36
   - key: event:/SFX/OTHER/UI_Pause
-    index: 40
+    index: 37
   - key: event:/SFX/PLAYER/Dash_V2
-    index: 41
+    index: 38
   - key: event:/SFX/OBJECTS/Barrier Opening_new
-    index: 42
+    index: 39
   - key: event:/SFX/PLAYER/Concrete Feet Pre Injection
-    index: 43
+    index: 40
   - key: event:/SFX/ENEMIES/AntFarm_SeekingEyes_v4
-    index: 44
+    index: 41
   - key: event:/SFX/PLAYER/Foot_Metal
-    index: 45
+    index: 42
   - key: event:/SFX/ENEMIES/Monster Feet
-    index: 46
+    index: 43
   - key: event:/SFX/PLAYER/AntFarm_BT_WakeUp_v3
-    index: 47
+    index: 44
   - key: event:/SFX/ENEMIES/Metal Arm Creaks_Longer
-    index: 48
+    index: 45
   - key: event:/SFX/PLAYER/Metal Jump Land
-    index: 49
+    index: 46
   - key: event:/SFX/PLAYER/AntFarm_BT_LadderClimb
-    index: 50
+    index: 47
   - key: event:/SFX/PLAYER/Jump_TakeOff
-    index: 51
+    index: 48
   - key: event:/SFX/ENEMIES/Metal Arm Creak_Short
-    index: 52
+    index: 49
   - key: event:/SFX/OBJECTS/AntFarm_BT_BigDoorOpen
-    index: 53
+    index: 50
   - key: event:/SFX/ENEMIES/AntFarm_Roaming_v4
-    index: 54
+    index: 51
   - key: event:/SFX/OTHER/AntFarm_BT_Death
-    index: 55
-  - key: event:/SFX/ATMOS/AntFarm_BT_LargeAtmos_LessElements
-    index: 56
+    index: 52
   - key: event:/SFX/ENEMIES/AntFarm_BT_ArmCrash
-    index: 57
+    index: 53
   - key: event:/SFX/PLAYER/Foot_Concrete_withReverb
-    index: 58
+    index: 54
   - key: event:/SFX/ENEMIES/AntFarm_BT_Injection
-    index: 59
+    index: 55
   - key: event:/SFX/OBJECTS/AntFarm_BT_LadderFall
-    index: 60
+    index: 56
   - key: event:/SFX/OBJECTS/AntFarm_BT_GiantShutterOpening
-    index: 61
+    index: 57
   - key: event:/SFX/OBJECTS/AntFarm_BT_MovingWalls_Small
-    index: 62
+    index: 58
   - key: event:/SFX/PLAYER/GettingUp
-    index: 63
+    index: 59
+  - key: event:/SFX/ATMOS/AtmosTracks
+    index: 60
 --- !u!114 &150140479302543663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,6 +3076,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 19200
+--- !u!114 &2649825343208374482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ATMOS/AtmosTracks
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/ATMOS/AtmosTracks
+  Guid:
+    Data1: -405210561
+    Data2: 1304386173
+    Data3: -852802394
+    Data4: 1184463282
+  Banks:
+  - {fileID: -7093795589980295658}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8589802258646702889}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2715929952097003281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3354,34 +3210,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
---- !u!114 &3022401535191107970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ATMOS/AntFarm_BT_LargeAtmos_WithFade
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/ATMOS/AntFarm_BT_LargeAtmos_WithFade
-  Guid:
-    Data1: -423473612
-    Data2: 1106159718
-    Data3: -277596234
-    Data4: 488530460
-  Banks:
-  - {fileID: -7093795589980295658}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -2808571460964207945}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 100000
 --- !u!114 &3062821280675648190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3609,7 +3437,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639281991264527389
+  lastModified: 639282282412081714
   FileSizes: []
   Exists: 1
 --- !u!114 &3945851568501336352
@@ -3911,10 +3739,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Progress_Intro+Outro
+  m_Name: parameter:/Intro
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Intro+Outro
-  StudioPath: parameter:/Progress_Intro+Outro
+  Name: Intro
+  StudioPath: parameter:/Intro
   Min: 0
   Max: 1
   Default: 0
@@ -4145,7 +3973,7 @@ MonoBehaviour:
   Path: Fmod/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639282000770044454
+  lastModified: 639282282412740480
   FileSizes: []
   Exists: 1
 --- !u!114 &5824259850983545480
@@ -4186,9 +4014,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Room_5+11/Progress_Room 5+11
+  m_Name: parameter:/Room_5+11/SafeRoom
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Progress_Room 5+11
+  Name: SafeRoom
   StudioPath: 
   Min: 0
   Max: 1
@@ -4197,7 +4025,7 @@ MonoBehaviour:
     data1: 1826691573
     data2: 873149125
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - In
   - Out
@@ -4416,32 +4244,6 @@ MonoBehaviour:
   Labels:
   - Room 1
   - Room 9
-  Exists: 1
---- !u!114 &7027361997123460264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/AntFarm_SmallAtmos_WithFade/atmos change
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: atmos change
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1609847331
-    data2: 226853410
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - in
-  - out
   Exists: 1
 --- !u!114 &7066350924107966186
 MonoBehaviour:

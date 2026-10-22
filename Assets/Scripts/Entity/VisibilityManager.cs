@@ -1,15 +1,17 @@
+using FMODUnity;
 using MoreMountains.CorgiEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using FMODUnity;
 
 public class VisibilityManager : MonoBehaviour
 {
-    public bool _isVisible {
-        get {
+    public bool _isVisible
+    {
+        get
+        {
             return coverObjects.Count == 0;
         }
     }
@@ -17,8 +19,8 @@ public class VisibilityManager : MonoBehaviour
     public float visibilityTrigger = 2.5f;
     public float caughtTrigger = 5f;
     public float visibilityTimer;
-    
-    [SerializeField]bool debuggingDistance = false;
+
+    [SerializeField] bool debuggingDistance = false;
     public UnityEvent onCaught;
     private bool seenEventPlaying = false;
     public Vector2 lastPlayerPositionSeen;
@@ -33,6 +35,10 @@ public class VisibilityManager : MonoBehaviour
     [SerializeField] private GameObject blackCut;
 
     [SerializeField] private EventReference deathSound;
+    /*    [SerializeField] private EventReference violinTrem;
+        private EventInstance _violinTremInstance;*/
+
+    [SerializeField] private StudioEventEmitter violinTrem;
 
     [Tooltip("Grace period variable to be used while transitioning between rooms.")]
     public bool CanBeSpotted = true;
@@ -47,20 +53,29 @@ public class VisibilityManager : MonoBehaviour
     Coroutine timerCoroutineGraceSpotting;
 
     public List<PlayerHider> coverObjects;
-    public static VisibilityManager Instance {
-        get {  return instance; }
+    public static VisibilityManager Instance
+    {
+        get { return instance; }
+    }
+    private void Start()
+    {
+        violinTrem.Play();
     }
 
-    public void OnNewRoomEnter() {
-        if(timerCoroutineGraceSpotting == null) {
+    public void OnNewRoomEnter()
+    {
+        if (timerCoroutineGraceSpotting == null)
+        {
             gracePeriodTimer = 0f;
             timerCoroutineGraceSpotting = StartCoroutine(gracePeriodSpottingImmunity());
         }
     }
 
-    IEnumerator gracePeriodSpottingImmunity() {
+    IEnumerator gracePeriodSpottingImmunity()
+    {
         CanBeSpotted = false;
-        while (gracePeriodTimer < spottingPeriodTimeImmunity) {
+        while (gracePeriodTimer < spottingPeriodTimeImmunity)
+        {
             gracePeriodTimer += Time.deltaTime;
             yield return null;
         }
@@ -68,10 +83,14 @@ public class VisibilityManager : MonoBehaviour
         timerCoroutineGraceSpotting = null;
     }
 
-    private void Awake() {
-        if(instance == null) {
+    private void Awake()
+    {
+        if (instance == null)
+        {
             instance = this;
-        } else {
+        }
+        else
+        {
             Destroy(gameObject);
         }
 
@@ -82,23 +101,28 @@ public class VisibilityManager : MonoBehaviour
 
     }
 
-    public float distanceToEntity() {
+    public float distanceToEntity()
+    {
         Vector2 VNoYPlayer = new Vector2(playerT.position.x, 0);
         Vector2 VNoYEntity = new Vector2(entity.transform.position.x, 0);
         float distance = Vector2.Distance(VNoYPlayer, VNoYEntity);
         return distance;
     }
-    void Update() {
-        if(_isVisible != true){
+    void Update()
+    {
+        if (_isVisible != true)
+        {
             visibilityTimer = 0;
         }
-        if (playerT == null) {
+        if (playerT == null)
+        {
             playerT = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        if (_isVisible == true && RoomTracker.Instance._canEntitySurvey == true) {
+        if (_isVisible == true && RoomTracker.Instance._canEntitySurvey == true)
+        {
 
             //If it's not submerged or emerged then try to feed visual input to the entity to act accordingly
-            if (entityTriggers.transitioned == true && CanBeSpotted )
+            if (entityTriggers.transitioned == true && CanBeSpotted)
             {
                 if (stateManager.GetCurrentState() is RoamingStatic)
                 {
@@ -114,7 +138,7 @@ public class VisibilityManager : MonoBehaviour
                 {
                     entityTriggers.isSpotting = true;
 
-                    if(visibilityTimer < visibilityTrigger) visibilityTimer = visibilityTrigger;
+                    if (visibilityTimer < visibilityTrigger) visibilityTimer = visibilityTrigger;
                 }
 
 
@@ -124,19 +148,31 @@ public class VisibilityManager : MonoBehaviour
 
             lastPlayerPositionSeen = playerT.position;
 
-        } else {
+        }
+        else
+        {
             //Toggle the visual input off so mechanics work accordingly
-            if(entityTriggers.transitioned) {
+            if (entityTriggers.transitioned)
+            {
                 entityTriggers.isSpotting = false;
                 entityTriggers.noticedPlayer = false;
             }
-            
+
         }
         /*if (seenEventPlaying == false) { }*/
         visiblityPercentage = visibilityTimer / visibilityTrigger;
         float currentAlpha = vignette.color.a;
-        float newAlpha = Mathf.Lerp(currentAlpha,visiblityPercentage, Time.deltaTime*8f);
-        vignette.color = new Color(vignette.color.r,vignette.color.g,vignette.color.b,newAlpha);
+        float newAlpha = Mathf.Lerp(currentAlpha, visiblityPercentage, Time.deltaTime * 8f);
+        vignette.color = new Color(vignette.color.r, vignette.color.g, vignette.color.b, newAlpha);
+        if (stateManager.GetCurrentState() is Spotting)
+        {
+            violinTrem.SetParameter("Visibility", 0);
+        }
+        else
+        {
+            violinTrem.SetParameter("Visibility", newAlpha);
+        }
+
         //set fmod parameter to newAlpha
         CheckIfCaught();
     }
@@ -155,7 +191,7 @@ public class VisibilityManager : MonoBehaviour
         //    caughtTimer += Time.deltaTime * 1f;
         //}
     }
-   
+
 
     public void CheckIfCaught()
     {
@@ -185,7 +221,7 @@ public class VisibilityManager : MonoBehaviour
         yield return new WaitForSeconds(2.3f);
         EntityStateTriggers.Instance.hasLeftRoom = true; // Will send the entity back to standby mode when player gets caught
         blackCut.SetActive(false);
-        
+
     }
 
 
