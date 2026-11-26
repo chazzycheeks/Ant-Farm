@@ -8,11 +8,15 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Animator playAnim;
     [SerializeField] private Animator quitAnim;
-    [SerializeField] private Animator settingsAnim;
     [SerializeField] private Animator creditsAnim;
     [SerializeField] private Animator backAnim;
+
+    [SerializeField] private GameObject play;
+    [SerializeField] private GameObject quit;
+    [SerializeField] private GameObject credits;
+
     [SerializeField] private GameObject creditsScreen;
-    [SerializeField] private GameObject settingsScreen;
+/*    [SerializeField] private Slider volume;*/
 
     [SerializeField] private StudioEventEmitter menuEmitter;
 
@@ -26,19 +30,25 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void OpenSettings()
-    {
-        settingsScreen.SetActive(true);
-    }
     public void OpenCredits()
     {
         creditsScreen.SetActive(true);
+        play.SetActive(false);
+        quit.SetActive(false);
+        credits.SetActive(false);
     }
     public void BackButton()
     {
-        settingsScreen.SetActive(false);
         creditsScreen.SetActive(false);
+        play.SetActive(true);
+        quit.SetActive(true);
+        credits.SetActive(true);
     }
+
+ /*   public void ChangeVolume()
+    {
+        *//*volume.*//*
+    }*/
 
     public void ChangePlayColourGreen()
     {
@@ -58,27 +68,19 @@ public class MainMenu : MonoBehaviour
     }
     public void ChangeCreditsColourGreen()
     {
-        quitAnim.SetBool("hovering", true);
+        creditsAnim.SetBool("hovering", true);
     }
     public void ChangeCreditsColourWhite()
     {
-        quitAnim.SetBool("hovering", false);
-    }
-    public void ChangeSettingsColourGreen()
-    {
-        quitAnim.SetBool("hovering", true);
-    }
-    public void ChangeSettingsColourWhite()
-    {
-        quitAnim.SetBool("hovering", false);
+        creditsAnim.SetBool("hovering", false);
     }
     public void ChangeBackColourGreen()
     {
-        quitAnim.SetBool("hovering", true);
+        backAnim.SetBool("hovering", true);
     }
     public void ChangeBackColourWhite()
     {
-        quitAnim.SetBool("hovering", false);
+        backAnim.SetBool("hovering", false);
     }
 
 }
